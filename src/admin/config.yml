@@ -1,0 +1,121 @@
+# =========================================================
+# Painel de administração — Lara Café Advocacia
+# ---------------------------------------------------------
+# Este arquivo define o que aparece no painel em /admin.
+# Ele grava exatamente os mesmos arquivos .md de
+# conteudo/artigos/ — o site continua sendo gerado por
+# `node build.mjs`, sem banco de dados.
+# =========================================================
+
+# O repositório, o ramo e o endereço abaixo são preenchidos pelo
+# build a partir de dados.json — não edite estas linhas à mão.
+backend:
+  name: github
+  repo: __REPOSITORIO__
+  branch: __RAMO__
+  base_url: __URL_SITE__
+  auth_endpoint: api/auth
+  commit_messages:
+    create: 'Novo artigo: {{slug}}'
+    update: 'Atualiza artigo: {{slug}}'
+    delete: 'Remove artigo: {{slug}}'
+    uploadMedia: 'Envia imagem: {{path}}'
+    deleteMedia: 'Remove imagem: {{path}}'
+
+# Idioma da interface
+locale: pt
+
+# Marca na tela de login, no lugar do logotipo do Decap
+logo_url: /assets/favicon-monograma.png
+site_url: /
+display_url: /
+
+# Onde as imagens enviadas pelo painel são guardadas.
+# É a mesma pasta que o build copia para o site.
+media_folder: src/assets
+public_folder: /assets
+
+# Aviso amigável quando a pessoa fecha a aba com texto não salvo
+show_preview_links: false
+
+collections:
+  - name: artigos
+    label: Artigos do blog
+    label_singular: Artigo
+    description: >-
+      Cada artigo vira uma página própria no site e um cartão no blog.
+      Enquanto "Publicado" estiver desligado, ele aparece no blog como
+      "Em breve", sem link — útil para deixar o plano de conteúdo à mostra.
+    folder: conteudo/artigos
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    slug: '{{slug}}'
+    summary: '{{titulo}}'
+    sortable_fields: [data, titulo]
+    view_groups:
+      - label: Situação
+        field: publicado
+
+    fields:
+      - label: Título
+        name: titulo
+        widget: string
+        hint: Aparece como título da página e no cartão do blog.
+
+      - label: Categoria
+        name: categoria
+        widget: select
+        default: Família
+        options:
+          - Família
+          - Sucessões
+          - Matrimonial
+        hint: Define em qual filtro o artigo aparece no blog.
+
+      - label: Resumo
+        name: resumo
+        widget: string
+        hint: Uma ou duas linhas. É o texto que aparece no cartão do blog.
+
+      - label: Data
+        name: data
+        widget: datetime
+        date_format: DD/MM/YYYY
+        time_format: false
+        picker_utc: true
+        format: YYYY-MM-DD
+        hint: Os artigos mais recentes aparecem primeiro.
+
+      - label: Tempo de leitura
+        name: leitura
+        widget: string
+        default: 4 min de leitura
+        required: false
+
+      - label: Imagem de capa
+        name: imagem
+        widget: image
+        required: false
+        media_library:
+          config:
+            max_file_size: 2000000
+        hint: >-
+          Opcional. Sem imagem, o site usa a capa padrão.
+          Prefira fotos até 2 MB — imagens pesadas deixam o site lento no celular.
+
+      - label: Publicado
+        name: publicado
+        widget: boolean
+        default: false
+        hint: Desligado = aparece como "Em breve", sem link.
+
+      - label: Texto do artigo
+        name: body
+        widget: markdown
+        hint: >-
+          O primeiro parágrafo vira a abertura em itálico, logo abaixo do título.
+          Use "Título 2" para os subtítulos.
+        buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list]
+        editor_components: []

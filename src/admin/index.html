@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel — Lara Café Advocacia</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+<style>
+  /* Tela enquanto o painel carrega — evita o "branco" de 5 MB */
+  body { margin: 0; background: #3b1f0e; }
+  #carregando {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: #3b1f0e;
+    color: #f5efe6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 24px;
+  }
+  #carregando img { width: 64px; height: auto; opacity: .9; }
+  #carregando p { margin: 0; font-size: 14px; letter-spacing: .04em; opacity: .75; }
+  #carregando .marca {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: .16em;
+  }
+</style>
+</head>
+<body>
+
+<div id="carregando">
+  <img src="../assets/mono-claro.png" alt="" />
+  <p class="marca">LARA CAFÉ</p>
+  <p>Carregando o painel…</p>
+</div>
+
+<script src="vendor/decap-cms.js"></script>
+
+<script>
+  // Some a tela de carregamento assim que o painel aparece.
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      var tela = document.getElementById('carregando');
+      if (tela) tela.remove();
+    }, 400);
+  });
+</script>
+
+</body>
+</html>

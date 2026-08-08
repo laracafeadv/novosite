@@ -1,0 +1,40 @@
+{
+  "_leia_me": "Único arquivo a editar para mudar dados do site. Depois de editar, rode: node build.mjs",
+  "site": {
+    "nome": "Lara Café Advocacia & Consultoria",
+    "nomeCurto": "Lara Café Advocacia",
+    "advogada": "Lara Café",
+    "url": "https://laracafeadvocacia.com.br",
+    "descricao": "Advocacia dedicada em Direito de Família e Sucessões. Atendimento online para todo o Brasil, com escuta, técnica e discrição.",
+    "idioma": "pt-BR",
+    "hospedagem": "vercel"
+  },
+  "painel": {
+    "_leia_me": "Usado pelo painel em /admin. O repositório é onde os artigos ficam guardados.",
+    "repositorio": "laracafeadv/novosite",
+    "ramo": "main"
+  },
+  "contato": {
+    "_formato_whatsapp": "Só números, com código do país e DDD.",
+    "whatsapp": "5571993812266",
+    "whatsappExibicao": "+55 (71) 99381-2266",
+    "email": "laracafe.adv@gmail.com",
+    "_confirmar_instagram": "Confirme se o usuário está certo. Para não exibir Instagram, deixe as duas linhas abaixo vazias.",
+    "instagramUsuario": "@laracafe.adv",
+    "instagramUrl": "https://instagram.com/laracafe.adv",
+    "_sobre_oab": "Removido do site a pedido. Se um dia quiser exibir, basta preencher aqui.",
+    "oab": "",
+    "cidade": ""
+  },
+  "imagens": {
+    "_como_usar": "Coloque o arquivo em src/assets/ e escreva o nome aqui.",
+    "hero": "hero-veu.jpg",
+    "retrato": "lara-foto.jpg",
+    "retratoAlt": "Lara Café, advogada especialista em Direito de Família e Sucessões"
+  },
+  "mensagensWhatsapp": {
+    "home": "Olá, Lara! Gostaria de agendar uma consulta.",
+    "blog": "Olá, Lara! Vim pelo blog e gostaria de agendar uma consulta.",
+    "artigo": "Olá, Lara! Li um artigo no site e gostaria de agendar uma consulta."
+  }
+}

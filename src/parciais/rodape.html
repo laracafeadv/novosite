@@ -1,0 +1,44 @@
+<footer class="rodape">
+  <img class="rodape__fundo" src="{{ raiz }}assets/monograma-contorno.png" alt="" aria-hidden="true" loading="lazy" />
+
+  <div class="rodape__interno">
+    <div class="rodape__grade">
+      <div class="rodape__marca">
+        <a href="{{ inicio }}">
+          <img src="{{ raiz }}assets/logo-lockup-claro.png" alt="Lara Café Advocacia" width="240" height="69" loading="lazy" />
+        </a>
+        <p class="rodape__sobre">Advocacia estratégica em Direito de Família e Sucessões — orientação clara, sigilosa e humana, para clientes em todo o Brasil.</p>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <ul class="rodape__lista">
+          <li><a href="{{ ancora }}#home">Início</a></li>
+          <li><a href="{{ ancora }}#sobre">Sobre</a></li>
+          <li><a href="{{ ancora }}#areas-de-atuacao">Áreas de Atuação</a></li>
+          <li><a href="{{ raiz }}blog.html">Blog</a></li>
+          <li><a href="{{ ancora }}#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <ul class="rodape__lista">
+{{ rodapeContato }}
+          <li class="rodape__horario">Segunda à sexta, das 8h às 18h</li>
+        </ul>
+      </div>
+
+{{ rodapeRedes }}
+    </div>
+
+    <div class="rodape__base">
+      <p>&copy; <span data-ano>{{ ano }}</span> {{ nome }} — Todos os direitos reservados.{{ oabRodape }}</p>
+      <p>
+        <a href="{{ raiz }}politica-de-privacidade.html">Política de Privacidade</a>
+        <span aria-hidden="true"> · </span>
+        Conteúdo informativo, conforme o Código de Ética e Disciplina da OAB.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+{
+  "name": "site-lara-cafe-advocacia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional — Lara Café Advocacia & Consultoria",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "novo": "node novo-artigo.mjs",
+    "ver": "node build.mjs && cd site && python3 -m http.server 4000"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

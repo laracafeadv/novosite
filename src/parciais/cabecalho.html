@@ -1,0 +1,27 @@
+<header class="cabecalho" data-cabecalho>
+  <div class="cabecalho__interno">
+    <a class="cabecalho__marca" href="{{ inicio }}">
+      <img src="{{ raiz }}assets/logo-lockup-claro.png" alt="Lara Café Advocacia" width="240" height="69" />
+    </a>
+
+    <button
+      class="menu-botao"
+      type="button"
+      data-menu-botao
+      aria-expanded="false"
+      aria-controls="menu-principal"
+      aria-label="Abrir menu de navegação"
+    ><span></span><span></span><span></span></button>
+
+    <nav class="menu" id="menu-principal" data-menu aria-label="Navegação principal">
+      <a href="{{ ancora }}#home">Início</a>
+      <a href="{{ ancora }}#sobre">Sobre</a>
+      <a href="{{ ancora }}#areas-de-atuacao">Áreas de Atuação</a>
+      <a href="{{ raiz }}blog.html"{{ blogAtual }}>Blog</a>
+      <a href="{{ ancora }}#contato">Contato</a>
+      <a class="botao botao--contorno-claro" href="{{ ancora }}#contato">Marcar uma Conversa</a>
+    </nav>
+
+    <a class="botao botao--contorno-claro cabecalho__acao" href="{{ ancora }}#contato">Marcar uma Conversa</a>
+  </div>
+</header>

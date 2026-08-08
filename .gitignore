@@ -1,0 +1,24 @@
+# Site gerado — a Vercel roda `node build.mjs` e recria esta pasta.
+# Se preferir enviar por FTP, rode o build localmente e use o conteúdo dela.
+site/
+
+# Material de origem: projeto antigo e imagens em alta resolução.
+# São 22 MB que o site não usa — ficam guardados fora do repositório.
+originais/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Segredos — as chaves do login do painel ficam no painel da Vercel,
+# nunca em arquivo.
+.env
+.env.*
+!.env.example

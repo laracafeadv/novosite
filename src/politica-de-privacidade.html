@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ meta }}
+<link rel="stylesheet" href="{{ raiz }}css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+{{ cabecalho }}
+
+<main id="conteudo">
+  <article class="artigo-corpo" style="padding-top:clamp(3rem,6vw,4.5rem)">
+    <h1 class="titulo-secao" style="max-width:none;margin-bottom:1.5rem">Política de Privacidade</h1>
+
+    <p>A {{ nome }} respeita a sua privacidade e está comprometida com a proteção dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</p>
+
+    <h2>Dados coletados</h2>
+    <p>Coletamos apenas os dados fornecidos voluntariamente por você através do formulário de contato: nome, e-mail ou telefone e a mensagem enviada.</p>
+
+    <h2>Finalidade</h2>
+    <p>Os dados são utilizados exclusivamente para retornar o seu contato e prestar esclarecimentos sobre os serviços jurídicos oferecidos. Não são usados para publicidade nem para qualquer finalidade diversa daquela informada no momento da coleta.</p>
+
+    <h2>Compartilhamento</h2>
+    <p>Seus dados não são compartilhados, vendidos ou cedidos a terceiros, salvo por obrigação legal ou determinação judicial.</p>
+
+    <h2>Armazenamento</h2>
+    <p>As mensagens recebidas são mantidas apenas pelo tempo necessário ao atendimento e ao cumprimento de obrigações legais e regulatórias aplicáveis à advocacia.</p>
+
+    <h2>Sigilo profissional</h2>
+    <p>As informações compartilhadas com a advogada são protegidas pelo sigilo profissional, nos termos do Estatuto da Advocacia e do Código de Ética e Disciplina da OAB.</p>
+
+    <h2>Seus direitos</h2>
+    <p>Você pode solicitar a qualquer momento a confirmação, o acesso, a correção ou a exclusão dos seus dados pessoais entrando em contato pelos canais oficiais informados neste site.</p>
+
+    <h2>Cookies</h2>
+    <p>Este site não utiliza cookies de rastreamento nem ferramentas de publicidade. As fontes e imagens são servidas pelo próprio site, sem requisições a serviços de terceiros.</p>
+
+    <p class="aviso-juridico">Última atualização: <span data-ano>{{ ano }}</span>.</p>
+  </article>
+</main>
+
+{{ rodape }}
+
+<script src="{{ raiz }}js/main.js" defer></script>
+</body>
+</html>
