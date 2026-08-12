@@ -56,6 +56,8 @@ function carregarArtigos() {
       const slug = nome.replace(/\.md$/, '');
 
       const publicado = /^(sim|true|yes|1)$/i.test(meta.publicado || '');
+      // "data" era o nome antigo; colidia com uma chave interna do painel.
+      const dataArtigo = meta.data_publicacao || meta.data || '';
       const texto = corpo.trim();
 
       // O primeiro parágrafo vira a abertura em itálico; o resto, o corpo.
@@ -73,8 +75,8 @@ function carregarArtigos() {
         categoria: meta.categoria || 'Geral',
         etiqueta: (meta.categoria || 'Geral').toUpperCase(),
         resumo: meta.resumo || '',
-        data: meta.data || '',
-        dataExibicao: formatarData(meta.data),
+        data: dataArtigo,
+        dataExibicao: formatarData(dataArtigo),
         leitura: meta.leitura || '',
         imagem: normalizarImagem(meta.imagem),
         publicado,

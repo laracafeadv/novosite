@@ -53,7 +53,7 @@ collections:
     format: yaml-frontmatter
     slug: '{{slug}}'
     summary: '{{titulo}}'
-    sortable_fields: [data, titulo]
+    sortable_fields: [data_publicacao, titulo]
     view_groups:
       - label: Situação
         field: publicado
@@ -80,7 +80,7 @@ collections:
         hint: Uma ou duas linhas. É o texto que aparece no cartão do blog.
 
       - label: Data
-        name: data
+        name: data_publicacao
         widget: datetime
         date_format: DD/MM/YYYY
         time_format: false

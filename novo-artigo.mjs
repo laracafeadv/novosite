@@ -111,7 +111,7 @@ const modelo = `---
 titulo: ${comAspas(titulo)}
 categoria: ${comAspas(categoria)}
 resumo: ${comAspas(resumo)}
-data: ${data}
+data_publicacao: ${data}
 leitura: ${comAspas(leitura)}
 imagem:
 publicado: nao
