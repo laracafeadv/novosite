@@ -23,3 +23,7 @@ npm-debug.log*
 .env.*
 !.env.example
 .vercel
+
+# Senha do painel — nunca versionar
+SENHA-DO-PAINEL.txt
+.hash-temp

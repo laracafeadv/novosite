@@ -171,10 +171,17 @@ export default async function handler(req, res) {
   const senhaGuardada = process.env.PAINEL_SENHA_HASH;
   const token = process.env.GITHUB_TOKEN;
 
-  if (!emailPermitido || !senhaGuardada || !token) {
+  // Diz exatamente o que falta — poupa adivinhação na hora de configurar.
+  const faltando = [
+    !emailPermitido && 'PAINEL_EMAIL',
+    !senhaGuardada && 'PAINEL_SENHA_HASH',
+    !token && 'GITHUB_TOKEN',
+  ].filter(Boolean);
+
+  if (faltando.length) {
     return res.status(500).send(paginaLogin({
-      erro: 'O painel ainda não foi configurado. Faltam as variáveis ' +
-            'PAINEL_EMAIL, PAINEL_SENHA_HASH ou GITHUB_TOKEN na Vercel.',
+      erro: `Falta configurar na Vercel: ${faltando.join(', ')}. ` +
+            'Depois de salvar, republique o site.',
     }));
   }
 
