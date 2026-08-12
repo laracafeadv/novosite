@@ -37,36 +37,49 @@ Depois disso, todo envio ao GitHub republica o site automaticamente.
 
 ### Ligar o login do painel (uma vez só)
 
-O `/admin` entra com a conta do **GitHub**. São dois passos:
+O `/admin` entra com **e-mail e senha**. Três variáveis na Vercel
+(*Settings → Environment Variables*, marque os três ambientes):
 
-**a) Criar o aplicativo no GitHub**
+**1. `PAINEL_EMAIL`** — o e-mail que pode entrar:
 
-GitHub → *Settings → Developer settings → OAuth Apps → New OAuth App*:
+```
+laracafe.adv@gmail.com
+```
+
+**2. `PAINEL_SENHA_HASH`** — a senha embaralhada. No Terminal:
+
+```bash
+node gerar-senha.mjs
+```
+
+Ele pede a senha (sem exibir na tela) e imprime o valor para colar.
+A senha original não é gravada em lugar nenhum — nem aqui, nem no
+repositório. Anote-a com você.
+
+**3. `GITHUB_TOKEN`** — a chave que grava os artigos. No GitHub:
+*Settings → Developer settings → Personal access tokens →
+Fine-grained tokens → Generate new token*
 
 | Campo | Valor |
 |---|---|
-| Application name | Painel Lara Café |
-| Homepage URL | `https://laracafeadvocacia.com.br` |
-| Authorization callback URL | `https://laracafeadvocacia.com.br/api/callback` |
+| Repository access | Only select repositories → `laracafeadv/novosite` |
+| Permissions | Contents → **Read and write** |
+| Expiration | 1 ano (anote a data para renovar) |
 
-Guarde o **Client ID** e gere um **Client Secret**.
+Depois de salvar as três, republique o site.
 
-**b) Guardar as chaves na Vercel**
+> **Por que uma chave só?** O painel precisa de permissão para gravar no
+> repositório. Em vez de exigir que a Lara tenha conta no GitHub, o
+> servidor guarda essa chave e só a entrega depois que a senha confere.
+> Por isso ela deve ser *fine-grained*, limitada a este repositório e
+> apenas a Contents: quem tiver a senha pode editar o conteúdo do site,
+> e nada além disso.
 
-Vercel → *Settings → Environment Variables*:
+### Trocar a senha
 
-- `GITHUB_CLIENT_ID` — o Client ID
-- `GITHUB_CLIENT_SECRET` — o Client Secret
-
-Republique o site depois de salvar.
-
-**c) Dar acesso à Lara**
-
-No GitHub, em *Settings → Collaborators* do repositório, convide a conta
-dela. Sem isso ela entra no painel mas não consegue salvar.
-
-Pronto: ela acessa `laracafeadvocacia.com.br/admin`, clica em entrar,
-autoriza pelo GitHub e já pode publicar.
+Rode `node gerar-senha.mjs` de novo e substitua o valor de
+`PAINEL_SENHA_HASH` na Vercel. Republique. A senha antiga deixa de valer
+na hora.
 
 ### Hospedagem comum (FTP)
 
@@ -78,8 +91,8 @@ ele depende das funções em `api/`.
 
 ## Painel de publicação (a Lara publica sozinha)
 
-Endereço: **`laracafeadvocacia.com.br/admin`** — entra com a **conta do
-GitHub** dela. Funciona no celular.
+Endereço: **`laracafe.com.br/admin`** — entra com **e-mail e senha**.
+Funciona no celular, sem conta em serviço nenhum.
 
 Ao salvar, o painel grava o arquivo `.md` no repositório e a Vercel
 republica o site sozinha. Em 1 ou 2 minutos o artigo está no ar.
@@ -108,8 +121,8 @@ O **primeiro parágrafo** vira a abertura em itálico sob o título.
 - O painel fica fora do Google (`Disallow: /admin/` no `robots.txt`).
 - O Decap CMS está **auto-hospedado** em `src/admin/vendor/` (5 MB). Ele só
   carrega no `/admin` — as páginas públicas continuam sem nada externo.
-- As chaves do login ficam nas variáveis de ambiente da Vercel, nunca no
-  repositório. O arquivo `.env.example` mostra quais são.
+- A senha fica embaralhada (scrypt) nas variáveis da Vercel, nunca no
+  repositório. O arquivo `.env.example` mostra as três variáveis.
 - O painel grava exatamente os mesmos arquivos de `conteudo/artigos/`.
   Publicar pelo painel ou editar o arquivo à mão dá no mesmo.
 
