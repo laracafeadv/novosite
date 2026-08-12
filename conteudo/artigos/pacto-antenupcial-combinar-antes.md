@@ -1,5 +1,5 @@
 ---
-titulo: Pacto antenupcial: combinar antes para viver em paz depois
+titulo: "Pacto antenupcial: combinar antes para viver em paz depois"
 categoria: Matrimonial
 resumo: Definir o regime de bens no início da união não é desconfiança — é clareza. Entenda como o pacto protege os dois e evita mal-entendidos futuros.
 data: 2026-07-20

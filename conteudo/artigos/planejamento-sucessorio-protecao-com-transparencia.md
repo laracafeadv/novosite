@@ -1,5 +1,5 @@
 ---
-titulo: Planejamento sucessório: proteção com transparência
+titulo: "Planejamento sucessório: proteção com transparência"
 categoria: Sucessões
 resumo: Como organizar a sucessão para reduzir conflitos e preservar o legado familiar.
 data: 2026-08-01

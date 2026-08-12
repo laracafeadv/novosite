@@ -94,12 +94,25 @@ while (existsSync(destino)) {
   n++;
 }
 
+/**
+ * Põe aspas quando o valor tem dois-pontos ou outro caractere que
+ * confunde a leitura em YAML — é o que o painel /admin usa.
+ * Sem isto, um título como "Inventário: como fazer" apaga a linha lá.
+ */
+function comAspas(valor) {
+  const v = String(valor).trim();
+  if (!v) return '';
+  const arriscado = v.includes(': ') || v.endsWith(':') || v.includes(' #') ||
+                    '[]{}&*!|>%@`,'.includes(v[0]);
+  return arriscado ? `"${v.replace(/"/g, '\\"')}"` : v;
+}
+
 const modelo = `---
-titulo: ${titulo}
-categoria: ${categoria}
-resumo: ${resumo}
+titulo: ${comAspas(titulo)}
+categoria: ${comAspas(categoria)}
+resumo: ${comAspas(resumo)}
 data: ${data}
-leitura: ${leitura}
+leitura: ${comAspas(leitura)}
 imagem:
 publicado: nao
 ---

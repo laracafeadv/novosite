@@ -1,0 +1,70 @@
+[     639ms] [LOG] decap-cms-app 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:490
+[     642ms] [LOG] decap-cms-core 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:53
+[     643ms] [LOG] Using config file path: "https://laracafe.com.br/admin/config.yml" @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[     643ms] [LOG] decap-cms 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:490
+[   38592ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[   38593ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[   38594ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[   38594ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[   38595ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[   44386ms] [ERROR] YAMLSemanticError: Nested mappings are not allowed in compact mappings
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1369138
+    at Object.it [as resolve] (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1370106)
+    at nt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1363875)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366476
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1366975
+    at rt (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1367191)
+    at https://laracafe.com.br/admin/vendor/decap-cms.js:2:1398623
+    at n.value (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1399151)
+    at pn (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402203)
+    at Object.parse (https://laracafe.com.br/admin/vendor/decap-cms.js:2:1402663) @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
