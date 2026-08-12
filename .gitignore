@@ -27,3 +27,8 @@ npm-debug.log*
 # Senha do painel — nunca versionar
 SENHA-DO-PAINEL.txt
 .hash-temp
+
+# Registros das minhas sessões de teste no navegador
+.playwright-mcp/
+*.jpg
+!src/assets/*.jpg
