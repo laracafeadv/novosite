@@ -7,6 +7,11 @@
 <title>Painel — Lara Café Advocacia</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+<!-- Caminho explícito da configuração. Sem isto o painel a procura em
+     /config.yml, porque /admin/ é redirecionado para /admin e os
+     caminhos relativos passam a resolver a partir da raiz. -->
+<link rel="cms-config-url" type="text/yaml" href="/admin/config.yml">
+
 <style>
   /* Tela enquanto o painel carrega — evita o "branco" de 5 MB */
   body { margin: 0; background: #3b1f0e; }
