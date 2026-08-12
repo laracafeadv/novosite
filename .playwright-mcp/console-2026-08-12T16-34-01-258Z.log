@@ -1,0 +1,4 @@
+[     620ms] [LOG] decap-cms-app 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:490
+[     624ms] [LOG] decap-cms-core 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:53
+[     624ms] [LOG] Using config file path: "https://laracafe.com.br/admin/config.yml" @ https://laracafe.com.br/admin/vendor/decap-cms.js:16
+[     625ms] [LOG] decap-cms 3.9.0 @ https://laracafe.com.br/admin/vendor/decap-cms.js:490

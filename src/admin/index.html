@@ -56,6 +56,26 @@
       if (tela) tela.remove();
     }, 400);
   });
+
+  // O painel escreve "Entrar com o GitHub" porque é o nome interno do
+  // mecanismo. Quem entra vê uma tela de e-mail e senha, então o texto
+  // confundiria. Trocamos assim que o botão aparece.
+  (function renomearBotao() {
+    function ajustar() {
+      var botoes = document.querySelectorAll('button, [role="button"]');
+      for (var i = 0; i < botoes.length; i++) {
+        var t = (botoes[i].textContent || '').trim();
+        if (/GitHub/i.test(t) && /entrar|login/i.test(t)) {
+          botoes[i].textContent = 'Entrar no painel';
+        }
+      }
+    }
+    new MutationObserver(ajustar).observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+    ajustar();
+  })();
 </script>
 
 </body>
