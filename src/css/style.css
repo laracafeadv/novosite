@@ -312,7 +312,7 @@ textarea:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 75% center;
+  object-position: center 28%;
 }
 .hero__veu {
   position: absolute;
@@ -329,28 +329,24 @@ textarea:focus-visible {
   margin: 0 auto;
   padding: 0 var(--lateral) clamp(4rem, 7vw, 6rem);
 }
-.hero__frase {
-  display: inline-flex;
-  align-items: baseline;
-  gap: .75rem;
-  max-width: 36rem;
-  color: var(--creme);
-}
-.hero__frase span {
+.hero__titulo {
+  max-width: 30rem;
   font-family: var(--serifada);
   font-style: italic;
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  line-height: 1.35;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--creme);
 }
-.hero__frase svg {
-  flex-shrink: 0;
-  align-self: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--creme-70);
-  transition: transform var(--transicao);
+.hero__texto {
+  max-width: 30rem;
+  margin-top: 1rem;
+  font-size: clamp(.92rem, 1.6vw, 1rem);
+  line-height: 1.6;
+  color: rgba(245, 239, 230, .82);
 }
-.hero__frase:hover svg { transform: translateX(4px); }
+.hero__acao { margin-top: 1.75rem; }
 
 .hero__mono {
   position: absolute;
@@ -472,7 +468,7 @@ textarea:focus-visible {
 }
 .atuacao__grade { display: grid; gap: 3rem; }
 
-.grupo-atuacao + .grupo-atuacao { margin-top: 2.5rem; }
+.grupo-atuacao + .grupo-atuacao { margin-top: 3.5rem; }
 .grupo-atuacao__rotulo {
   margin-bottom: .25rem;
   font-size: .7rem;
@@ -481,15 +477,23 @@ textarea:focus-visible {
   text-transform: uppercase;
   color: var(--creme-40);
 }
+.grupo-atuacao__descricao {
+  max-width: 32rem;
+  margin-bottom: 1.25rem;
+  font-size: .875rem;
+  line-height: 1.65;
+  color: rgba(245, 239, 230, .55);
+}
+
 .indice li { border-bottom: 1px solid var(--linha-creme); }
 .indice li:first-child { border-top: 1px solid var(--linha-creme); }
 
 .indice a {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.25rem 0;
+  padding: 1.4rem 0;
 }
 .indice__esquerda { display: flex; align-items: baseline; gap: 1.25rem; }
 .indice__numero {
@@ -506,24 +510,18 @@ textarea:focus-visible {
   transition: color var(--transicao);
 }
 .indice a:hover .indice__titulo { color: var(--creme); }
+/* A descrição fica sempre à mostra: é informação que a pessoa
+   precisa para escolher, não um detalhe a se descobrir no hover. */
 .indice__descricao {
   display: block;
-  max-width: 28rem;
-  max-height: 0;
-  margin-top: 0;
-  overflow: hidden;
-  opacity: 0;
+  max-width: 30rem;
+  margin-top: .4rem;
   font-size: .825rem;
   line-height: 1.65;
-  color: rgba(245, 239, 230, .5);
-  transition: max-height var(--transicao), opacity var(--transicao), margin-top var(--transicao);
+  color: rgba(245, 239, 230, .55);
+  transition: color var(--transicao);
 }
-.indice a:hover .indice__descricao,
-.indice a:focus-visible .indice__descricao {
-  max-height: 5rem;
-  margin-top: .375rem;
-  opacity: 1;
-}
+.indice a:hover .indice__descricao { color: rgba(245, 239, 230, .72); }
 .indice__seta {
   flex-shrink: 0;
   width: 1rem;
@@ -1136,4 +1134,43 @@ textarea:focus-visible {
   .cabecalho, .zap-flutuante, .menu-botao, .formulario, .artigo-chamada, .filtros { display: none !important; }
   body { background: #fff; color: #000; }
   .js [data-revelar] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---------- Glossário ---------- */
+
+.glossario {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--linha-cafe);
+}
+.glossario__item { border-bottom: 1px solid var(--linha-cafe); }
+
+.glossario__item a {
+  display: grid;
+  gap: .5rem;
+  padding: 1.75rem 0;
+  transition: padding-left var(--transicao);
+}
+.glossario__item a:hover { padding-left: .75rem; }
+
+.glossario__item h2 {
+  font-size: 1.35rem;
+  color: var(--cafe);
+}
+.glossario__item p {
+  max-width: 56ch;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--tinta-65);
+}
+.glossario__item .link-risco { margin-top: .35rem; }
+
+@media (min-width: 48rem) {
+  .glossario__item a {
+    grid-template-columns: 16rem 1fr;
+    gap: .5rem 2.5rem;
+    align-items: start;
+  }
+  .glossario__item h2 { grid-row: span 2; }
+  .glossario__item .link-risco { grid-column: 2; }
 }

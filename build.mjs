@@ -12,6 +12,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { paraHtml, lerCabecalho, paraTextoSimples } from './lib/markdown.mjs';
 import { gruposDeAtuacao } from './conteudo/atuacao.mjs';
+import { termosDoGlossario } from './conteudo/glossario.mjs';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const SRC = join(AQUI, 'src');
@@ -149,7 +150,16 @@ function contexto({ subpasta = false, mensagem = 'home', paginaBlog = false, pag
     nome: escapar(dados.site.nome),
     advogada: escapar(dados.site.advogada),
     oabRodape: ok(dados.contato.oab) ? ' · ' + escapar(dados.contato.oab) : '',
+    zapFlutuante: '', // preenchido logo abaixo, precisa do zap já montado
   };
+}
+
+const ICONE_ZAP_GRANDE = '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16.004 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.258.594 4.428 1.72 6.352L3.2 28.8l6.61-1.686a12.74 12.74 0 0 0 6.194 1.586h.006c7.07 0 12.8-5.73 12.8-12.8s-5.73-12.7-12.806-12.7Zm0 23.36a10.5 10.5 0 0 1-5.362-1.47l-.384-.228-3.92 1.002 1.048-3.822-.25-.394a10.478 10.478 0 0 1-1.612-5.646c0-5.804 4.722-10.526 10.53-10.526 2.812 0 5.456 1.098 7.444 3.088a10.457 10.457 0 0 1 3.082 7.446c0 5.804-4.722 10.55-10.576 10.55Zm5.77-7.892c-.316-.158-1.87-.922-2.16-1.028-.29-.106-.502-.158-.714.158-.21.316-.818 1.028-1.004 1.24-.184.21-.37.238-.686.08-.316-.158-1.334-.492-2.542-1.57-.94-.838-1.574-1.872-1.758-2.188-.184-.316-.02-.487.138-.644.142-.14.316-.37.474-.554.158-.184.21-.316.316-.526.106-.21.052-.396-.026-.554-.078-.158-.714-1.72-.978-2.356-.258-.618-.52-.534-.714-.544l-.608-.01c-.21 0-.554.078-.844.396-.29.316-1.106 1.08-1.106 2.634 0 1.554 1.132 3.056 1.29 3.266.158.21 2.228 3.402 5.398 4.77.754.326 1.342.52 1.802.664.758.242 1.446.208 1.992.126.608-.09 1.87-.764 2.134-1.502.264-.738.264-1.37.184-1.502-.078-.132-.29-.21-.606-.368Z"/></svg>';
+
+function botaoFlutuante(ctx) {
+  return `<a class="zap-flutuante" href="${ctx.zap}"${ctx.zapAlvo} aria-label="Conversar no WhatsApp">
+  ${ICONE_ZAP_GRANDE}
+</a>`;
 }
 
 /** Capa padrão para artigo que ainda não tem imagem própria. */
@@ -217,8 +227,12 @@ function gerarIndiceAtuacao(ctx) {
               </li>`;
     }).join('\n');
 
+    const descricao = grupo.descricao
+      ? `\n            <p class="grupo-atuacao__descricao">${escapar(grupo.descricao)}</p>`
+      : '';
+
     return `          <div class="grupo-atuacao">
-            <p class="grupo-atuacao__rotulo">${escapar(grupo.rotulo)}</p>
+            <p class="grupo-atuacao__rotulo">${escapar(grupo.rotulo)}</p>${descricao}
             <ul class="indice">
 ${itens}
             </ul>
@@ -450,6 +464,61 @@ function gerarPrivacidade() {
     preencher(lerModelo('politica-de-privacidade.html'), valores));
 }
 
+function gerarGlossario() {
+  const ctx = contexto({ mensagem: 'home', paginaInterna: true });
+
+  const lista = termosDoGlossario.map((t) => `        <li class="glossario__item">
+          <a href="${ctx.raiz}glossario/${t.slug}.html">
+            <h2>${escapar(t.termo)}</h2>
+            <p>${escapar(t.definicao)}</p>
+            <span class="link-risco">Ler a explicação</span>
+          </a>
+        </li>`).join('\n');
+
+  const valores = {
+    ...ctx,
+    ...parciais(ctx),
+    zapFlutuante: botaoFlutuante(ctx),
+    meta: cabecaMeta({
+      titulo: `Glossário jurídico — ${dados.site.nomeCurto}`,
+      descricao: 'Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão — sem juridiquês.',
+      caminho: 'glossario.html',
+      ctx,
+    }),
+    termosGlossario: lista,
+  };
+
+  writeFileSync(join(SAIDA, 'glossario.html'), preencher(lerModelo('glossario.html'), valores));
+}
+
+function gerarTermos() {
+  if (!termosDoGlossario.length) return;
+  mkdirSync(join(SAIDA, 'glossario'), { recursive: true });
+
+  const modelo = lerModelo('parciais', 'termo.html');
+
+  for (const t of termosDoGlossario) {
+    const ctx = contexto({ subpasta: true, mensagem: 'home' });
+
+    const valores = {
+      ...ctx,
+      ...parciais(ctx),
+      zapFlutuante: botaoFlutuante(ctx),
+      meta: cabecaMeta({
+        titulo: `${t.termo} — o que é | ${dados.site.nomeCurto}`,
+        descricao: t.definicao,
+        caminho: `glossario/${t.slug}.html`,
+        ctx,
+      }),
+      termo: escapar(t.termo),
+      definicao: escapar(t.definicao),
+      paragrafos: t.paragrafos.map((x) => `    <p>${escapar(x)}</p>`).join('\n'),
+    };
+
+    writeFileSync(join(SAIDA, 'glossario', `${t.slug}.html`), preencher(modelo, valores));
+  }
+}
+
 function gerarArtigos() {
   if (!publicados.length) return;
   mkdirSync(join(SAIDA, 'artigos'), { recursive: true });
@@ -541,6 +610,8 @@ function gerarSitemap() {
     { caminho: '', prioridade: '1.0' },
     { caminho: 'blog.html', prioridade: '0.8' },
     { caminho: 'politica-de-privacidade.html', prioridade: '0.3' },
+    { caminho: 'glossario.html', prioridade: '0.7' },
+    ...termosDoGlossario.map((t) => ({ caminho: `glossario/${t.slug}.html`, prioridade: '0.6' })),
     ...publicados.map((a) => ({ caminho: `artigos/${a.slug}.html`, prioridade: '0.7', data: a.data })),
   ];
 
@@ -623,6 +694,8 @@ gerarHome();
 gerarBlog();
 gerarArtigos();
 gerarPrivacidade();
+gerarGlossario();
+gerarTermos();
 gerarFavicon();
 gerarRobots();
 gerarSitemap();
@@ -639,6 +712,7 @@ console.log(`  · index.html`);
 console.log(`  · blog.html                 ${artigos.length} cartões`);
 console.log(`  · artigos/                  ${publicados.length} publicado(s)${emBreve ? `, ${emBreve} em breve` : ''}`);
 console.log(`  · politica-de-privacidade.html`);
+console.log(`  · glossario.html            ${termosDoGlossario.length} termos`);
 if (temPainel) console.log(`  · admin/                    painel de publicação`);
 console.log(`  · sitemap, robots, favicon, cabeçalhos`);
 

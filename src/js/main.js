@@ -146,12 +146,12 @@
     // Monta a mensagem que segue para o WhatsApp quando o site
     // não está num host que processa formulários.
     function montarMensagem(dados) {
-      return (
-        'Olá, Lara! Vim pelo site.\n\n' +
-        'Nome: ' + (dados.get('nome') || '') + '\n' +
-        'Contato: ' + (dados.get('contato') || '') + '\n\n' +
-        (dados.get('mensagem') || '')
-      );
+      var linhas = ['Olá, Lara! Vim pelo site.', ''];
+      if (dados.get('nome'))     linhas.push('Nome: ' + dados.get('nome'));
+      if (dados.get('email'))    linhas.push('E-mail: ' + dados.get('email'));
+      if (dados.get('telefone')) linhas.push('Telefone: ' + dados.get('telefone'));
+      if (dados.get('mensagem')) linhas.push('', dados.get('mensagem'));
+      return linhas.join('\n');
     }
 
     form.addEventListener('submit', function (e) {

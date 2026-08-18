@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ meta }}
+<link rel="stylesheet" href="{{ raiz }}css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+{{ zapFlutuante }}
+
+{{ cabecalho }}
+
+<main id="conteudo">
+
+  <section class="artigo-topo">
+    <div class="artigo-topo__interno">
+      <a class="voltar" href="{{ raiz }}glossario.html">← Voltar ao glossário</a>
+      <p class="sobrancelha sobrancelha--clara">Glossário</p>
+      <h1>{{ termo }}</h1>
+    </div>
+  </section>
+
+  <article class="artigo-corpo" style="padding-top:clamp(2.5rem,5vw,3.5rem)">
+    <p class="abertura">{{ definicao }}</p>
+
+{{ paragrafos }}
+
+    <div class="artigo-chamada">
+      <img src="{{ raiz }}assets/mono-claro.png" alt="" aria-hidden="true" width="44" height="44" loading="lazy" />
+      <p>Como isso se aplica ao seu caso?</p>
+      <a class="botao" href="{{ zap }}"{{ zapAlvo }}>
+        Conversar sobre isso
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <p class="aviso-juridico">Este conteúdo tem finalidade exclusivamente informativa e não constitui consulta ou parecer jurídico. Cada caso possui particularidades que exigem análise individual.</p>
+  </article>
+
+</main>
+
+{{ rodape }}
+
+<script src="{{ raiz }}js/main.js" defer></script>
+</body>
+</html>

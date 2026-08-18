@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ meta }}
+<link rel="stylesheet" href="{{ raiz }}css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+{{ zapFlutuante }}
+
+{{ cabecalho }}
+
+<main id="conteudo">
+
+  <section class="pagina-topo">
+    <img class="pagina-topo__mono" src="{{ raiz }}assets/monograma-contorno.png" alt="" aria-hidden="true" />
+    <div class="pagina-topo__interno">
+      <p class="sobrancelha sobrancelha--clara sobrancelha--centro">Glossário</p>
+      <h1>O que significa cada termo</h1>
+      <p>Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão — sem juridiquês.</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container container--medio">
+      <ul class="glossario">
+{{ termosGlossario }}
+      </ul>
+    </div>
+  </section>
+
+  <section class="faixa">
+    <div class="faixa__padrao" aria-hidden="true" style="background-image:url({{ raiz }}assets/padrao-monograma.jpg)"></div>
+    <img class="faixa__mono" src="{{ raiz }}assets/monograma-contorno.png" alt="" aria-hidden="true" loading="lazy" />
+    <div class="faixa__interno" data-revelar>
+      <span class="faixa__risco" aria-hidden="true"></span>
+      <p>Entender o termo é o começo. Aplicar ao seu caso é o próximo passo.</p>
+      <a class="botao botao--contorno-claro" href="{{ zap }}"{{ zapAlvo }} style="margin-top:2rem">Falar com a Lara</a>
+    </div>
+  </section>
+
+</main>
+
+{{ rodape }}
+
+<script src="{{ raiz }}js/main.js" defer></script>
+</body>
+</html>
