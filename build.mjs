@@ -412,7 +412,6 @@ function gerarHome() {
     imagemHero: ok(dados.imagens.hero) ? dados.imagens.hero : 'hero-veu.jpg',
     imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-foto.jpg',
     imagemRetratoAlt: escapar(dados.imagens.retratoAlt || dados.site.advogada),
-    envioFormulario: (dados.site.hospedagem || '').toLowerCase() === 'netlify' ? 'servidor' : 'whatsapp',
     indiceAtuacao: gerarIndiceAtuacao(ctx),
     cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx)).join('\n'),
     canaisContato: gerarCanais(),

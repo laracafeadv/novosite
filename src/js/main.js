@@ -126,88 +126,7 @@
     if (inicial && valida) aplicar(inicial);
   }
 
-  /* ---------- 4. Formulário de contato ---------- */
-
-  function iniciarFormulario() {
-    var form = document.querySelector('[data-formulario-contato]');
-    if (!form) return;
-
-    var retorno = form.querySelector('[data-retorno]');
-    var botao = form.querySelector('button[type="submit"]');
-    var textoOriginal = botao ? botao.textContent : '';
-
-    function avisar(mensagem, tipo) {
-      if (!retorno) return;
-      retorno.textContent = mensagem;
-      retorno.className = 'retorno retorno--' + tipo;
-      retorno.hidden = false;
-    }
-
-    // Monta a mensagem que segue para o WhatsApp quando o site
-    // não está num host que processa formulários.
-    function montarMensagem(dados) {
-      var linhas = ['Olá, Lara! Vim pelo site.', ''];
-      if (dados.get('nome'))     linhas.push('Nome: ' + dados.get('nome'));
-      if (dados.get('email'))    linhas.push('E-mail: ' + dados.get('email'));
-      if (dados.get('telefone')) linhas.push('Telefone: ' + dados.get('telefone'));
-      if (dados.get('mensagem')) linhas.push('', dados.get('mensagem'));
-      return linhas.join('\n');
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Armadilha anti-spam: se estiver preenchida, foi um robô.
-      // Fingimos sucesso e não enviamos nada.
-      if (form.querySelector('[name="empresa"]') && form.querySelector('[name="empresa"]').value) {
-        avisar('Mensagem enviada. Obrigada!', 'ok');
-        return;
-      }
-
-      var dados = new FormData(form);
-      var zap = form.getAttribute('data-whatsapp');
-
-      if (botao) { botao.disabled = true; botao.textContent = 'Enviando…'; }
-
-      function liberarBotao() {
-        if (botao) { botao.disabled = false; botao.textContent = textoOriginal; }
-      }
-
-      // Caminho de reserva: abre o WhatsApp com a mensagem pronta.
-      function irParaWhatsApp() {
-        liberarBotao();
-        if (zap) {
-          window.open(zap + '?text=' + encodeURIComponent(montarMensagem(dados)), '_blank', 'noopener');
-          avisar('Abrimos o WhatsApp com a sua mensagem pronta — é só tocar em enviar.', 'ok');
-        } else {
-          avisar('Não foi possível enviar agora. Por favor, fale pelo WhatsApp ou e-mail acima.', 'erro');
-        }
-      }
-
-      // Só tentamos enviar ao servidor onde isso de fato existe.
-      // Num host que serve apenas arquivos, um POST pode responder 200
-      // sem processar nada — e o site diria "enviado" sem ter enviado.
-      if (form.getAttribute('data-envio') !== 'servidor') {
-        irParaWhatsApp();
-        return;
-      }
-
-      fetch(form.getAttribute('action') || '/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(dados).toString()
-      })
-        .then(function (resposta) {
-          if (!resposta.ok) throw new Error('host não processou o formulário');
-          liberarBotao();
-          form.reset();
-          avisar('Mensagem enviada. Obrigada — em breve entrarei em contato.', 'ok');
-        })
-        .catch(irParaWhatsApp);
-    });
-  }
-
-  /* ---------- 5. Sombra do cabeçalho ao rolar ---------- */
+  /* ---------- 4. Sombra do cabeçalho ao rolar ---------- */
 
   function iniciarCabecalho() {
     var cabecalho = document.querySelector('[data-cabecalho]');
@@ -220,7 +139,7 @@
     window.addEventListener('scroll', aoRolar, { passive: true });
   }
 
-  /* ---------- 6. Ano corrente no rodapé ---------- */
+  /* ---------- 5. Ano corrente no rodapé ---------- */
 
   function iniciarAno() {
     var ano = String(new Date().getFullYear());
@@ -233,7 +152,6 @@
     iniciarRevelacao();
     iniciarMenu();
     iniciarFiltros();
-    iniciarFormulario();
     iniciarCabecalho();
     iniciarAno();
   }

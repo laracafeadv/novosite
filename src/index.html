@@ -207,54 +207,17 @@
           <p class="sobrancelha">Fale Comigo</p>
           <h2 class="titulo-secao">O primeiro passo é uma conversa</h2>
           <p class="texto-secao">Conte, em poucas palavras, o que está acontecendo. Eu leio com atenção e retorno pessoalmente com os próximos passos possíveis para o seu caso.</p>
-
-          <div class="canais">
-{{ canaisContato }}
-          </div>
+          <a class="botao botao--cafe contato__acao" href="{{ zap }}"{{ zapAlvo }}>
+            Chamar no WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
         </div>
 
         <div data-revelar>
-          <form
-            class="formulario"
-            name="contato"
-            method="POST"
-            action="/"
-            data-formulario-contato
-            data-envio="{{ envioFormulario }}"
-            data-whatsapp="{{ zapBase }}"
-          >
-            <p class="armadilha" aria-hidden="true">
-              <label>Não preencha este campo: <input name="empresa" tabindex="-1" autocomplete="off" /></label>
-            </p>
-
-            <div class="campo">
-              <label for="campo-nome">Nome</label>
-              <input id="campo-nome" name="nome" type="text" required autocomplete="name" placeholder="Seu nome completo" />
-            </div>
-
-            <div class="campo">
-              <label for="campo-email">E-mail</label>
-              <input id="campo-email" name="email" type="email" required autocomplete="email" placeholder="seu@email.com" />
-            </div>
-
-            <div class="campo">
-              <label for="campo-telefone">Telefone</label>
-              <input id="campo-telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(71) 99999-9999" />
-            </div>
-
-            <div class="campo">
-              <label for="campo-mensagem">Mensagem</label>
-              <textarea id="campo-mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre sua situação..."></textarea>
-            </div>
-
-            <label class="consentimento">
-              <input type="checkbox" name="consentimento" required />
-              <span>Autorizo o contato e o tratamento dos meus dados para esta finalidade, conforme a LGPD.</span>
-            </label>
-
-            <button class="botao botao--cafe botao--largo" type="submit">Enviar mensagem</button>
-            <p class="retorno" data-retorno hidden></p>
-          </form>
+          <div class="canais">
+{{ canaisContato }}
+          </div>
+          <p class="canais__horario">Segunda à sexta, das 8h às 18h. Respondo pessoalmente cada mensagem.</p>
         </div>
 
       </div>
