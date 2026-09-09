@@ -21,7 +21,12 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
-    <img class="hero__foto" src="{{ raiz }}assets/{{ imagemHero }}" alt="" aria-hidden="true" fetchpriority="high" width="1600" height="2044" />
+    <picture>
+      <!-- No celular a foto vertical: a horizontal perderia dois terços
+           da largura no corte e deixaria o rosto fora de quadro. -->
+      <source media="(max-width: 46rem)" srcset="{{ raiz }}assets/{{ imagemHeroCelular }}" width="1024" height="1280" />
+      <img class="hero__foto" src="{{ raiz }}assets/{{ imagemHero }}" alt="" aria-hidden="true" fetchpriority="high" width="1024" height="571" />
+    </picture>
     <div class="hero__veu" aria-hidden="true"></div>
 
     <div class="hero__interno">

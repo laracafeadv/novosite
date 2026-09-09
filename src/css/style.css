@@ -10,6 +10,9 @@
   /* Cores */
   --cafe:        #3b1f0e;
   --cafe-claro:  #8b6f47;
+  /* Versão escurecida para rótulos pequenos: #8b6f47 sobre o creme dá
+     4,1:1, abaixo do mínimo de 4,5:1 para texto miúdo. */
+  --cafe-rotulo: #6f5636;
   --creme:       #f5efe6;
   --tinta:       #2c2c2c;
   --branco:      #ffffff;
@@ -127,12 +130,6 @@ textarea:focus-visible {
 .container--texto  { max-width: 44rem; }
 
 .secao { padding-block: var(--secao); }
-.secao--cafe {
-  position: relative;
-  overflow: hidden;
-  background: var(--cafe);
-  color: var(--creme);
-}
 
 /* Rótulo de seção: risco + texto em caixa alta */
 .sobrancelha {
@@ -162,7 +159,6 @@ textarea:focus-visible {
   font-size: clamp(1.85rem, 3.4vw, 2.15rem);
   color: var(--cafe);
 }
-.secao--cafe .titulo-secao { color: var(--creme); }
 
 .texto-secao {
   margin-top: 1.25rem;
@@ -171,7 +167,6 @@ textarea:focus-visible {
   line-height: 1.7;
   color: var(--tinta-70);
 }
-.secao--cafe .texto-secao { color: var(--creme-60); }
 
 /* ---------- Botões e links ---------- */
 
@@ -484,7 +479,7 @@ textarea:focus-visible {
   font-weight: 600;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--cafe-claro);
+  color: var(--cafe-rotulo);
 }
 .grupo-atuacao__descricao {
   max-width: 32rem;
@@ -502,13 +497,18 @@ textarea:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.4rem 0;
+  padding: 1.4rem 1rem 1.4rem .75rem;
+  margin-inline: -.75rem;
+  border-radius: .375rem;
+  transition: background var(--transicao);
 }
+/* Cada linha abre uma conversa — precisa reagir ao passar o mouse. */
+.indice a:hover { background: rgba(59, 31, 14, .04); }
 .indice__esquerda { display: flex; align-items: baseline; gap: 1.25rem; }
 .indice__numero {
   font-family: var(--serifada);
   font-size: .75rem;
-  color: var(--cafe-claro);
+  color: var(--cafe-rotulo);
 }
 .indice__titulo {
   display: block;
@@ -516,7 +516,6 @@ textarea:focus-visible {
   font-size: 1.15rem;
   line-height: 1.4;
   color: var(--cafe);
-  transition: color var(--transicao);
 }
 /* A descrição fica sempre à mostra: é informação que a pessoa
    precisa para escolher, não um detalhe a se descobrir no hover. */
@@ -526,14 +525,13 @@ textarea:focus-visible {
   margin-top: .4rem;
   font-size: .825rem;
   line-height: 1.65;
-  color: var(--tinta-65);
-  transition: color var(--transicao);
+  color: var(--tinta-70);
 }
 .indice__seta {
   flex-shrink: 0;
   width: 1rem;
   height: 1rem;
-  color: var(--cafe-claro);
+  color: var(--cafe-rotulo);
   opacity: 0;
   transform: translateX(-.25rem);
   transition: opacity var(--transicao), transform var(--transicao);
@@ -584,9 +582,9 @@ textarea:focus-visible {
 .faixa__padrao {
   position: absolute;
   inset: 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-position: center;
-  background-size: cover;
+  background-size: auto 100%;
   pointer-events: none;
 }
 .faixa__interno { position: relative; max-width: 42rem; margin: 0 auto; padding-inline: var(--lateral); }
