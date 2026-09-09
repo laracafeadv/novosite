@@ -7,7 +7,8 @@
    Uso:  node build.mjs
    ========================================================= */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync, rmSync, mkdirSync, cpSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, rmSync, mkdirSync, cpSync, renameSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { paraHtml, lerCabecalho, paraTextoSimples } from './lib/markdown.mjs';
@@ -111,6 +112,32 @@ function formatarData(iso) {
 
 const artigos = carregarArtigos();
 const publicados = artigos.filter((a) => a.publicado);
+
+/* Quantos artigos por categoria — o número ao lado do nome na lateral.
+   Conta todos, inclusive os "em breve", porque é o que o filtro mostra. */
+const contagemPorCategoria = artigos.reduce((conta, a) => {
+  conta[a.categoria] = (conta[a.categoria] || 0) + 1;
+  return conta;
+}, {});
+
+/** Os mais recentes que já têm página. */
+const recentes = publicados.slice(0, 5);
+
+/** Mesma categoria, com página própria, menos ele mesmo. */
+function relacionados(artigo, limite = 3) {
+  return publicados
+    .filter((a) => a.slug !== artigo.slug && a.categoria === artigo.categoria)
+    .slice(0, limite);
+}
+
+/** Vizinhos na ordem de publicação, para a navegação no rodapé do texto. */
+function vizinhos(artigo) {
+  const i = publicados.findIndex((a) => a.slug === artigo.slug);
+  return {
+    anterior: i >= 0 ? publicados[i + 1] : null,   // publicados vem do mais novo
+    proximo:  i > 0  ? publicados[i - 1] : null,
+  };
+}
 
 /* ---------------------------------------------------------
    3. Montagem de HTML
@@ -421,6 +448,83 @@ function gerarHome() {
   writeFileSync(join(SAIDA, 'index.html'), preencher(lerModelo('index.html'), valores));
 }
 
+/* ---------- Blocos da barra lateral ---------- */
+
+/** Miniatura + título + data, usada em "recentes" e "relacionados". */
+function linhaDeArtigo(artigo, ctx) {
+  const capa = imagem(artigo.imagem, '', ctx, ' loading="lazy" width="120" height="120"');
+  return `            <li>
+              <a class="lateral__artigo" href="${ctx.raiz}artigos/${artigo.slug}.html">
+                <span class="lateral__miniatura">${capa}</span>
+                <span>
+                  <span class="lateral__titulo">${escapar(artigo.titulo)}</span>
+                  <span class="lateral__data">${escapar(artigo.dataExibicao)}</span>
+                </span>
+              </a>
+            </li>`;
+}
+
+function blocoCategorias(ctx) {
+  const linhas = Object.entries(contagemPorCategoria)
+    .sort((a, b) => b[1] - a[1])
+    .map(([nome, quantos]) => `            <li>
+              <a href="${ctx.raiz}blog.html?categoria=${encodeURIComponent(nome)}">
+                <span>${escapar(nome)}</span>
+                <span class="lateral__conta">${quantos}</span>
+              </a>
+            </li>`).join('\n');
+
+  return `        <div class="lateral__bloco">
+          <h2 class="lateral__cabeca">Categorias</h2>
+          <ul class="lateral__categorias">
+${linhas}
+          </ul>
+        </div>`;
+}
+
+function blocoRecentes(ctx) {
+  if (!recentes.length) return '';
+  return `        <div class="lateral__bloco">
+          <h2 class="lateral__cabeca">Artigos recentes</h2>
+          <ul class="lateral__lista">
+${recentes.map((a) => linhaDeArtigo(a, ctx)).join('\n')}
+          </ul>
+        </div>`;
+}
+
+function blocoBusca() {
+  return `        <div class="lateral__bloco">
+          <h2 class="lateral__cabeca"><label for="busca">Buscar</label></h2>
+          <div class="busca">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+            <input id="busca" type="search" placeholder="Buscar artigos…" autocomplete="off" data-busca />
+          </div>
+        </div>`;
+}
+
+/** Cartão da advogada, no alto da lateral do artigo. */
+function blocoAutora(ctx) {
+  return `        <div class="lateral__bloco cartao-autora">
+          <img src="${ctx.raiz}assets/favicon-monograma.png" alt="" width="52" height="52" loading="lazy" />
+          <div>
+            <p class="cartao-autora__nome">${escapar(dados.site.advogada)}</p>
+            <p class="cartao-autora__area">Advocacia de Família e Sucessões</p>
+          </div>
+          <a class="botao botao--cafe botao--largo" href="${ctx.zap}"${ctx.zapAlvo}>Marcar uma conversa</a>
+        </div>`;
+}
+
+/** Trilha de navegação — ajuda o visitante e o Google a se situarem. */
+function trilha(itens, ctx) {
+  const partes = itens.map((item, i) => {
+    const ultimo = i === itens.length - 1;
+    return ultimo
+      ? `<span aria-current="page">${escapar(item.texto)}</span>`
+      : `<a href="${item.href}">${escapar(item.texto)}</a>`;
+  });
+  return `<nav class="trilha" aria-label="Você está aqui">${partes.join('<span class="trilha__sep" aria-hidden="true">›</span>')}</nav>`;
+}
+
 function gerarBlog() {
   const ctx = contexto({ mensagem: 'blog', paginaBlog: true });
 
@@ -433,14 +537,20 @@ function gerarBlog() {
   const valores = {
     ...ctx,
     ...parciais(ctx),
+    zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
       titulo: `Blog — ${dados.site.nomeCurto}`,
       descricao: 'Orientações claras sobre Direito de Família e Sucessões, escritas para ajudar você a decidir com tranquilidade.',
       caminho: 'blog.html',
       ctx,
     }),
+    trilha: trilha([
+      { texto: 'Início', href: ctx.raiz + 'index.html' },
+      { texto: 'Blog' },
+    ], ctx),
     filtros,
     cartoesBlog: artigos.map((a) => cartao(a, ctx)).join('\n'),
+    lateralBlog: [blocoBusca(), blocoCategorias(ctx), blocoRecentes(ctx)].filter(Boolean).join('\n\n'),
   };
 
   writeFileSync(join(SAIDA, 'blog.html'), preencher(lerModelo('blog.html'), valores));
@@ -527,10 +637,38 @@ function gerarArtigos() {
 
   for (const artigo of publicados) {
     const ctx = contexto({ subpasta: true, mensagem: 'artigo' });
+    const ligados = relacionados(artigo);
+    const { anterior, proximo } = vizinhos(artigo);
+
+    const blocoRelacionados = ligados.length
+      ? `        <div class="lateral__bloco">
+          <h2 class="lateral__cabeca">Artigos relacionados</h2>
+          <ul class="lateral__lista">
+${ligados.map((a) => linhaDeArtigo(a, ctx)).join('\n')}
+          </ul>
+        </div>`
+      : '';
+
+    const vizinho = (a, rotulo) => a
+      ? `      <a class="vizinho" href="${ctx.raiz}artigos/${a.slug}.html">
+        <span class="vizinho__rotulo">${rotulo}</span>
+        <span class="vizinho__titulo">${escapar(a.titulo)}</span>
+      </a>`
+      : '';
+
+    const navegacao = (anterior || proximo)
+      ? `    <nav class="vizinhos" aria-label="Outros artigos">
+${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].filter(Boolean).join('\n')}
+    </nav>`
+      : '';
+
+    const endereco = urlSite ? `${urlSite}/artigos/${artigo.slug}.html` : '';
+    const compartilhar = endereco ? blocoCompartilhar(artigo, endereco) : '';
 
     const valores = {
       ...ctx,
       ...parciais(ctx),
+      zapFlutuante: botaoFlutuante(ctx),
       meta: cabecaMeta({
         titulo: `${artigo.titulo} — ${dados.site.nomeCurto}`,
         descricao: artigo.resumo || artigo.textoSimples.slice(0, 160),
@@ -538,18 +676,55 @@ function gerarArtigos() {
         ctx,
         artigo,
       }),
+      trilha: trilha([
+        { texto: 'Início', href: ctx.raiz + 'index.html' },
+        { texto: 'Blog', href: ctx.raiz + 'blog.html' },
+        { texto: artigo.categoria, href: `${ctx.raiz}blog.html?categoria=${encodeURIComponent(artigo.categoria)}` },
+        { texto: artigo.titulo },
+      ], ctx),
       etiqueta: escapar(artigo.etiqueta),
       titulo: escapar(artigo.titulo),
       dataExibicao: escapar(artigo.dataExibicao),
       leitura: escapar(artigo.leitura),
       abertura: escapar(artigo.abertura),
       corpo: artigo.corpoHtml.split('\n').map((l) => (l ? '    ' + l : l)).join('\n'),
-      imagemCapa: imagem(artigo.imagem, artigo.imagemAlt || artigo.titulo, ctx,
-                         ' width="1100" height="619"'),
+      imagemCapa: imagem(artigo.imagem, artigo.imagemAlt || artigo.titulo, ctx, ' width="1100" height="619"'),
+      compartilhar,
+      navegacao,
+      lateralArtigo: [blocoAutora(ctx), blocoRelacionados, blocoCategorias(ctx)].filter(Boolean).join('\n\n'),
     };
 
     writeFileSync(join(SAIDA, 'artigos', `${artigo.slug}.html`), preencher(modelo, valores));
   }
+}
+
+/** Botões de compartilhar — links diretos, sem script de terceiro. */
+function blocoCompartilhar(artigo, endereco) {
+  const u = encodeURIComponent(endereco);
+  const t = encodeURIComponent(artigo.titulo);
+
+  const redes = [
+    ['WhatsApp', `https://wa.me/?text=${t}%20${u}`,
+     '<path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/>'],
+    ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+     '<path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5H16.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H7.6v3h2.7v8h3.2Z"/>'],
+    ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
+     '<path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1Zm1.8 13.1H3.6V9h3.5v11.5Z"/>'],
+    ['E-mail', `mailto:?subject=${t}&body=${u}`,
+     '<path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'],
+  ];
+
+  const botoes = redes.map(([nome, href, caminho]) =>
+    `        <a class="compartilhar__botao" href="${href}" target="_blank" rel="noopener" aria-label="Compartilhar no ${nome}">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${caminho}</svg>
+        </a>`).join('\n');
+
+  return `    <div class="compartilhar">
+      <span class="compartilhar__rotulo">Compartilhar</span>
+      <div class="compartilhar__botoes">
+${botoes}
+      </div>
+    </div>`;
 }
 
 const modeloCabecalho = lerModelo('parciais', 'cabecalho.html');
@@ -702,7 +877,92 @@ gerarSitemap();
 gerarConfigDeHospedagem();
 
 /* ---------------------------------------------------------
-   7. Conferência
+   7. Assinatura nos nomes dos arquivos
+   --------------------------------------------------------- */
+
+/**
+ * Estilos, scripts e imagens vão para o ar com cache de um ano — é o
+ * que deixa o site rápido em quem volta. Mas com o nome fixo, a versão
+ * velha fica presa no navegador e nenhuma alteração aparece.
+ *
+ * Aqui cada arquivo ganha uma assinatura do próprio conteúdo:
+ *   style.css  →  style.a3f9c1d2.css
+ *
+ * Trocou o conteúdo, muda a assinatura, muda o endereço e o navegador
+ * busca a versão nova. Sem trocar nada, o cache continua valendo.
+ */
+function assinarArquivos() {
+  const mapa = new Map();
+
+  const assinar = (pastaRelativa) => {
+    const pasta = join(SAIDA, pastaRelativa);
+    if (!existsSync(pasta)) return;
+
+    for (const item of readdirSync(pasta, { withFileTypes: true })) {
+      const caminho = join(pasta, item.name);
+
+      if (item.isDirectory()) {
+        assinar(join(pastaRelativa, item.name));
+        continue;
+      }
+
+      // As fontes são chamadas de dentro do CSS, que já é assinado.
+      if (/\.(woff2?|map)$/i.test(item.name)) continue;
+
+      const conteudo = readFileSync(caminho);
+      const assinatura = createHash('sha256').update(conteudo).digest('hex').slice(0, 8);
+      const ponto = item.name.lastIndexOf('.');
+      const novoNome = `${item.name.slice(0, ponto)}.${assinatura}${item.name.slice(ponto)}`;
+
+      renameSync(caminho, join(pasta, novoNome));
+      mapa.set(`${pastaRelativa}/${item.name}`, `${pastaRelativa}/${novoNome}`);
+    }
+  };
+
+  assinar('assets');
+  assinar('css');
+  assinar('js');
+
+  // Reescreve as referências em tudo que é texto — inclusive o painel,
+  // que aponta para /assets e /favicon a partir da raiz.
+  const reescrever = (pasta) => {
+    for (const item of readdirSync(pasta, { withFileTypes: true })) {
+      const caminho = join(pasta, item.name);
+      if (item.isDirectory()) { reescrever(caminho); continue; }
+      if (!/\.(html|css|xml|txt|yml)$/i.test(item.name)) continue;
+
+      let texto = readFileSync(caminho, 'utf8');
+      let mudou = false;
+
+      for (const [de, para] of mapa) {
+        if (texto.includes(de)) { texto = texto.split(de).join(para); mudou = true; }
+
+        // Um arquivo pode citar o vizinho só pelo nome, sem a pasta —
+        // é o caso do @import dentro do CSS. Sem isto, a importação
+        // apontaria para um nome que deixou de existir.
+        const pastaDe = de.slice(0, de.lastIndexOf('/'));
+        const nomeDe = de.slice(de.lastIndexOf('/') + 1);
+        const nomePara = para.slice(para.lastIndexOf('/') + 1);
+        const mesmaPasta = caminho.slice(0, caminho.lastIndexOf('/')).endsWith(pastaDe);
+
+        if (mesmaPasta && texto.includes(nomeDe)) {
+          texto = texto.split(nomeDe).join(nomePara);
+          mudou = true;
+        }
+      }
+
+      if (mudou) writeFileSync(caminho, texto);
+    }
+  };
+  reescrever(SAIDA);
+
+  return mapa.size;
+}
+
+const assinados = assinarArquivos();
+
+/* ---------------------------------------------------------
+   8. Conferência
    --------------------------------------------------------- */
 
 /**
@@ -736,7 +996,7 @@ function conferirMarcadores() {
 conferirMarcadores();
 
 /* ---------------------------------------------------------
-   8. Relatório
+   9. Relatório
    --------------------------------------------------------- */
 
 const emBreve = artigos.length - publicados.length;
@@ -749,6 +1009,7 @@ console.log(`  · politica-de-privacidade.html`);
 console.log(`  · glossario.html            ${termosDoGlossario.length} termos`);
 if (temPainel) console.log(`  · admin/                    painel de publicação`);
 console.log(`  · sitemap, robots, favicon, cabeçalhos`);
+console.log(`  · ${assinados} arquivos assinados para o cache`);
 
 if (avisos.length) {
   console.log('\n  Ainda falta preencher em dados.json:');
