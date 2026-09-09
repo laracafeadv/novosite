@@ -1086,6 +1086,16 @@ textarea:focus-visible {
 /* ---------- Celular ---------- */
 
 @media (max-width: 900px) {
+  /* No dedo, um link de 18px de altura é difícil de acertar. Damos
+     folga vertical e tiramos o espaçamento da lista, para a aparência
+     não mudar mas a área de toque crescer. */
+  .rodape__lista { gap: 0; }
+  .rodape__lista a { display: inline-block; padding-block: .62rem; }
+  .rodape__horario { padding-block: .62rem; }
+  .link-risco { padding-block: .7rem; }
+  .rodape__base a { display: inline-block; padding-block: .55rem; }
+  .lateral__categorias a { padding-block: .55rem; }
+
   .menu-botao { display: flex; }
 
   .menu {
