@@ -34,7 +34,7 @@
   /* Layout */
   --largura:  80rem;   /* max-w-7xl */
   --lateral:  clamp(1rem, 4vw, 2rem);
-  --secao:    clamp(6rem, 9vw, 9rem);
+  --secao:    clamp(4rem, 8vw, 9rem);
 
   --transicao: .3s cubic-bezier(.2, .7, .2, 1);
 }
@@ -314,12 +314,17 @@ textarea:focus-visible {
   object-fit: cover;
   object-position: center 28%;
 }
+/* Dois véus sobrepostos: um sobe do rodapé para sustentar o texto,
+   outro desce do topo para o cabeçalho não flutuar sobre a foto crua.
+   O fundo terracota é claro, então o de baixo puxa também para a
+   esquerda, onde o título fica. */
 .hero__veu {
   position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  height: 60%;
-  background: linear-gradient(to top, rgba(59,31,14,.88), rgba(59,31,14,.28) 45%, transparent);
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(59, 31, 14, .92) 0%, rgba(59, 31, 14, .55) 32%, rgba(59, 31, 14, 0) 62%),
+    linear-gradient(to right, rgba(59, 31, 14, .55) 0%, rgba(59, 31, 14, .12) 45%, rgba(59, 31, 14, 0) 70%),
+    linear-gradient(to bottom, rgba(59, 31, 14, .45) 0%, rgba(59, 31, 14, 0) 22%);
   pointer-events: none;
 }
 .hero__interno {
@@ -456,14 +461,18 @@ textarea:focus-visible {
 
 /* ---------- Áreas de atuação (índice) ---------- */
 
+/* Fundo claro: a marca d'água é escura sobre o creme, sem inverter. */
+.atuacao {
+  position: relative;
+  overflow: hidden;
+}
 .atuacao__fundo {
   position: absolute;
   right: -4rem;
   bottom: -6rem;
   height: 26rem;
   width: auto;
-  opacity: .05;
-  filter: invert(1);
+  opacity: .06;
   pointer-events: none;
 }
 .atuacao__grade { display: grid; gap: 3rem; }
@@ -472,21 +481,21 @@ textarea:focus-visible {
 .grupo-atuacao__rotulo {
   margin-bottom: .25rem;
   font-size: .7rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--creme-40);
+  color: var(--cafe-claro);
 }
 .grupo-atuacao__descricao {
   max-width: 32rem;
   margin-bottom: 1.25rem;
   font-size: .875rem;
   line-height: 1.65;
-  color: rgba(245, 239, 230, .55);
+  color: var(--tinta-60);
 }
 
-.indice li { border-bottom: 1px solid var(--linha-creme); }
-.indice li:first-child { border-top: 1px solid var(--linha-creme); }
+.indice li { border-bottom: 1px solid var(--linha-cafe); }
+.indice li:first-child { border-top: 1px solid var(--linha-cafe); }
 
 .indice a {
   display: flex;
@@ -499,17 +508,16 @@ textarea:focus-visible {
 .indice__numero {
   font-family: var(--serifada);
   font-size: .75rem;
-  color: rgba(245, 239, 230, .35);
+  color: var(--cafe-claro);
 }
 .indice__titulo {
   display: block;
   font-family: var(--serifada);
   font-size: 1.15rem;
   line-height: 1.4;
-  color: var(--creme-90);
+  color: var(--cafe);
   transition: color var(--transicao);
 }
-.indice a:hover .indice__titulo { color: var(--creme); }
 /* A descrição fica sempre à mostra: é informação que a pessoa
    precisa para escolher, não um detalhe a se descobrir no hover. */
 .indice__descricao {
@@ -518,15 +526,14 @@ textarea:focus-visible {
   margin-top: .4rem;
   font-size: .825rem;
   line-height: 1.65;
-  color: rgba(245, 239, 230, .55);
+  color: var(--tinta-65);
   transition: color var(--transicao);
 }
-.indice a:hover .indice__descricao { color: rgba(245, 239, 230, .72); }
 .indice__seta {
   flex-shrink: 0;
   width: 1rem;
   height: 1rem;
-  color: var(--creme-40);
+  color: var(--cafe-claro);
   opacity: 0;
   transform: translateX(-.25rem);
   transition: opacity var(--transicao), transform var(--transicao);
@@ -572,23 +579,14 @@ textarea:focus-visible {
   padding-block: clamp(5rem, 7vw, 7rem);
   text-align: center;
 }
+/* A textura já vem pronta no tom certo — entra inteira, sem
+   esmaecer, cobrindo a faixa. */
 .faixa__padrao {
   position: absolute;
   inset: 0;
-  opacity: .06;
-  background-repeat: repeat;
-  background-size: 260px 260px;
-  pointer-events: none;
-}
-.faixa__mono {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 28rem;
-  width: auto;
-  transform: translate(-50%, -50%);
-  opacity: .05;
-  filter: invert(1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   pointer-events: none;
 }
 .faixa__interno { position: relative; max-width: 42rem; margin: 0 auto; padding-inline: var(--lateral); }
@@ -602,7 +600,9 @@ textarea:focus-visible {
 
 /* ---------- Contato ---------- */
 
-.contato-grade { display: grid; gap: 3.5rem; }
+/* Empilhado, 3,5rem entre as metades é demais e a legenda fica solta;
+   lado a lado (desktop) o respiro maior faz sentido. */
+.contato-grade { display: grid; gap: 2.5rem; }
 
 .canais { display: grid; gap: 1rem; }
 .canal {
@@ -655,7 +655,7 @@ textarea:focus-visible {
 .contato__acao { margin-top: 2rem; }
 
 .canais__horario {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   font-size: .85rem;
   line-height: 1.6;
   color: var(--tinta-45);
@@ -764,6 +764,11 @@ textarea:focus-visible {
 }
 @media (min-width: 40rem) { .cartoes { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 64rem) { .cartoes { grid-template-columns: repeat(3, 1fr); } }
+
+/* Os 3 destaques da home pulam a etapa de 2 colunas: com número ímpar,
+   ela deixaria uma célula vazia — o buraco que aparecia no iPad. */
+.cartoes--destaque { grid-template-columns: 1fr; }
+@media (min-width: 64rem) { .cartoes--destaque { grid-template-columns: repeat(3, 1fr); } }
 .cartao {
   display: flex;
   flex-direction: column;
