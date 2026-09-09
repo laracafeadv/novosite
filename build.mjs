@@ -409,8 +409,9 @@ function gerarHome() {
       caminho: '',
       ctx,
     }),
-    imagemHero: ok(dados.imagens.hero) ? dados.imagens.hero : 'hero-veu.jpg',
-    imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-foto.jpg',
+    imagemHero: ok(dados.imagens.hero) ? dados.imagens.hero : 'hero02.jpeg',
+    imagemHeroCelular: ok(dados.imagens.heroCelular) ? dados.imagens.heroCelular : 'hero.jpeg',
+    imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-retrato.jpg',
     imagemRetratoAlt: escapar(dados.imagens.retratoAlt || dados.site.advogada),
     indiceAtuacao: gerarIndiceAtuacao(ctx),
     cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx)).join('\n'),
@@ -701,7 +702,41 @@ gerarSitemap();
 gerarConfigDeHospedagem();
 
 /* ---------------------------------------------------------
-   7. Relatório
+   7. Conferência
+   --------------------------------------------------------- */
+
+/**
+ * Um {{ marcador }} que sobrou significa token esquecido no build —
+ * e o visitante veria as chaves na tela. Melhor o build parar aqui
+ * do que a página subir errada.
+ */
+function conferirMarcadores() {
+  const pendentes = [];
+
+  (function varrer(pasta) {
+    for (const nome of readdirSync(pasta, { withFileTypes: true })) {
+      const caminho = join(pasta, nome.name);
+      if (nome.isDirectory()) {
+        if (nome.name !== 'admin') varrer(caminho);
+      } else if (/\.(html|xml|txt)$/.test(nome.name)) {
+        const achados = readFileSync(caminho, 'utf8').match(/\{\{\s*\w+\s*\}\}/g);
+        if (achados) pendentes.push(`${caminho.replace(SAIDA + '/', '')}: ${[...new Set(achados)].join(', ')}`);
+      }
+    }
+  })(SAIDA);
+
+  if (pendentes.length) {
+    console.error('\n  Marcadores não substituídos — nada foi publicado:\n');
+    for (const p of pendentes) console.error('  ! ' + p);
+    console.error('');
+    process.exit(1);
+  }
+}
+
+conferirMarcadores();
+
+/* ---------------------------------------------------------
+   8. Relatório
    --------------------------------------------------------- */
 
 const emBreve = artigos.length - publicados.length;
