@@ -17,11 +17,24 @@
       return;
     }
 
+    // Irmãos que entram juntos ganham um atraso crescente: em vez de
+    // 16 elementos surgindo no mesmo instante, a seção se monta.
+    function atraso(el) {
+      if (!el.parentElement) return 0;
+      var irmaos = el.parentElement.querySelectorAll(':scope > [data-revelar]');
+      if (irmaos.length < 2) return 0;
+      var posicao = Array.prototype.indexOf.call(irmaos, el);
+      return Math.min(posicao, 5) * 80;
+    }
+
     var observador = new IntersectionObserver(function (entradas) {
       entradas.forEach(function (entrada) {
         if (entrada.isIntersecting) {
-          entrada.target.classList.add('visivel');
-          observador.unobserve(entrada.target);
+          var el = entrada.target;
+          // Um atraso já escrito no HTML tem prioridade sobre o automático.
+          if (!el.style.transitionDelay) el.style.transitionDelay = atraso(el) + 'ms';
+          el.classList.add('visivel');
+          observador.unobserve(el);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
@@ -41,7 +54,10 @@
     // Rede de segurança: se algo impedir o observador de disparar,
     // o conteúdo nunca fica invisível para sempre.
     setTimeout(function () {
-      alvos.forEach(function (el) { el.classList.add('visivel'); });
+      alvos.forEach(function (el) {
+        el.style.transitionDelay = '0ms';
+        el.classList.add('visivel');
+      });
     }, 4000);
   }
 
