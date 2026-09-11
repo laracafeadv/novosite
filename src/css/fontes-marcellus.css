@@ -1,0 +1,21 @@
+/* =========================================================
+   Marcellus — TESTE: título da home e título principal do artigo.
+   Fonte gratuita (Google Fonts, licença SIL Open Font License,
+   livre para uso comercial). Sem itálico própria (a fonte não tem
+   um estilo itálico desenhado).
+   ========================================================= */
+
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fontes/marcellus.woff2) format('woff2');
+}
+
+.artigo__cabeca h1,
+.hero__interno .hero__titulo {
+  font-family: 'Marcellus', var(--serifada);
+  font-weight: 400;
+  font-style: normal;
+}
