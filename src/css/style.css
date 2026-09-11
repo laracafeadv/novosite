@@ -587,35 +587,6 @@ textarea:focus-visible {
 .etapa h3 { font-size: 1.05rem; color: var(--cafe); }
 .etapa p { margin-top: .5rem; font-size: .875rem; line-height: 1.7; color: var(--tinta-65); }
 
-/* ---------- Faixa editorial ---------- */
-
-.faixa {
-  position: relative;
-  overflow: hidden;
-  background: var(--cafe);
-  color: var(--creme);
-  padding-block: clamp(5rem, 7vw, 7rem);
-  text-align: center;
-}
-/* A textura já vem pronta no tom certo — entra inteira, sem
-   esmaecer, cobrindo a faixa. */
-.faixa__padrao {
-  position: absolute;
-  inset: 0;
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: auto 100%;
-  pointer-events: none;
-}
-.faixa__interno { position: relative; max-width: 42rem; margin: 0 auto; padding-inline: var(--lateral); }
-.faixa__risco { display: block; width: 2.5rem; height: 1px; margin: 0 auto 1.5rem; background: rgba(245,239,230,.5); }
-.faixa p {
-  font-family: var(--serifada);
-  font-style: italic;
-  font-size: clamp(1.4rem, 2.6vw, 1.65rem);
-  line-height: 1.4;
-}
-
 /* ---------- Contato ---------- */
 
 /* Empilhado, 3,5rem entre as metades é demais e a legenda fica solta;
