@@ -25,3 +25,10 @@ h1, h2, h3, h4 {
 .artigo-corpo blockquote p {
   font-style: normal !important;
 }
+
+/* Trava qualquer itálico em todo o site, inclusive texto marcado como
+   itálico dentro do corpo de futuros artigos (o editor do painel tem
+   um botão de itálico) — garante que nada fique inclinado. */
+em, i, cite {
+  font-style: normal !important;
+}
