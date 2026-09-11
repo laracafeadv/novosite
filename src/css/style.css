@@ -156,7 +156,7 @@ textarea:focus-visible {
 
 .titulo-secao {
   max-width: 32rem;
-  font-size: clamp(1.6rem, 3vw, 1.85rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.6rem);
   color: var(--cafe);
 }
 
@@ -466,7 +466,7 @@ textarea:focus-visible {
 .pilar { border-top: 1px solid var(--linha-cafe); padding-top: 1rem; }
 .pilar dt {
   font-family: var(--serifada);
-  font-size: 1.05rem;
+  font-size: .92rem;
   color: var(--cafe);
 }
 .pilar dd {
@@ -535,7 +535,7 @@ textarea:focus-visible {
 .indice__titulo {
   display: block;
   font-family: var(--serifada);
-  font-size: 1.15rem;
+  font-size: 1rem;
   line-height: 1.4;
   color: var(--cafe);
 }
@@ -586,7 +586,7 @@ textarea:focus-visible {
   font-size: 1.25rem;
   color: var(--cafe-claro);
 }
-.etapa h3 { font-size: 1.05rem; color: var(--cafe); }
+.etapa h3 { font-size: .92rem; color: var(--cafe); }
 .etapa p { margin-top: .5rem; font-size: .875rem; line-height: 1.7; color: var(--tinta-65); }
 
 /* ---------- Contato ---------- */
@@ -711,7 +711,7 @@ textarea:focus-visible {
 .rodape__grade { display: grid; gap: 3rem; }
 .rodape__marca img { height: 3rem; width: auto; object-fit: contain; margin-bottom: 1.25rem; }
 .rodape__sobre { max-width: 20rem; font-size: .875rem; line-height: 1.7; color: var(--creme-70); }
-.rodape h3 { margin-bottom: 1.25rem; font-size: 1.125rem; color: var(--creme); }
+.rodape h3 { margin-bottom: 1.25rem; font-size: .98rem; color: var(--creme); }
 .rodape__lista { display: grid; gap: .625rem; font-size: .875rem; color: var(--creme-70); }
 .rodape__lista a:hover { color: var(--creme); }
 .rodape__horario { padding-top: .25rem; color: rgba(245, 239, 230, .5); }
@@ -804,7 +804,7 @@ textarea:focus-visible {
   color: var(--creme-90);
 }
 .cartao__corpo { display: flex; flex-direction: column; flex: 1; padding: 1.25rem; }
-.cartao__corpo h3 { font-size: 1.2rem; line-height: 1.4; color: var(--cafe); }
+.cartao__corpo h3 { font-size: 1.05rem; line-height: 1.4; color: var(--cafe); }
 .cartao__resumo {
   margin-top: .625rem;
   font-size: .875rem;
@@ -887,7 +887,7 @@ textarea:focus-visible {
   pointer-events: none;
 }
 .pagina-topo__interno { position: relative; max-width: 44rem; margin: 0 auto; padding-inline: var(--lateral); }
-.pagina-topo h1 { font-size: clamp(2rem, 4.6vw, 3rem); }
+.pagina-topo h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); }
 .pagina-topo p { margin-top: 1.25rem; font-size: 1rem; line-height: 1.7; color: var(--creme-70); }
 
 /* ---------- Artigo ---------- */
@@ -950,13 +950,13 @@ textarea:focus-visible {
 }
 .artigo-corpo h2 {
   margin: 2.5rem 0 .75rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--cafe);
 }
 .artigo-corpo h3 {
   margin: 1.75rem 0 .5rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--cafe);
 }
@@ -1134,7 +1134,7 @@ textarea:focus-visible {
 .glossario__item a:hover { padding-left: .75rem; }
 
 .glossario__item h2 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   color: var(--cafe);
 }
 .glossario__item p {
@@ -1217,7 +1217,7 @@ textarea:focus-visible {
 .blog-topo__interno .sobrancelha { margin: .5rem 0 0; }
 .blog-topo h1 {
   max-width: 30rem;
-  font-size: clamp(1.75rem, 3.6vw, 2.4rem);
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
   color: var(--creme);
 }
 
@@ -1369,7 +1369,7 @@ textarea:focus-visible {
   color: var(--cafe);
 }
 .artigo__cabeca h1 {
-  font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
   line-height: 1.2;
   color: var(--cafe);
 }
