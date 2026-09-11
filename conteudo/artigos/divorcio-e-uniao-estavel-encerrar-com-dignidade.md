@@ -8,7 +8,6 @@ leitura: 5 min de leitura
 imagem: ""
 publicado: true
 ---
-
 Encerrar uma relação é uma das decisões mais difíceis que alguém toma. A parte jurídica não deveria somar peso a isso — e, bem conduzida, não soma.
 
 ## O divórcio hoje
@@ -29,10 +28,10 @@ Em qualquer modalidade, a presença de advogado é obrigatória.
 
 Independentemente do caminho, alguns pontos precisam de definição:
 
-- **Partilha dos bens**, conforme o regime adotado no casamento.
-- **Guarda e convivência** dos filhos, e o valor da pensão alimentícia.
-- **Uso do nome** de casado, que pode ser mantido ou não.
-- **Alimentos entre os ex-cônjuges**, quando houver essa necessidade.
+* **Partilha dos bens**, conforme o regime adotado no casamento.
+* **Guarda e convivência** dos filhos, e o valor da pensão alimentícia.
+* **Uso do nome** de casado, que pode ser mantido ou não.
+* **Alimentos entre os ex-cônjuges**, quando houver essa necessidade.
 
 ## A união estável termina diferente?
 
@@ -40,7 +39,7 @@ Na essência, não. A união estável reconhecida gera efeitos patrimoniais seme
 
 A diferença prática está na prova: como não há certidão de casamento, às vezes é preciso demonstrar quando a união começou e quando terminou. Documentos, contas conjuntas e testemunhas ajudam. Um contrato de convivência feito no início evita esse trabalho todo depois.
 
-> Um acordo bem construído protege tanto quanto uma sentença — e custa muito menos em tempo e desgaste.
+> Um acordo bem construído protege tanto quanto uma sentença, e custa muito menos em tempo e desgaste.
 
 ## Onde a condução faz diferença
 
