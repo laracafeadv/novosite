@@ -5,8 +5,8 @@ resumo: Comunhão parcial, universal ou separação total — cada escolha molda
   futuro do casal. Um guia sereno para decidir com informação, não por padrão.
 data_publicacao: 2026-06-10
 leitura: 5 min de leitura
-imagem: ""
-publicado: false
+imagem: /assets/capa-regime.jpg
+publicado: true
 ---
 
 A maioria dos casais brasileiros se casa sem escolher o regime de bens. Não por decisão — por desconhecimento. E como a lei precisa de uma resposta, ela aplica a sua: comunhão parcial.

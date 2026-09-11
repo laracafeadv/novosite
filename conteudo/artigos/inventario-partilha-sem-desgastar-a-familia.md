@@ -6,7 +6,7 @@ resumo: Entre o luto e a burocracia, há um caminho mais leve. Veja como o
   herdeiros.
 data_publicacao: 2026-07-05
 leitura: 5 min de leitura
-imagem: ""
+imagem: /assets/capa-inventario.jpg
 publicado: true
 ---
 

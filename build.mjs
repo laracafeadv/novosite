@@ -540,7 +540,7 @@ function gerarBlog() {
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
-      titulo: `Blog — ${dados.site.nomeCurto}`,
+      titulo: `Artigos sobre Direito de Família e Sucessões — ${dados.site.nomeCurto}`,
       descricao: 'Orientações claras sobre Direito de Família e Sucessões, escritas para ajudar você a decidir com tranquilidade.',
       caminho: 'blog.html',
       ctx,

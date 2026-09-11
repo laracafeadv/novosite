@@ -5,8 +5,8 @@ resumo: Sim — desde que respeitada a legítima. Entenda os limites da parte
   disponível e como proteger a sua vontade sem ferir os direitos dos herdeiros.
 data_publicacao: 2026-05-28
 leitura: 5 min de leitura
-imagem: ""
-publicado: false
+imagem: /assets/capa-testamento-flores.jpg
+publicado: true
 ---
 
 Quem pensa em organizar a transmissão do patrimônio costuma se deparar com as duas ferramentas ao mesmo tempo: fazer um testamento ou doar ainda em vida. A resposta raramente é uma ou outra — na maioria das vezes, é as duas, na medida certa.

@@ -4,8 +4,8 @@ categoria: Sucessões
 resumo: Como organizar a sucessão para reduzir conflitos e preservar o legado familiar.
 data: 2026-08-01
 leitura: 4 min de leitura
-imagem: capa-planejamento.jpg
-publicado: sim
+imagem: /assets/capa-planejamento.jpg
+publicado: true
 ---
 
 O planejamento sucessório é um instrumento essencial para proteger o patrimônio e evitar conflitos familiares — organizando a transferência de bens com clareza, transparência e respeito às decisões de cada pessoa.

@@ -113,8 +113,8 @@ categoria: ${comAspas(categoria)}
 resumo: ${comAspas(resumo)}
 data_publicacao: ${data}
 leitura: ${comAspas(leitura)}
-imagem:
-publicado: nao
+imagem: ""
+publicado: false
 ---
 
 Escreva aqui o parágrafo de abertura — ele aparece em destaque, em itálico, logo abaixo do título.
@@ -147,10 +147,12 @@ console.log(`
      conteudo/artigos/${destino.split('/').pop()}
 
   2. Quando terminar, troque no topo do arquivo:
-     publicado: nao   →   publicado: sim
+     publicado: false   →   publicado: true
 
   3. Se tiver imagem de capa, coloque o arquivo em src/assets/
-     e escreva o nome na linha "imagem:".
+     e escreva na linha "imagem:" assim:  imagem: /assets/nome-da-foto.jpg
+     (é o formato que o painel entende — com só o nome, o painel
+     abre a capa vazia e apaga ao salvar.)
 
   4. Gere o site:
      node build.mjs
