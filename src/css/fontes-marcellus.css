@@ -13,9 +13,6 @@
   src: url(fontes/marcellus.woff2) format('woff2');
 }
 
-.artigo__cabeca h1,
-.hero__interno .hero__titulo {
-  font-family: 'Marcellus', var(--serifada);
-  font-weight: 400;
-  font-style: normal;
+h1, h2, h3, h4 {
+  font-family: 'Marcellus', var(--serifada) !important;
 }
