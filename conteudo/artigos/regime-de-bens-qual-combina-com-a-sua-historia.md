@@ -18,7 +18,7 @@ Funciona bem para casais que constroem juntos a partir do zero, ou com patrimôn
 
 ## Comunhão universal
 
-Comunica praticamente todo o patrimônio: o anterior ao casamento, o adquirido durante e, em regra, o recebido por herança — com as exceções que a lei estabelece, como bens gravados com cláusula de incomunicabilidade.
+Comunica praticamente todo o patrimônio: o anterior ao casamento, o adquirido durante e, em regra, o recebido por herança, com as exceções que a lei estabelece, como bens gravados com cláusula de incomunicabilidade.
 
 Exige pacto antenupcial. É uma escolha de integração total, e por isso merece reflexão cuidadosa: ela alcança também as dívidas.
 
