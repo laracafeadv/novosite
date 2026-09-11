@@ -1,11 +1,13 @@
 ---
 titulo: "Inventário: como conduzir a partilha sem desgastar a família"
 categoria: Sucessões
-resumo: Entre o luto e a burocracia, há um caminho mais leve. Veja como o inventário extrajudicial acelera a partilha e preserva os vínculos entre herdeiros.
+resumo: Entre o luto e a burocracia, há um caminho mais leve. Veja como o
+  inventário extrajudicial acelera a partilha e preserva os vínculos entre
+  herdeiros.
 data_publicacao: 2026-07-05
 leitura: 5 min de leitura
 imagem: capa-inventario.jpg
-publicado: sim
+publicado: false
 ---
 
 Perder alguém já é difícil. Precisar resolver documentos, prazos e divisão de bens no meio disso torna tudo mais pesado — e é justamente por isso que a forma como o inventário é conduzido faz tanta diferença.
