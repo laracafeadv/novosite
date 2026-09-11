@@ -12,7 +12,8 @@
   src: url(fontes/ethereal-thin.woff2) format('woff2');
 }
 
-.artigo__cabeca h1 {
+.artigo__cabeca h1,
+.hero__interno .hero__titulo {
   font-family: 'Ethereal', var(--serifada);
   font-weight: 100;
 }
