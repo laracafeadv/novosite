@@ -1,0 +1,19 @@
+/* =========================================================
+   Ethereal (peso Thin) — TESTE: título principal do artigo.
+   Arquivo licenciado para uso comercial (comprado na Kereatype).
+   Poppins continua nos subtítulos (H2/H3), sem alteração.
+   ========================================================= */
+
+@font-face {
+  font-family: 'Ethereal';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(fontes/ethereal-thin.woff2) format('woff2');
+}
+
+.artigo__cabeca h1,
+.hero__interno .hero__titulo {
+  font-family: 'Ethereal', var(--serifada);
+  font-weight: 100;
+}
