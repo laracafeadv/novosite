@@ -123,11 +123,12 @@ const contagemPorCategoria = artigos.reduce((conta, a) => {
 /** Os mais recentes que já têm página. */
 const recentes = publicados.slice(0, 5);
 
-/** Mesma categoria, com página própria, menos ele mesmo. */
+/** Mesma categoria primeiro; se faltar, completa com os mais recentes. */
 function relacionados(artigo, limite = 3) {
-  return publicados
-    .filter((a) => a.slug !== artigo.slug && a.categoria === artigo.categoria)
-    .slice(0, limite);
+  const outros = publicados.filter((a) => a.slug !== artigo.slug);
+  const mesmaCategoria = outros.filter((a) => a.categoria === artigo.categoria);
+  const demais = outros.filter((a) => a.categoria !== artigo.categoria);
+  return [...mesmaCategoria, ...demais].slice(0, limite);
 }
 
 /** Vizinhos na ordem de publicação, para a navegação no rodapé do texto. */
@@ -505,7 +506,7 @@ function blocoBusca() {
 /** Cartão da advogada, no alto da lateral do artigo. */
 function blocoAutora(ctx) {
   return `        <div class="lateral__bloco cartao-autora">
-          <img src="${ctx.raiz}assets/favicon-monograma.png" alt="" width="52" height="52" loading="lazy" />
+          <img src="${ctx.raiz}assets/${dados.imagens.avatar || 'favicon-monograma.png'}" alt="" width="52" height="52" loading="lazy" />
           <div>
             <p class="cartao-autora__nome">${escapar(dados.site.advogada)}</p>
             <p class="cartao-autora__area">Advocacia de Família e Sucessões</p>
@@ -548,6 +549,7 @@ function gerarBlog() {
       { texto: 'Início', href: ctx.raiz + 'index.html' },
       { texto: 'Blog' },
     ], ctx),
+    imagemBlog: ok(dados.imagens.blog) ? dados.imagens.blog : 'capa-inventario.jpg',
     filtros,
     cartoesBlog: artigos.map((a) => cartao(a, ctx)).join('\n'),
     lateralBlog: [blocoBusca(), blocoCategorias(ctx), blocoRecentes(ctx)].filter(Boolean).join('\n\n'),

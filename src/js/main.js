@@ -101,27 +101,43 @@
     });
   }
 
-  /* ---------- 3. Filtro de categorias do blog ---------- */
+  /* ---------- 3. Filtro e busca do blog ---------- */
+
+  // Tira acentos e caixa: "Inventário" e "inventario" batem.
+  function normalizar(texto) {
+    return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
 
   function iniciarFiltros() {
     var filtros = document.querySelectorAll('[data-filtro]');
     var artigos = document.querySelectorAll('[data-categoria]');
+    var busca = document.querySelector('[data-busca]');
     var vazio = document.querySelector('[data-sem-resultados]');
-    if (!filtros.length || !artigos.length) return;
+    if (!artigos.length) return;
 
-    function aplicar(categoria) {
+    var categoriaAtual = 'Todos';
+    var termo = '';
+
+    // Categoria e busca valem juntas: o artigo aparece se passar nas duas.
+    function aplicar() {
       var visiveis = 0;
       artigos.forEach(function (artigo) {
-        var combina = categoria === 'Todos' || artigo.getAttribute('data-categoria') === categoria;
-        artigo.hidden = !combina;
-        if (combina) visiveis++;
+        var naCategoria = categoriaAtual === 'Todos' || artigo.getAttribute('data-categoria') === categoriaAtual;
+        var naBusca = !termo || normalizar(artigo.textContent).indexOf(termo) !== -1;
+        var mostrar = naCategoria && naBusca;
+        artigo.hidden = !mostrar;
+        if (mostrar) visiveis++;
       });
       filtros.forEach(function (f) {
-        f.setAttribute('aria-pressed', String(f.getAttribute('data-filtro') === categoria));
+        f.setAttribute('aria-pressed', String(f.getAttribute('data-filtro') === categoriaAtual));
       });
       if (vazio) vazio.hidden = visiveis > 0;
+    }
 
-      // Mantém a categoria escolhida na URL, para poder compartilhar o link.
+    function escolherCategoria(categoria) {
+      categoriaAtual = categoria;
+      aplicar();
+      // Mantém a categoria na URL, para poder compartilhar o link filtrado.
       var url = new URL(window.location.href);
       if (categoria === 'Todos') url.searchParams.delete('categoria');
       else url.searchParams.set('categoria', categoria);
@@ -129,17 +145,22 @@
     }
 
     filtros.forEach(function (f) {
-      f.addEventListener('click', function () {
-        aplicar(f.getAttribute('data-filtro'));
-      });
+      f.addEventListener('click', function () { escolherCategoria(f.getAttribute('data-filtro')); });
     });
 
-    // Respeita ?categoria=... ao abrir a página
+    if (busca) {
+      busca.addEventListener('input', function () {
+        termo = normalizar(busca.value.trim());
+        aplicar();
+      });
+    }
+
+    // Respeita ?categoria=... ao abrir — é para onde a lateral aponta.
     var inicial = new URL(window.location.href).searchParams.get('categoria');
     var valida = Array.prototype.some.call(filtros, function (f) {
       return f.getAttribute('data-filtro') === inicial;
     });
-    if (inicial && valida) aplicar(inicial);
+    if (inicial && valida) escolherCategoria(inicial);
   }
 
   /* ---------- 4. Sombra do cabeçalho ao rolar ---------- */

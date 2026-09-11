@@ -27,11 +27,14 @@
   },
   "imagens": {
     "_como_usar": "Coloque o arquivo em src/assets/ e escreva o nome aqui.",
-    "hero": "hero02.jpeg",
+    "hero": "banner-desktop.jpeg",
     "retrato": "lara-retrato.jpg",
     "retratoAlt": "Lara Café, advogada especialista em Direito de Família e Sucessões",
-    "heroCelular": "hero.jpeg",
-    "_sobre_hero": "Duas versões: a horizontal para telas largas e a vertical para o celular."
+    "heroCelular": "banner-celular.jpeg",
+    "_sobre_hero": "Duas versões: a horizontal para telas largas e a vertical para o celular.",
+    "blog": "capa-inventario.jpg",
+    "_sobre_avatar": "Foto redonda do cartão da Lara na lateral dos artigos.",
+    "avatar": "lara-avatar.jpg"
   },
   "mensagensWhatsapp": {
     "home": "Olá, Lara! Gostaria de agendar uma consulta.",

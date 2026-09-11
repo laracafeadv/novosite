@@ -24,14 +24,14 @@
     <picture>
       <!-- No celular a foto vertical: a horizontal perderia dois terços
            da largura no corte e deixaria o rosto fora de quadro. -->
-      <source media="(max-width: 46rem)" srcset="{{ raiz }}assets/{{ imagemHeroCelular }}" width="1024" height="1280" />
-      <img class="hero__foto" src="{{ raiz }}assets/{{ imagemHero }}" alt="" aria-hidden="true" fetchpriority="high" width="1024" height="571" />
+      <source media="(max-width: 46rem)" srcset="{{ raiz }}assets/{{ imagemHeroCelular }}" width="1747" height="2184" />
+      <img class="hero__foto" src="{{ raiz }}assets/{{ imagemHero }}" alt="" aria-hidden="true" fetchpriority="high" width="4160" height="2184" />
     </picture>
     <div class="hero__veu" aria-hidden="true"></div>
 
     <div class="hero__interno">
       <h1 class="hero__titulo">Direito de Família e Sucessões, com atuação extrajudicial e judicial.</h1>
-      <p class="hero__texto">Do planejamento do casamento ao inventário, com atendimento em todo o Brasil.</p>
+      <p class="hero__texto">Do planejamento do casamento ao inventário,<br /> com atendimento em todo o Brasil.</p>
       <a class="botao botao--contorno-claro hero__acao" href="{{ zap }}"{{ zapAlvo }}>Agendar atendimento</a>
     </div>
 
@@ -174,15 +174,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ FAIXA EDITORIAL ============ -->
-  <section class="faixa">
-    <div class="faixa__padrao" aria-hidden="true" style="background-image:url({{ raiz }}assets/fundofrase.jpeg)"></div>
-    <div class="faixa__interno" data-revelar>
-      <span class="faixa__risco" aria-hidden="true"></span>
-      <p>Decisões importantes merecem clareza e a orientação certa.</p>
     </div>
   </section>
 
