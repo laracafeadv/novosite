@@ -410,7 +410,7 @@ function gerarRodapeRedes() {
   if (!redes.length) return '';
 
   return `      <div>
-        <h3>Redes Sociais</h3>
+        <h2>Redes Sociais</h2>
         <div class="redes">
 ${redes.join('\n')}
         </div>
@@ -825,6 +825,19 @@ function gerarConfigDeHospedagem() {
   X-Frame-Options: SAMEORIGIN
 `);
 
+  // www.laracafe.com.br → laracafe.com.br: um endereço só, para o Google
+  // não enxergar dois sites iguais. "/(.*)" pega também a raiz — o padrão
+  // "/:caminho*" deixava www.laracafe.com.br/ sem redirecionar.
+  const dominio = urlSite ? new URL(urlSite).hostname : '';
+  const redirects = dominio && !dominio.startsWith('www.')
+    ? [{
+        source: '/(.*)',
+        has: [{ type: 'host', value: `www.${dominio}` }],
+        destination: `${urlSite}/$1`,
+        permanent: true,
+      }]
+    : [];
+
   writeFileSync(join(AQUI, 'vercel.json'), JSON.stringify({
     $schema: 'https://openapi.vercel.sh/vercel.json',
     buildCommand: 'node build.mjs',
@@ -833,6 +846,7 @@ function gerarConfigDeHospedagem() {
     // redirecionaria cada um deles — um salto a mais por clique, à toa.
     cleanUrls: false,
     trailingSlash: false,
+    ...(redirects.length ? { redirects } : {}),
     headers: [
       {
         source: '/(assets|css|js)/(.*)',
@@ -863,6 +877,7 @@ mkdirSync(SAIDA, { recursive: true });
 
 // Arquivos estáticos: CSS, JS, fontes e imagens
 cpSync(join(SRC, 'css'), join(SAIDA, 'css'), { recursive: true });
+juntarImportsDoCss();
 cpSync(join(SRC, 'js'), join(SAIDA, 'js'), { recursive: true });
 cpSync(join(SRC, 'assets'), join(SAIDA, 'assets'), { recursive: true });
 
@@ -883,6 +898,27 @@ gerarFavicon();
 gerarRobots();
 gerarSitemap();
 gerarConfigDeHospedagem();
+
+/**
+ * O style.css puxa as fontes por @import: o navegador só descobre esses
+ * arquivos depois de baixar o style.css — uma fila que, no celular,
+ * atrasava em quase meio segundo a primeira pintura da página (Lighthouse).
+ * Aqui o conteúdo de cada @import entra no lugar da linha e o site
+ * publicado recebe um CSS só. Em src/ nada muda: continue usando @import.
+ */
+function juntarImportsDoCss() {
+  const principal = join(SAIDA, 'css', 'style.css');
+  if (!existsSync(principal)) return;
+  const css = readFileSync(principal, 'utf8');
+  const juntado = css.replace(
+    /@import\s+url\(\s*['"]?([^'")]+\.css)['"]?\s*\)\s*;?/g,
+    (linha, arquivo) => {
+      const caminho = join(SAIDA, 'css', arquivo);
+      return existsSync(caminho) ? readFileSync(caminho, 'utf8') : linha;
+    },
+  );
+  writeFileSync(principal, juntado);
+}
 
 /* ---------------------------------------------------------
    7. Assinatura nos nomes dos arquivos

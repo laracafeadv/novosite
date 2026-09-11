@@ -711,10 +711,12 @@ textarea:focus-visible {
 .rodape__grade { display: grid; gap: 3rem; }
 .rodape__marca img { height: 3rem; width: auto; object-fit: contain; margin-bottom: 1.25rem; }
 .rodape__sobre { max-width: 20rem; font-size: .875rem; line-height: 1.7; color: var(--creme-70); }
-.rodape h3 { margin-bottom: 1.25rem; font-size: .98rem; color: var(--creme); }
+.rodape h2 { margin-bottom: 1.25rem; font-size: .98rem; color: var(--creme); }
 .rodape__lista { display: grid; gap: .625rem; font-size: .875rem; color: var(--creme-70); }
 .rodape__lista a:hover { color: var(--creme); }
-.rodape__horario { padding-top: .25rem; color: rgba(245, 239, 230, .5); }
+/* .55 e não .5: com .5 o texto miúdo dava 4,38:1 sobre o café,
+   abaixo do mínimo de 4,5:1. Com .55 fica em 5:1. */
+.rodape__horario { padding-top: .25rem; color: rgba(245, 239, 230, .55); }
 
 .redes { display: flex; gap: .75rem; }
 .rede {
@@ -739,7 +741,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 1rem;
   font-size: .75rem;
-  color: rgba(245, 239, 230, .5);
+  color: rgba(245, 239, 230, .55);
   text-align: center;
 }
 .rodape__base a:hover { color: var(--creme); }
