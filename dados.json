@@ -6,7 +6,9 @@
     "advogada": "Lara Café",
     "url": "https://laracafe.com.br",
     "descricao": "Advocacia dedicada em Direito de Família e Sucessões. Atendimento online para todo o Brasil, com escuta, técnica e discrição.",
-    "idioma": "pt-BR"
+    "idioma": "pt-BR",
+    "_sobre_verificacao": "Meta tag do Google Search Console (propriedade na conta da Fysi). Não remover.",
+    "googleSiteVerification": "0ZPYeCWZr_tDgfDDdond_9iUrZHp6P_CnKu_CJKEEKM"
   },
   "painel": {
     "_leia_me": "Usado pelo painel em /admin. O repositório é onde os artigos ficam guardados.",

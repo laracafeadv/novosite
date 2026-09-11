@@ -279,6 +279,9 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
   partes.push(`<meta name="author" content="${escapar(dados.site.advogada)}">`);
   partes.push(`<meta name="robots" content="index, follow">`);
   partes.push(`<meta name="theme-color" content="#3b1f0e">`);
+  if (ok(dados.site.googleSiteVerification)) {
+    partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerification)}">`);
+  }
 
   if (enderecoCompleto) partes.push(`<link rel="canonical" href="${enderecoCompleto}">`);
 
