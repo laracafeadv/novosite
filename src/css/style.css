@@ -974,7 +974,7 @@ textarea:focus-visible {
   border-left: 4px solid var(--cafe);
 }
 .artigo-corpo blockquote p {
-  font-family: var(--serifada);
+  font-family: 'Poppins', var(--sem-serifa);
   font-style: italic;
   font-size: 1.125rem;
   color: var(--cafe-claro);
