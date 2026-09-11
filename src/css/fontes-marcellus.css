@@ -16,3 +16,12 @@
 h1, h2, h3, h4 {
   font-family: 'Marcellus', var(--serifada) !important;
 }
+
+/* Remove o itálico do restante do site (título da home, abertura do
+   artigo, citações em bloco) — a Marcellus não tem versão itálica
+   própria, então o itálico ficaria "forçado" pelo navegador. */
+.hero__titulo,
+.artigo-corpo .abertura,
+.artigo-corpo blockquote p {
+  font-style: normal !important;
+}
