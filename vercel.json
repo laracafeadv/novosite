@@ -4,6 +4,14 @@
   "outputDirectory": "site",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:caminho*",
+      "has": [{ "type": "host", "value": "www.laracafe.com.br" }],
+      "destination": "https://laracafe.com.br/:caminho*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(assets|css|js)/(.*)",

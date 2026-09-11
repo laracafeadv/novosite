@@ -334,9 +334,11 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
         description: dados.site.descricao,
         areaServed: { '@type': 'Country', name: 'Brasil' },
         availableLanguage: 'Portuguese',
-        knowsAbout: ['Direito de Família', 'Direito das Sucessões', 'Planejamento sucessório', 'Pacto antenupcial'],
+        knowsAbout: ['Direito de Família', 'Direito das Sucessões', 'Divórcio', 'União estável',
+                     'Inventário', 'Partilha de bens', 'Testamento', 'Planejamento sucessório', 'Pacto antenupcial'],
         founder: { '@type': 'Person', name: dados.site.advogada, jobTitle: 'Advogada' },
-        ...(urlSite ? { url: urlSite } : {}),
+        ...(urlSite ? { url: urlSite, logo: `${urlSite}/assets/favicon-monograma.png` } : {}),
+        ...(temCartao && urlSite ? { image: `${urlSite}/assets/og.jpg` } : {}),
         ...(ok(dados.contato.email) ? { email: dados.contato.email } : {}),
         ...(temWhatsapp ? { telephone: '+' + dados.contato.whatsapp.replace(/\D/g, '') } : {}),
         ...(ok(dados.contato.instagramUrl) ? { sameAs: [dados.contato.instagramUrl] } : {}),
@@ -435,7 +437,8 @@ function gerarHome() {
     ...ctx,
     ...parciais(ctx),
     meta: cabecaMeta({
-      titulo: `${dados.site.nomeCurto} — Direito de Família e Sucessões`,
+      // O serviço vem antes do nome: é o que as pessoas digitam no Google.
+      titulo: `Advogada de Direito de Família e Sucessões | ${dados.site.advogada}`,
       descricao: dados.site.descricao,
       caminho: '',
       ctx,
@@ -595,7 +598,7 @@ function gerarGlossario() {
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
-      titulo: `Glossário jurídico — ${dados.site.nomeCurto}`,
+      titulo: `Glossário de Direito de Família e Sucessões | ${dados.site.advogada}`,
       descricao: 'Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão — sem juridiquês.',
       caminho: 'glossario.html',
       ctx,
