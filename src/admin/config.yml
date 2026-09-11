@@ -22,6 +22,12 @@ backend:
     uploadMedia: 'Envia imagem: {{path}}'
     deleteMedia: 'Remove imagem: {{path}}'
 
+# Nome de arquivo sem acento: "Pensão alimentícia" vira pensao-alimenticia,
+# igual aos endereços que o site já usa.
+slug:
+  encoding: ascii
+  clean_accents: true
+
 # Idioma da interface
 locale: pt
 
@@ -51,6 +57,9 @@ collections:
     delete: true
     extension: md
     format: yaml-frontmatter
+    # O painel procura um campo "title" para dar nome ao arquivo; o nosso
+    # é "titulo". Sem esta linha, o nome sai com o artigo inteiro dentro.
+    identifier_field: titulo
     slug: '{{slug}}'
     summary: '{{titulo}}'
     sortable_fields: [data_publicacao, titulo]
