@@ -636,7 +636,7 @@ textarea:focus-visible {
 }
 .canal__valor {
   display: block;
-  font-family: var(--serifada);
+  font-family: 'Poppins', var(--sem-serifa);
   font-size: 1rem;
   color: var(--cafe);
   word-break: break-word;
