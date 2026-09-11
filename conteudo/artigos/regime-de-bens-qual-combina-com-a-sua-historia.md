@@ -5,11 +5,10 @@ resumo: Comunhão parcial, universal ou separação total — cada escolha molda
   futuro do casal. Um guia sereno para decidir com informação, não por padrão.
 data_publicacao: 2026-06-10
 leitura: 5 min de leitura
-imagem: /assets/capa-regime.jpg
+imagem: ""
 publicado: true
 ---
-
-A maioria dos casais brasileiros se casa sem escolher o regime de bens. Não por decisão — por desconhecimento. E como a lei precisa de uma resposta, ela aplica a sua: comunhão parcial.
+A maioria dos casais brasileiros se casa sem escolher o regime de bens. Não por decisão, por desconhecimento. E como a lei precisa de uma resposta, ela aplica a sua: comunhão parcial.
 
 ## Comunhão parcial
 
@@ -29,7 +28,7 @@ Cada um mantém o seu, sem comunicação. Os patrimônios permanecem independent
 
 Também exige pacto. Costuma fazer sentido quando há patrimônio prévio relevante, atividade empresarial, ou filhos de união anterior cuja herança o casal prefere manter organizada desde o início.
 
-Vale distinguir: existe também a **separação obrigatória**, imposta pela lei em situações específicas — não é escolha, é imposição legal.
+Vale distinguir: existe também a **separação obrigatória**, imposta pela lei em situações específicas, não é escolha, é imposição legal.
 
 ## Participação final nos aquestos
 
@@ -37,7 +36,7 @@ O regime menos conhecido e, para alguns casais, o mais adequado. Durante o casam
 
 Combina autonomia no dia a dia com divisão do que foi construído junto. Exige pacto e uma administração patrimonial mais organizada.
 
-> Não existe regime melhor. Existe o regime que corresponde à história daquele casal — e à que eles pretendem construir.
+> Não existe regime melhor. Existe o regime que corresponde à história daquele casal, e à que eles pretendem construir.
 
 ## Dá para mudar depois?
 
@@ -49,8 +48,8 @@ Não é impossível, mas é mais trabalhoso e mais demorado do que escolher ante
 
 Três perguntas costumam clarear a decisão:
 
-- O que cada um traz para a união hoje?
-- Alguém exerce atividade que pode expor o patrimônio a risco?
-- Existem filhos, de agora ou de antes, cuja situação convém organizar?
+* O que cada um traz para a união hoje?
+* Alguém exerce atividade que pode expor o patrimônio a risco?
+* Existem filhos, de agora ou de antes, cuja situação convém organizar?
 
 Respondidas essas três, a escolha do regime costuma se apresentar sozinha.
