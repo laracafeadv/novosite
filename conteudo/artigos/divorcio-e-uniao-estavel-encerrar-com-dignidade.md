@@ -5,7 +5,7 @@ resumo: Separar-se também é um recomeço. Entenda como conduzir a dissolução
   forma consensual, protegendo o seu patrimônio e a sua tranquilidade.
 data_publicacao: 2026-06-22
 leitura: 5 min de leitura
-imagem: /assets/capa-divorcio.jpg
+imagem: ""
 publicado: true
 ---
 
