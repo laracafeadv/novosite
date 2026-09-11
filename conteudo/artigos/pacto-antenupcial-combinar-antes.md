@@ -8,9 +8,9 @@ leitura: 4 min de leitura
 imagem: ""
 publicado: true
 ---
-Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o pacto antenupcial não trata de desconfiança: trata de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
-
 ## O que acontece quando não há pacto
+
+Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o pacto antenupcial não trata de desconfiança: trata de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
 
 Casamento sem pacto segue automaticamente o regime da **comunhão parcial de bens**. É a regra que a lei aplica quando o casal não escolhe outra.
 
