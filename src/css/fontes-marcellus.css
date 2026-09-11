@@ -13,7 +13,9 @@
   src: url(fontes/marcellus.woff2) format('woff2');
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4,
+.indice__titulo,
+.pilar dt {
   font-family: 'Marcellus', var(--serifada) !important;
 }
 
