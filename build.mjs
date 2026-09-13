@@ -286,6 +286,9 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
   if (ok(dados.site.googleSiteVerification)) {
     partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerification)}">`);
   }
+  if (ok(dados.site.googleSiteVerificationLara)) {
+    partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerificationLara)}">`);
+  }
 
   if (enderecoCompleto) partes.push(`<link rel="canonical" href="${enderecoCompleto}">`);
 
