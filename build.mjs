@@ -198,17 +198,25 @@ function imagem(arquivo, alt, ctx, extra = '') {
   return `<img src="${ctx.raiz}assets/${nome}" alt="${escapar(alt)}"${extra} />`;
 }
 
-/** Cartão de artigo — vira link só quando o artigo tem conteúdo. */
-function cartao(artigo, ctx) {
+/** Cartão de artigo — vira link só quando o artigo tem conteúdo.
+ *  mostrarCapa=false tira a foto por completo (usado nos cartões da
+ *  home) — nesse caso a categoria vira um selo de texto no corpo,
+ *  em vez de aparecer sobre a imagem. */
+function cartao(artigo, ctx, mostrarCapa = true) {
   const destino = `${ctx.raiz}artigos/${artigo.slug}.html`;
-  const capa = imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"');
 
-  const miolo = `
+  const capaBloco = mostrarCapa
+    ? `
+          <span class="cartao__capa">
+            ${imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"')}
             <div class="cartao__veu" aria-hidden="true"></div>
-            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>`;
+            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>
+          </span>`
+    : '';
 
   const corpo = `
           <div class="cartao__corpo">
+            ${mostrarCapa ? '' : `<span class="chip" style="margin-bottom:.75rem">${escapar(artigo.etiqueta)}</span>`}
             <h3>${escapar(artigo.titulo)}</h3>
             <p class="cartao__resumo">${escapar(artigo.resumo)}</p>
             <p class="cartao__meta">${escapar(artigo.dataExibicao)}${artigo.leitura ? ' · ' + escapar(artigo.leitura) : ''}</p>
@@ -218,13 +226,9 @@ function cartao(artigo, ctx) {
           </div>`;
 
   return artigo.publicado
-    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">${capaBloco}${corpo}
         </a>`
-    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
         </article>`;
 }
 
@@ -356,11 +360,12 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       name: 'Como funciona o atendimento jurídico',
       description: 'Cada etapa é pensada para trazer segurança e transparência a um momento sensível.',
       step: [
-        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me conta o que está acontecendo. Eu avalio o caso com atenção e digo, com clareza, como posso conduzi-lo.' },
-        { '@type': 'HowToStep', position: 2, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
-        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é uma solução extrajudicial ou a via judicial, e explico por quê.' },
-        { '@type': 'HowToStep', position: 4, name: 'Condução do caso', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
-        { '@type': 'HowToStep', position: 5, name: 'Solução', text: 'Uma resposta jurídica sólida, construída para durar e não apenas para resolver o momento.' },
+        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me chama no WhatsApp e conta, em poucas palavras, o que está acontecendo.' },
+        { '@type': 'HowToStep', position: 2, name: 'Triagem', text: 'Você responde a um formulário com perguntas voltadas para o seu caso, contando a sua situação e as suas dúvidas, para eu já chegar na consulta com esse contexto em mãos.' },
+        { '@type': 'HowToStep', position: 3, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
+        { '@type': 'HowToStep', position: 4, name: 'Proposta', text: 'Você recebe a estratégia pensada para o seu caso e a apresentação dos honorários, com total transparência.' },
+        { '@type': 'HowToStep', position: 5, name: 'Contrato', text: 'Havendo acordo, assinamos o contrato de honorários e seu caso já está sob meus cuidados.' },
+        { '@type': 'HowToStep', position: 6, name: 'Acompanhamento', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
       ],
     };
     partes.push(`<script type="application/ld+json">${JSON.stringify(comoFunciona)}</script>`);
@@ -468,7 +473,7 @@ function gerarHome() {
     imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-retrato.jpg',
     imagemRetratoAlt: escapar(dados.imagens.retratoAlt || dados.site.advogada),
     indiceAtuacao: gerarIndiceAtuacao(ctx),
-    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx)).join('\n'),
+    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx, false)).join('\n'),
     canaisContato: gerarCanais(),
   };
 
@@ -716,7 +721,6 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
       leitura: escapar(artigo.leitura),
       abertura: escapar(artigo.abertura),
       corpo: artigo.corpoHtml.split('\n').map((l) => (l ? '    ' + l : l)).join('\n'),
-      imagemCapa: imagem(artigo.imagem, artigo.imagemAlt || artigo.titulo, ctx, ' width="1100" height="619"'),
       compartilhar,
       navegacao,
       lateralArtigo: [blocoAutora(ctx), blocoRelacionados, blocoCategorias(ctx)].filter(Boolean).join('\n\n'),
