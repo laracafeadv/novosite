@@ -198,17 +198,25 @@ function imagem(arquivo, alt, ctx, extra = '') {
   return `<img src="${ctx.raiz}assets/${nome}" alt="${escapar(alt)}"${extra} />`;
 }
 
-/** Cartão de artigo — vira link só quando o artigo tem conteúdo. */
-function cartao(artigo, ctx) {
+/** Cartão de artigo — vira link só quando o artigo tem conteúdo.
+ *  mostrarCapa=false tira a foto por completo (usado nos cartões da
+ *  home) — nesse caso a categoria vira um selo de texto no corpo,
+ *  em vez de aparecer sobre a imagem. */
+function cartao(artigo, ctx, mostrarCapa = true) {
   const destino = `${ctx.raiz}artigos/${artigo.slug}.html`;
-  const capa = imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"');
 
-  const miolo = `
+  const capaBloco = mostrarCapa
+    ? `
+          <span class="cartao__capa">
+            ${imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"')}
             <div class="cartao__veu" aria-hidden="true"></div>
-            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>`;
+            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>
+          </span>`
+    : '';
 
   const corpo = `
           <div class="cartao__corpo">
+            ${mostrarCapa ? '' : `<span class="chip" style="margin-bottom:.75rem">${escapar(artigo.etiqueta)}</span>`}
             <h3>${escapar(artigo.titulo)}</h3>
             <p class="cartao__resumo">${escapar(artigo.resumo)}</p>
             <p class="cartao__meta">${escapar(artigo.dataExibicao)}${artigo.leitura ? ' · ' + escapar(artigo.leitura) : ''}</p>
@@ -218,13 +226,9 @@ function cartao(artigo, ctx) {
           </div>`;
 
   return artigo.publicado
-    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">${capaBloco}${corpo}
         </a>`
-    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
         </article>`;
 }
 
@@ -468,7 +472,7 @@ function gerarHome() {
     imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-retrato.jpg',
     imagemRetratoAlt: escapar(dados.imagens.retratoAlt || dados.site.advogada),
     indiceAtuacao: gerarIndiceAtuacao(ctx),
-    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx)).join('\n'),
+    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx, false)).join('\n'),
     canaisContato: gerarCanais(),
   };
 
@@ -716,7 +720,6 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
       leitura: escapar(artigo.leitura),
       abertura: escapar(artigo.abertura),
       corpo: artigo.corpoHtml.split('\n').map((l) => (l ? '    ' + l : l)).join('\n'),
-      imagemCapa: imagem(artigo.imagem, artigo.imagemAlt || artigo.titulo, ctx, ' width="1100" height="619"'),
       compartilhar,
       navegacao,
       lateralArtigo: [blocoAutora(ctx), blocoRelacionados, blocoCategorias(ctx)].filter(Boolean).join('\n\n'),
