@@ -198,10 +198,13 @@ function imagem(arquivo, alt, ctx, extra = '') {
   return `<img src="${ctx.raiz}assets/${nome}" alt="${escapar(alt)}"${extra} />`;
 }
 
-/** Cartão de artigo — vira link só quando o artigo tem conteúdo. */
-function cartao(artigo, ctx) {
+/** Cartão de artigo — vira link só quando o artigo tem conteúdo.
+ *  mostrarCapa=false tira a foto (usado nos cartões da home). */
+function cartao(artigo, ctx, mostrarCapa = true) {
   const destino = `${ctx.raiz}artigos/${artigo.slug}.html`;
-  const capa = imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"');
+  const capa = mostrarCapa
+    ? imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"')
+    : '';
 
   const miolo = `
             <div class="cartao__veu" aria-hidden="true"></div>
@@ -468,7 +471,7 @@ function gerarHome() {
     imagemRetrato: ok(dados.imagens.retrato) ? dados.imagens.retrato : 'lara-retrato.jpg',
     imagemRetratoAlt: escapar(dados.imagens.retratoAlt || dados.site.advogada),
     indiceAtuacao: gerarIndiceAtuacao(ctx),
-    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx)).join('\n'),
+    cartoesHome: artigos.slice(0, 3).map((a) => cartao(a, ctx, false)).join('\n'),
     canaisContato: gerarCanais(),
   };
 
@@ -716,7 +719,6 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
       leitura: escapar(artigo.leitura),
       abertura: escapar(artigo.abertura),
       corpo: artigo.corpoHtml.split('\n').map((l) => (l ? '    ' + l : l)).join('\n'),
-      imagemCapa: imagem(artigo.imagem, artigo.imagemAlt || artigo.titulo, ctx, ' width="1100" height="619"'),
       compartilhar,
       navegacao,
       lateralArtigo: [blocoAutora(ctx), blocoRelacionados, blocoCategorias(ctx)].filter(Boolean).join('\n\n'),
