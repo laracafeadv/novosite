@@ -357,7 +357,7 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       description: 'Cada etapa é pensada para trazer segurança e transparência a um momento sensível.',
       step: [
         { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me chama no WhatsApp e conta, em poucas palavras, o que está acontecendo.' },
-        { '@type': 'HowToStep', position: 2, name: 'Triagem', text: 'Você recebe um formulário rápido, com perguntas sobre a sua situação, para eu já entender o contexto antes da nossa consulta.' },
+        { '@type': 'HowToStep', position: 2, name: 'Triagem', text: 'Você preenche um formulário rápido, com perguntas sobre a sua situação, para eu já entender o contexto antes da nossa consulta.' },
         { '@type': 'HowToStep', position: 3, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
         { '@type': 'HowToStep', position: 4, name: 'Proposta', text: 'Você recebe a estratégia pensada para o seu caso, com total transparência.' },
         { '@type': 'HowToStep', position: 5, name: 'Contrato', text: 'Apresento o contrato de honorários, com transparência total sobre valores e prazos. Assinado, seu caso já está sob meus cuidados.' },
