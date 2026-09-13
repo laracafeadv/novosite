@@ -46,6 +46,18 @@
 
 /* ---------- Base ---------- */
 
+/* Transição suave entre páginas (recurso nativo do navegador — em
+   quem não suporta ainda, a regra é simplesmente ignorada e a
+   navegação continua normal, sem nenhum efeito colateral). */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .35s;
+  animation-timing-function: cubic-bezier(.2, .7, .2, 1);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -308,6 +320,11 @@ textarea:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: center 28%;
+  animation: respirar-hero 5s cubic-bezier(.16, 1, .3, 1) both;
+}
+@keyframes respirar-hero {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
 }
 /* No computador a foto é larga e a Lara fica no meio: prender a foto
    pela esquerda empurra a Lara para a direita, longe do texto. */
@@ -515,6 +532,7 @@ textarea:focus-visible {
 .indice li:first-child { border-top: 1px solid var(--linha-cafe); }
 
 .indice a {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -526,6 +544,20 @@ textarea:focus-visible {
 }
 /* Cada linha abre uma conversa — precisa reagir ao passar o mouse. */
 .indice a:hover { background: rgba(59, 31, 14, .04); }
+/* Barra de destaque que cresce na lateral, mesma linguagem do
+   sublinhado que cresce em .link-risco e no menu. */
+.indice a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .5rem;
+  bottom: .5rem;
+  width: 2px;
+  background: var(--cafe);
+  transform: scaleY(0);
+  transition: transform var(--transicao);
+}
+.indice a:hover::before { transform: scaleY(1); }
 .indice__esquerda { display: flex; align-items: baseline; gap: 1.25rem; }
 .indice__numero {
   font-family: var(--serifada);
