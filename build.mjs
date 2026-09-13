@@ -358,7 +358,7 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       step: [
         { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me conta o que está acontecendo no seu caso de família ou sucessões. Eu avalio com atenção e digo, com clareza, como posso conduzi-lo.' },
         { '@type': 'HowToStep', position: 2, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário jurídico e patrimonial: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
-        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é um divórcio ou inventário extrajudicial, ou a via judicial, e explico por quê.' },
+        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é uma solução extrajudicial ou a via judicial, e explico por quê.' },
         { '@type': 'HowToStep', position: 4, name: 'Condução do caso', text: 'Acompanho cada etapa do processo de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
         { '@type': 'HowToStep', position: 5, name: 'Solução', text: 'Uma resposta jurídica sólida em Direito de Família e Sucessões, construída para durar e não apenas para resolver o momento.' },
       ],
