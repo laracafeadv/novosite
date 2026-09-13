@@ -362,7 +362,7 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       step: [
         { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me chama no WhatsApp e conta, em poucas palavras, o que está acontecendo.' },
         { '@type': 'HowToStep', position: 2, name: 'Triagem', text: 'Você responde a um formulário com perguntas voltadas para o seu caso, contando a sua situação e as suas dúvidas, para eu já chegar na consulta com esse contexto em mãos.' },
-        { '@type': 'HowToStep', position: 3, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
+        { '@type': 'HowToStep', position: 3, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário, o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
         { '@type': 'HowToStep', position: 4, name: 'Proposta', text: 'Você recebe a estratégia pensada para o seu caso e a apresentação dos honorários, com total transparência.' },
         { '@type': 'HowToStep', position: 5, name: 'Contrato', text: 'Havendo acordo, assinamos o contrato de honorários e seu caso já está sob meus cuidados.' },
         { '@type': 'HowToStep', position: 6, name: 'Acompanhamento', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
