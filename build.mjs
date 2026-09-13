@@ -199,19 +199,24 @@ function imagem(arquivo, alt, ctx, extra = '') {
 }
 
 /** Cartão de artigo — vira link só quando o artigo tem conteúdo.
- *  mostrarCapa=false tira a foto (usado nos cartões da home). */
+ *  mostrarCapa=false tira a foto por completo (usado nos cartões da
+ *  home) — nesse caso a categoria vira um selo de texto no corpo,
+ *  em vez de aparecer sobre a imagem. */
 function cartao(artigo, ctx, mostrarCapa = true) {
   const destino = `${ctx.raiz}artigos/${artigo.slug}.html`;
-  const capa = mostrarCapa
-    ? imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"')
-    : '';
 
-  const miolo = `
+  const capaBloco = mostrarCapa
+    ? `
+          <span class="cartao__capa">
+            ${imagem(artigo.imagem, artigo.titulo, ctx, ' loading="lazy" width="1100" height="1400"')}
             <div class="cartao__veu" aria-hidden="true"></div>
-            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>`;
+            <span class="cartao__categoria">${escapar(artigo.etiqueta)}</span>
+          </span>`
+    : '';
 
   const corpo = `
           <div class="cartao__corpo">
+            ${mostrarCapa ? '' : `<span class="chip" style="margin-bottom:.75rem">${escapar(artigo.etiqueta)}</span>`}
             <h3>${escapar(artigo.titulo)}</h3>
             <p class="cartao__resumo">${escapar(artigo.resumo)}</p>
             <p class="cartao__meta">${escapar(artigo.dataExibicao)}${artigo.leitura ? ' · ' + escapar(artigo.leitura) : ''}</p>
@@ -221,13 +226,9 @@ function cartao(artigo, ctx, mostrarCapa = true) {
           </div>`;
 
   return artigo.publicado
-    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">${capaBloco}${corpo}
         </a>`
-    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">
-          <span class="cartao__capa">${capa}${miolo}
-          </span>${corpo}
+    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
         </article>`;
 }
 
