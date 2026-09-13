@@ -356,11 +356,12 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       name: 'Como funciona o atendimento jurídico',
       description: 'Cada etapa é pensada para trazer segurança e transparência a um momento sensível.',
       step: [
-        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me conta o que está acontecendo. Eu avalio o caso com atenção e digo, com clareza, como posso conduzi-lo.' },
-        { '@type': 'HowToStep', position: 2, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
-        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é uma solução extrajudicial ou a via judicial, e explico por quê.' },
-        { '@type': 'HowToStep', position: 4, name: 'Condução do caso', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
-        { '@type': 'HowToStep', position: 5, name: 'Solução', text: 'Uma resposta jurídica sólida, construída para durar e não apenas para resolver o momento.' },
+        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me chama no WhatsApp e conta, em poucas palavras, o que está acontecendo.' },
+        { '@type': 'HowToStep', position: 2, name: 'Triagem', text: 'Faço uma triagem inicial do seu caso e já digo se atuo nessa área e como posso ajudar.' },
+        { '@type': 'HowToStep', position: 3, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
+        { '@type': 'HowToStep', position: 4, name: 'Proposta', text: 'Você recebe a estratégia pensada para o seu caso, com prazos e valores, com total transparência.' },
+        { '@type': 'HowToStep', position: 5, name: 'Contrato', text: 'Formalizamos o acordo e, a partir daí, seu caso já está sob meus cuidados.' },
+        { '@type': 'HowToStep', position: 6, name: 'Acompanhamento', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
       ],
     };
     partes.push(`<script type="application/ld+json">${JSON.stringify(comoFunciona)}</script>`);
