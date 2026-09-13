@@ -356,11 +356,11 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
       name: 'Como funciona o atendimento jurídico',
       description: 'Cada etapa é pensada para trazer segurança e transparência a um momento sensível.',
       step: [
-        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me conta o que está acontecendo — separação, herança, um contrato que precisa ser revisado. Eu avalio o caso com atenção e digo, com clareza, como posso conduzi-lo.' },
+        { '@type': 'HowToStep', position: 1, name: 'Primeiro contato', text: 'Você me conta o que está acontecendo. Eu avalio o caso com atenção e digo, com clareza, como posso conduzi-lo.' },
         { '@type': 'HowToStep', position: 2, name: 'Consulta e diagnóstico', text: 'Nessa conversa, entendo a fundo o cenário: o que está em jogo, os riscos e as possibilidades reais para o seu caso.' },
-        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é uma solução extrajudicial — como inventário, divórcio consensual ou pacto antenupcial — ou a via judicial, e explico por quê.' },
+        { '@type': 'HowToStep', position: 3, name: 'Definição da estratégia', text: 'Defino, com base no que foi levantado, se o caminho mais seguro é uma solução extrajudicial ou a via judicial, e explico por quê.' },
         { '@type': 'HowToStep', position: 4, name: 'Condução do caso', text: 'Acompanho cada etapa de perto, com atualizações claras, seja na negociação, no acordo ou no processo judicial.' },
-        { '@type': 'HowToStep', position: 5, name: 'Solução', text: 'Uma solução jurídica sólida em Direito de Família e Sucessões — divórcio, partilha de bens, inventário ou planejamento sucessório —, construída para durar e não apenas para resolver o momento.' },
+        { '@type': 'HowToStep', position: 5, name: 'Solução', text: 'Uma solução jurídica sólida em Direito de Família e Sucessões, construída para durar e não apenas para resolver o momento.' },
       ],
     };
     partes.push(`<script type="application/ld+json">${JSON.stringify(comoFunciona)}</script>`);
