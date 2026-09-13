@@ -34,7 +34,7 @@ export const gruposDeAtuacao = [
   },
   {
     rotulo: 'Sucessões e Patrimônio',
-    descricao: 'Para quem precisa organizar a transmissão de bens — antes ou depois de uma perda.',
+    descricao: 'Para quem precisa organizar a transmissão de bens, antes ou depois de uma perda.',
     itens: [
       {
         titulo: 'Inventário judicial e extrajudicial',
