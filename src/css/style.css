@@ -31,7 +31,7 @@
   --creme-40:    rgba(245, 239, 230, .4);
   --linha-cafe:  rgba(59, 31, 14, .12);
   --linha-creme: rgba(245, 239, 230, .12);
-  --acento:      #a8672c;
+  --acento:      #613e26;
 
   /* Tipografia */
   --serifada:   'Cosen', 'Iowan Old Style', Georgia, serif;
@@ -178,7 +178,9 @@ textarea:focus-visible {
    precisa de um tamanho maior para acompanhar visualmente a altura
    das letras ao redor. font-style normal porque a fonte já nasce
    inclinada, se herdasse itálico do título ficaria com dupla inclinação.
-   Cor terracota única, para o efeito ficar igual em fundo claro e escuro. */
+   Cor: no site de referência, em fundo claro a palavra ganha um marrom
+   mais escuro que o título; em fundo escuro ela usa a mesma cor do
+   resto do título, só a fonte muda. Replicamos os dois casos aqui. */
 .acento {
   font-family: 'Alex Brush', var(--serifada);
   font-style: normal;
@@ -186,6 +188,10 @@ textarea:focus-visible {
   line-height: 1;
   padding-inline: .08em;
   color: var(--acento);
+}
+.hero__titulo .acento,
+.blog-topo h1 .acento {
+  color: inherit;
 }
 
 .texto-secao {
