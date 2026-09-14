@@ -245,7 +245,7 @@ function gerarIndiceAtuacao(ctx) {
         ? `${zapBase}?text=${encodeURIComponent(mensagem)}`
         : `${ctx.ancora}#contato`;
 
-      return `              <li>
+      return `              <li data-revelar="escala">
                 <a href="${destino}"${ctx.zapAlvo}>
                   <span class="indice__esquerda">
                     <span class="indice__numero" aria-hidden="true">${numero}</span>

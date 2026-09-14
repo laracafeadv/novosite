@@ -466,11 +466,6 @@ textarea:focus-visible {
   position: relative;
   max-width: 28rem;
   margin-inline: auto;
-  transform: rotate(-2.5deg);
-  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
-}
-@media (hover: hover) {
-  .sobre__retrato-area:hover { transform: rotate(0deg); }
 }
 .sobre__contorno {
   position: absolute;
@@ -1117,6 +1112,11 @@ textarea:focus-visible {
   transform: translateY(20px);
   transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
 }
+
+/* Variante discreta, sem deslocamento: só fade e leve zoom (para fotos
+   e cartões, onde subir de baixo para cima ficaria chamativo demais). */
+.js [data-revelar="escala"] { transform: scale(.96); }
+.js [data-revelar="escala"].visivel { transform: none; }
 .js [data-revelar].visivel { opacity: 1; transform: none; }
 
 /* Marca-texto: um fundo tipo caneta marca-texto que se expande da
