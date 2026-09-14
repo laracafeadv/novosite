@@ -61,7 +61,25 @@
     }, 4000);
   }
 
-  /* ---------- 2. Menu do celular ---------- */
+  /* ---------- 2. Marca-texto ---------- */
+
+  function iniciarMarcaTexto() {
+    var alvos = document.querySelectorAll('.marca-texto');
+    if (!alvos.length || !('IntersectionObserver' in window)) return;
+
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('marcado');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    alvos.forEach(function (el) { observador.observe(el); });
+  }
+
+  /* ---------- 3. Menu do celular ---------- */
 
   function iniciarMenu() {
     var botao = document.querySelector('[data-menu-botao]');
@@ -101,7 +119,7 @@
     });
   }
 
-  /* ---------- 3. Filtro e busca do blog ---------- */
+  /* ---------- 4. Filtro e busca do blog ---------- */
 
   // Tira acentos e caixa: "Inventário" e "inventario" batem.
   function normalizar(texto) {
@@ -163,7 +181,7 @@
     if (inicial && valida) escolherCategoria(inicial);
   }
 
-  /* ---------- 4. Sombra do cabeçalho ao rolar ---------- */
+  /* ---------- 5. Sombra do cabeçalho ao rolar ---------- */
 
   function iniciarCabecalho() {
     var cabecalho = document.querySelector('[data-cabecalho]');
@@ -176,7 +194,7 @@
     window.addEventListener('scroll', aoRolar, { passive: true });
   }
 
-  /* ---------- 5. Ano corrente no rodapé ---------- */
+  /* ---------- 6. Ano corrente no rodapé ---------- */
 
   function iniciarAno() {
     var ano = String(new Date().getFullYear());
@@ -187,6 +205,7 @@
 
   function iniciar() {
     iniciarRevelacao();
+    iniciarMarcaTexto();
     iniciarMenu();
     iniciarFiltros();
     iniciarCabecalho();

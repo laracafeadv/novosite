@@ -226,9 +226,9 @@ function cartao(artigo, ctx, mostrarCapa = true) {
           </div>`;
 
   return artigo.publicado
-    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}">${capaBloco}${corpo}
+    ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}" data-revelar>${capaBloco}${corpo}
         </a>`
-    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
+    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" data-revelar aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
         </article>`;
 }
 
@@ -245,7 +245,7 @@ function gerarIndiceAtuacao(ctx) {
         ? `${zapBase}?text=${encodeURIComponent(mensagem)}`
         : `${ctx.ancora}#contato`;
 
-      return `              <li>
+      return `              <li data-revelar="escala">
                 <a href="${destino}"${ctx.zapAlvo}>
                   <span class="indice__esquerda">
                     <span class="indice__numero" aria-hidden="true">${numero}</span>
@@ -636,7 +636,7 @@ function gerarPrivacidade() {
 function gerarGlossario() {
   const ctx = contexto({ mensagem: 'home', paginaInterna: true });
 
-  const lista = termosDoGlossario.map((t) => `        <li class="glossario__item">
+  const lista = termosDoGlossario.map((t) => `        <li class="glossario__item" data-revelar>
           <a href="${ctx.raiz}glossario/${t.slug}.html">
             <h2>${escapar(t.termo)}</h2>
             <p>${escapar(t.definicao)}</p>
