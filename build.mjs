@@ -500,6 +500,8 @@ function linhaDeArtigo(artigo, ctx) {
 }
 
 function blocoCategorias(ctx) {
+  if (!Object.keys(contagemPorCategoria).length) return '';
+
   const linhas = Object.entries(contagemPorCategoria)
     .sort((a, b) => b[1] - a[1])
     .map(([nome, quantos]) => `            <li>
@@ -563,11 +565,17 @@ function trilha(itens, ctx) {
 function gerarBlog() {
   const ctx = contexto({ mensagem: 'blog', paginaBlog: true });
 
+  // Sem nenhum artigo (nem "em breve"), não faz sentido mostrar filtro
+  // de categoria nem busca — não há o que filtrar ou buscar ainda.
+  const temArtigos = artigos.length > 0;
+
   const categorias = ['Todos', ...new Set(artigos.map((a) => a.categoria))];
-  const filtros = categorias
-    .map((c, i) =>
-      `        <button class="filtro" type="button" data-filtro="${escapar(c)}" aria-pressed="${i === 0}">${escapar(c)}</button>`)
-    .join('\n');
+  const filtros = temArtigos
+    ? categorias
+        .map((c, i) =>
+          `        <button class="filtro" type="button" data-filtro="${escapar(c)}" aria-pressed="${i === 0}">${escapar(c)}</button>`)
+        .join('\n')
+    : '';
 
   const valores = {
     ...ctx,
@@ -585,7 +593,8 @@ function gerarBlog() {
     ], ctx),
     imagemBlog: ok(dados.imagens.blog) ? dados.imagens.blog : 'capa-inventario.jpg',
     filtros,
-    cartoesBlog: artigos.map((a) => cartao(a, ctx)).join('\n'),
+    cartoesBlog: temArtigos ? artigos.map((a) => cartao(a, ctx)).join('\n') : '',
+    blogVazio: temArtigos ? '' : '        <p class="sem-resultados">Em breve, novos artigos por aqui.</p>',
     lateralBlog: [blocoBusca(), blocoCategorias(ctx), blocoRecentes(ctx)].filter(Boolean).join('\n\n'),
   };
 
