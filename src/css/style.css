@@ -31,7 +31,7 @@
   --creme-40:    rgba(245, 239, 230, .4);
   --linha-cafe:  rgba(59, 31, 14, .12);
   --linha-creme: rgba(245, 239, 230, .12);
-  --acento:      #b8873f;
+  --acento:      #a8672c;
 
   /* Tipografia */
   --serifada:   'Cosen', 'Iowan Old Style', Georgia, serif;
@@ -174,21 +174,17 @@ textarea:focus-visible {
 }
 
 /* Palavra em destaque dentro de um título, sem trocar nenhum texto:
-   cursiva Beau Rivage, que tem o traço fino de assinatura e por isso
+   cursiva Alex Brush, que tem o traço fino de assinatura e por isso
    precisa de um tamanho maior para acompanhar visualmente a altura
    das letras ao redor. font-style normal porque a fonte já nasce
-   inclinada, se herdasse itálico do título ficaria com dupla inclinação. */
+   inclinada, se herdasse itálico do título ficaria com dupla inclinação.
+   Cor terracota única, para o efeito ficar igual em fundo claro e escuro. */
 .acento {
   font-family: 'Alex Brush', var(--serifada);
   font-style: normal;
   font-size: 1.5em;
   line-height: 1;
   padding-inline: .08em;
-  color: var(--cafe-claro);
-}
-/* Sobre fundo escuro (hero), o café claro perde contraste: dourado mais
-   aberto no lugar. */
-.hero__titulo .acento {
   color: var(--acento);
 }
 
