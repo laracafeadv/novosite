@@ -31,6 +31,7 @@
   --creme-40:    rgba(245, 239, 230, .4);
   --linha-cafe:  rgba(59, 31, 14, .12);
   --linha-creme: rgba(245, 239, 230, .12);
+  --acento:      #b8873f;
 
   /* Tipografia */
   --serifada:   'Cosen', 'Iowan Old Style', Georgia, serif;
@@ -172,6 +173,16 @@ textarea:focus-visible {
   color: var(--cafe);
 }
 
+/* Palavra em destaque dentro de um título, sem trocar nenhum texto:
+   usa o itálico próprio da Cosen (a Marcellus não tem itálico e o
+   itálico do site inteiro é travado em fontes-marcellus.css, então
+   a família precisa ser redeclarada aqui, não só o estilo). */
+.acento {
+  font-family: 'Cosen', var(--serifada);
+  font-style: italic;
+  color: var(--acento);
+}
+
 .texto-secao {
   margin-top: 1.25rem;
   max-width: 28rem;
@@ -233,18 +244,21 @@ textarea:focus-visible {
 
 .cabecalho {
   position: sticky;
-  top: 0;
+  top: clamp(.75rem, 2vw, 1.25rem);
   z-index: 40;
+  margin: clamp(.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 2rem) 0;
+  border-radius: 999px;
   background: var(--cafe);
   color: var(--creme);
+  box-shadow: 0 4px 16px rgba(59, 31, 14, .14);
   transition: box-shadow var(--transicao);
 }
-.cabecalho[data-rolado='true'] { box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
+.cabecalho[data-rolado='true'] { box-shadow: 0 12px 28px rgba(59, 31, 14, .24); }
 
 .cabecalho__interno {
-  max-width: var(--largura);
+  max-width: calc(var(--largura) - 4rem);
   margin: 0 auto;
-  padding: .875rem var(--lateral);
+  padding: .7rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -302,6 +316,41 @@ textarea:focus-visible {
 .menu-botao[aria-expanded='true'] span:nth-child(1) { transform: translateY(.5rem) rotate(45deg); }
 .menu-botao[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
 .menu-botao[aria-expanded='true'] span:nth-child(3) { transform: translateY(-.5rem) rotate(-45deg); }
+
+/* ---------- Faixa (fita decorativa em looping) ---------- */
+
+.faixa {
+  overflow: hidden;
+  background: var(--cafe);
+  padding-block: .85rem;
+}
+.faixa__trilha {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 2.5rem;
+  animation: rolar-faixa 26s linear infinite;
+}
+.faixa__item {
+  flex-shrink: 0;
+  font-family: var(--serifada);
+  font-size: .9rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--creme-70);
+}
+.faixa__ponto {
+  flex-shrink: 0;
+  color: var(--cafe-claro);
+}
+@keyframes rolar-faixa {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faixa__trilha { animation: none; }
+}
 
 /* ---------- Hero ---------- */
 
@@ -1122,7 +1171,11 @@ textarea:focus-visible {
     border-top: 1px solid rgba(245, 239, 230, .1);
     box-shadow: 0 20px 30px rgba(0, 0, 0, .2);
   }
-  .menu[data-aberto='true'] { display: flex; }
+  .menu[data-aberto='true'] {
+    display: flex;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
   .menu a:not(.botao) {
     padding: .625rem .5rem;
     border-radius: .25rem;
@@ -1145,7 +1198,7 @@ textarea:focus-visible {
 /* ---------- Impressão ---------- */
 
 @media print {
-  .cabecalho, .zap-flutuante, .menu-botao, .artigo-chamada, .filtros { display: none !important; }
+  .cabecalho, .faixa, .zap-flutuante, .menu-botao, .artigo-chamada, .filtros { display: none !important; }
   body { background: #fff; color: #000; }
   .js [data-revelar] { opacity: 1 !important; transform: none !important; }
 }
