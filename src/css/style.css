@@ -174,12 +174,21 @@ textarea:focus-visible {
 }
 
 /* Palavra em destaque dentro de um título, sem trocar nenhum texto:
-   usa o itálico próprio da Cosen (a Marcellus não tem itálico e o
-   itálico do site inteiro é travado em fontes-marcellus.css, então
-   a família precisa ser redeclarada aqui, não só o estilo). */
+   cursiva Beau Rivage, que tem o traço fino de assinatura e por isso
+   precisa de um tamanho maior para acompanhar visualmente a altura
+   das letras ao redor. font-style normal porque a fonte já nasce
+   inclinada, se herdasse itálico do título ficaria com dupla inclinação. */
 .acento {
-  font-family: 'Cosen', var(--serifada);
-  font-style: italic;
+  font-family: 'Alex Brush', var(--serifada);
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 1;
+  padding-inline: .08em;
+  color: var(--cafe-claro);
+}
+/* Sobre fundo escuro (hero), o café claro perde contraste: dourado mais
+   aberto no lugar. */
+.hero__titulo .acento {
   color: var(--acento);
 }
 
