@@ -273,7 +273,7 @@ ${itens}
 }
 
 /** Bloco <head>: título, descrição, redes sociais, ícones e dados estruturados. */
-function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
+function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null, robots = 'index, follow' }) {
   const partes = [];
   const desc = escapar(descricao.slice(0, 300));
   const enderecoCompleto = urlSite ? urlSite + '/' + caminho : '';
@@ -281,7 +281,7 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null }) {
   partes.push(`<title>${escapar(titulo)}</title>`);
   partes.push(`<meta name="description" content="${desc}">`);
   partes.push(`<meta name="author" content="${escapar(dados.site.advogada)}">`);
-  partes.push(`<meta name="robots" content="index, follow">`);
+  partes.push(`<meta name="robots" content="${robots}">`);
   partes.push(`<meta name="theme-color" content="#3b1f0e">`);
   if (ok(dados.site.googleSiteVerification)) {
     partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerification)}">`);
@@ -559,7 +559,21 @@ function trilha(itens, ctx) {
       ? `<span aria-current="page">${escapar(item.texto)}</span>`
       : `<a href="${item.href}">${escapar(item.texto)}</a>`;
   });
-  return `<nav class="trilha" aria-label="Você está aqui">${partes.join('<span class="trilha__sep" aria-hidden="true">›</span>')}</nav>`;
+  const nav = `<nav class="trilha" aria-label="Você está aqui">${partes.join('<span class="trilha__sep" aria-hidden="true">›</span>')}</nav>`;
+
+  // Dados estruturados da trilha (BreadcrumbList) — ajuda o Google a
+  // mostrar esse caminho diretamente no resultado de busca.
+  if (!urlSite) return nav;
+
+  const lista = itens.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.texto,
+    item: `${urlSite}/${item.href.replace(/^(\.\.\/)+/, '')}`,
+  }));
+  const schema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: lista };
+
+  return `${nav}\n<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
 function gerarBlog() {
@@ -589,7 +603,7 @@ function gerarBlog() {
     }),
     trilha: trilha([
       { texto: 'Início', href: ctx.raiz + 'index.html' },
-      { texto: 'Blog' },
+      { texto: 'Blog', href: ctx.raiz + 'blog.html' },
     ], ctx),
     imagemBlog: ok(dados.imagens.blog) ? dados.imagens.blog : 'capa-inventario.jpg',
     filtros,
@@ -644,6 +658,27 @@ function gerarGlossario() {
   };
 
   writeFileSync(join(SAIDA, 'glossario.html'), preencher(lerModelo('glossario.html'), valores));
+}
+
+/** Página de erro 404 — a Vercel serve esse arquivo automaticamente
+ *  quando o endereço não bate com nenhuma página do site. */
+function gerarPagina404() {
+  const ctx = contexto({ mensagem: 'home' });
+
+  const valores = {
+    ...ctx,
+    ...parciais(ctx),
+    zapFlutuante: botaoFlutuante(ctx),
+    meta: cabecaMeta({
+      titulo: `Página não encontrada | ${dados.site.nomeCurto}`,
+      descricao: 'Essa página não existe ou o endereço mudou.',
+      caminho: '404.html',
+      ctx,
+      robots: 'noindex, follow',
+    }),
+  };
+
+  writeFileSync(join(SAIDA, '404.html'), preencher(lerModelo('404.html'), valores));
 }
 
 function gerarTermos() {
@@ -725,7 +760,7 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
         { texto: 'Início', href: ctx.raiz + 'index.html' },
         { texto: 'Blog', href: ctx.raiz + 'blog.html' },
         { texto: artigo.categoria, href: `${ctx.raiz}blog.html?categoria=${encodeURIComponent(artigo.categoria)}` },
-        { texto: artigo.titulo },
+        { texto: artigo.titulo, href: `${ctx.raiz}artigos/${artigo.slug}.html` },
       ], ctx),
       etiqueta: escapar(artigo.etiqueta),
       titulo: escapar(artigo.titulo),
@@ -929,6 +964,7 @@ gerarBlog();
 gerarArtigos();
 gerarPrivacidade();
 gerarGlossario();
+gerarPagina404();
 gerarTermos();
 gerarFavicon();
 gerarRobots();
@@ -1087,6 +1123,7 @@ console.log(`  · blog.html                 ${artigos.length} cartões`);
 console.log(`  · artigos/                  ${publicados.length} publicado(s)${emBreve ? `, ${emBreve} em breve` : ''}`);
 console.log(`  · politica-de-privacidade.html`);
 console.log(`  · glossario.html            ${termosDoGlossario.length} termos`);
+console.log(`  · 404.html                  página de erro personalizada`);
 if (temPainel) console.log(`  · admin/                    painel de publicação`);
 console.log(`  · sitemap, robots, favicon, cabeçalhos`);
 console.log(`  · ${assinados} arquivos assinados para o cache`);
