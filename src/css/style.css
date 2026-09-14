@@ -1,16 +1,16 @@
 @import url('fontes.css');
 @import url('fontes-poppins.css');
-@import url('fontes-marcellus.css');
+@import url('fontes-titulos.css');
 
 /* =========================================================
    Lara Café Advocacia & Consultoria
-   Design system — café #3b1f0e / creme #f5efe6
+   Design system — café #412b20 / creme #f5efe6
    Cosen (títulos) + Karla (texto e interface)
    ========================================================= */
 
 :root {
   /* Cores */
-  --cafe:        #3b1f0e;
+  --cafe:        #412b20;
   --cafe-claro:  #8b6f47;
   /* Versão escurecida para rótulos pequenos: #8b6f47 sobre o creme dá
      4,1:1, abaixo do mínimo de 4,5:1 para texto miúdo. */
@@ -29,7 +29,7 @@
   --creme-70:    rgba(245, 239, 230, .7);
   --creme-60:    rgba(245, 239, 230, .6);
   --creme-40:    rgba(245, 239, 230, .4);
-  --linha-cafe:  rgba(59, 31, 14, .12);
+  --linha-cafe:  rgba(65, 43, 32, .12);
   --linha-creme: rgba(245, 239, 230, .12);
   --acento:      #613e26;
 
@@ -224,8 +224,8 @@ textarea:focus-visible {
 .botao svg { width: .875rem; height: .875rem; transition: transform var(--transicao); }
 .botao:hover svg { transform: translateX(2px); }
 
-.botao--cafe { background: var(--cafe); color: var(--creme); box-shadow: 0 1px 2px rgba(59,31,14,.1); }
-.botao--cafe:hover { gap: 1rem; background: rgba(59,31,14,.9); box-shadow: 0 6px 18px rgba(59,31,14,.18); }
+.botao--cafe { background: var(--cafe); color: var(--creme); box-shadow: 0 1px 2px rgba(65,43,32,.1); }
+.botao--cafe:hover { gap: 1rem; background: rgba(65,43,32,.9); box-shadow: 0 6px 18px rgba(65,43,32,.18); }
 
 .botao--contorno-claro { border-color: var(--creme-40); color: var(--creme); text-transform: uppercase; }
 .botao--contorno-claro:hover { transform: translateY(-2px); border-color: var(--creme); background: var(--creme); color: var(--cafe); }
@@ -261,10 +261,10 @@ textarea:focus-visible {
   border-radius: 999px;
   background: var(--cafe);
   color: var(--creme);
-  box-shadow: 0 4px 16px rgba(59, 31, 14, .14);
+  box-shadow: 0 4px 16px rgba(65, 43, 32, .14);
   transition: box-shadow var(--transicao);
 }
-.cabecalho[data-rolado='true'] { box-shadow: 0 12px 28px rgba(59, 31, 14, .24); }
+.cabecalho[data-rolado='true'] { box-shadow: 0 12px 28px rgba(65, 43, 32, .24); }
 
 .cabecalho__interno {
   max-width: calc(var(--largura) - 4rem);
@@ -399,9 +399,9 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(59, 31, 14, .92) 0%, rgba(59, 31, 14, .55) 32%, rgba(59, 31, 14, 0) 62%),
-    linear-gradient(to right, rgba(59, 31, 14, .55) 0%, rgba(59, 31, 14, .12) 45%, rgba(59, 31, 14, 0) 70%),
-    linear-gradient(to bottom, rgba(59, 31, 14, .45) 0%, rgba(59, 31, 14, 0) 22%);
+    linear-gradient(to top, rgba(65, 43, 32, .92) 0%, rgba(65, 43, 32, .55) 32%, rgba(65, 43, 32, 0) 62%),
+    linear-gradient(to right, rgba(65, 43, 32, .55) 0%, rgba(65, 43, 32, .12) 45%, rgba(65, 43, 32, 0) 70%),
+    linear-gradient(to bottom, rgba(65, 43, 32, .45) 0%, rgba(65, 43, 32, 0) 22%);
   pointer-events: none;
 }
 .hero__interno {
@@ -471,7 +471,7 @@ textarea:focus-visible {
   position: absolute;
   inset: -1rem;
   z-index: -1;
-  border: 1px solid rgba(59, 31, 14, .12);
+  border: 1px solid rgba(65, 43, 32, .12);
   border-radius: 2rem;
 }
 .sobre__marca-agua {
@@ -490,7 +490,7 @@ textarea:focus-visible {
   object-fit: cover;
   border-radius: 1.75rem;
   border-top-right-radius: 4.5rem;
-  box-shadow: 0 20px 45px rgba(59, 31, 14, .18);
+  box-shadow: 0 20px 45px rgba(65, 43, 32, .18);
 }
 .sobre__cartao {
   position: absolute;
@@ -501,7 +501,7 @@ textarea:focus-visible {
   padding: .875rem 1.25rem;
   background: var(--branco);
   border-radius: .375rem;
-  box-shadow: 0 10px 26px rgba(59, 31, 14, .14);
+  box-shadow: 0 10px 26px rgba(65, 43, 32, .14);
   text-align: center;
 }
 .sobre__cartao strong {
@@ -603,7 +603,7 @@ textarea:focus-visible {
   transition: background var(--transicao);
 }
 /* Cada linha abre uma conversa — precisa reagir ao passar o mouse. */
-.indice a:hover { background: rgba(59, 31, 14, .04); }
+.indice a:hover { background: rgba(65, 43, 32, .04); }
 /* Barra de destaque que cresce na lateral, mesma linguagem do
    sublinhado que cresce em .link-risco e no menu. */
 .indice a::before {
@@ -670,7 +670,7 @@ textarea:focus-visible {
   display: flex;
   gap: 1.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(59, 31, 14, .15);
+  border-bottom: 1px solid rgba(65, 43, 32, .15);
 }
 .etapa:last-child { border-bottom: 0; padding-bottom: 0; }
 .etapa__numero {
@@ -700,8 +700,8 @@ textarea:focus-visible {
 }
 .canal:hover {
   transform: translateY(-2px);
-  border-color: rgba(59, 31, 14, .4);
-  box-shadow: 0 10px 22px rgba(59, 31, 14, .1);
+  border-color: rgba(65, 43, 32, .4);
+  box-shadow: 0 10px 22px rgba(65, 43, 32, .1);
 }
 .canal__icone {
   display: flex;
@@ -711,11 +711,11 @@ textarea:focus-visible {
   width: 3.25rem;
   height: 3.25rem;
   border-radius: 50%;
-  background: rgba(59, 31, 14, .09);
+  background: rgba(65, 43, 32, .09);
   color: var(--cafe);
   transition: background var(--transicao);
 }
-.canal:hover .canal__icone { background: rgba(59, 31, 14, .14); }
+.canal:hover .canal__icone { background: rgba(65, 43, 32, .14); }
 .canal__icone svg { width: 1.4rem; height: 1.4rem; }
 .canal__rotulo {
   display: block;
@@ -861,10 +861,10 @@ textarea:focus-visible {
   overflow: hidden;
   background: var(--branco);
   border-radius: .375rem;
-  box-shadow: 0 1px 3px rgba(59, 31, 14, .08);
+  box-shadow: 0 1px 3px rgba(65, 43, 32, .08);
   transition: transform var(--transicao), box-shadow var(--transicao);
 }
-.cartao:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(59, 31, 14, .14); }
+.cartao:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(65, 43, 32, .14); }
 
 .cartao__capa {
   position: relative;
@@ -885,7 +885,7 @@ textarea:focus-visible {
   inset-inline: 0;
   bottom: 0;
   height: 66%;
-  background: linear-gradient(to top, rgba(59,31,14,.85), rgba(59,31,14,.15) 55%, transparent);
+  background: linear-gradient(to top, rgba(65,43,32,.85), rgba(65,43,32,.15) 55%, transparent);
 }
 .cartao__categoria {
   position: absolute;
@@ -912,7 +912,7 @@ textarea:focus-visible {
 .cartao__meta {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(59, 31, 14, .08);
+  border-top: 1px solid rgba(65, 43, 32, .08);
   font-size: .7rem;
   color: var(--tinta-45);
 }
@@ -920,7 +920,7 @@ textarea:focus-visible {
 
 /* Artigo ainda sem conteúdo publicado */
 .cartao--em-breve { opacity: .78; }
-.cartao--em-breve:hover { transform: none; box-shadow: 0 1px 3px rgba(59,31,14,.08); }
+.cartao--em-breve:hover { transform: none; box-shadow: 0 1px 3px rgba(65,43,32,.08); }
 .etiqueta-em-breve {
   display: inline-block;
   margin-top: .75rem;
@@ -943,7 +943,7 @@ textarea:focus-visible {
 }
 .filtro {
   padding: .5rem 1.25rem;
-  border: 1px solid rgba(59, 31, 14, .22);
+  border: 1px solid rgba(65, 43, 32, .22);
   border-radius: 999px;
   background: transparent;
   font-family: var(--sem-serifa);
@@ -1026,7 +1026,7 @@ textarea:focus-visible {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: .5rem;
-  box-shadow: 0 24px 50px rgba(59, 31, 14, .18);
+  box-shadow: 0 24px 50px rgba(65, 43, 32, .18);
 }
 
 .artigo-corpo {
@@ -1301,7 +1301,7 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(59, 31, 14, .94) 0%, rgba(59, 31, 14, .62) 45%, rgba(59, 31, 14, .38) 100%);
+    linear-gradient(to top, rgba(65, 43, 32, .94) 0%, rgba(65, 43, 32, .62) 45%, rgba(65, 43, 32, .38) 100%);
 }
 .blog-topo__interno {
   position: relative;
@@ -1379,7 +1379,7 @@ textarea:focus-visible {
 .busca input {
   width: 100%;
   padding: .75rem .9rem .75rem 2.4rem;
-  border: 1px solid rgba(59, 31, 14, .18);
+  border: 1px solid rgba(65, 43, 32, .18);
   border-radius: .5rem;
   background: var(--branco);
   font-family: var(--sem-serifa);
@@ -1390,7 +1390,7 @@ textarea:focus-visible {
 .busca input:focus {
   outline: none;
   border-color: var(--cafe);
-  box-shadow: 0 0 0 3px rgba(59, 31, 14, .08);
+  box-shadow: 0 0 0 3px rgba(65, 43, 32, .08);
 }
 
 .lateral__categorias li { border-bottom: 1px solid var(--linha-cafe); }
