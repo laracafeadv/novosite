@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ meta }}
+<link rel="stylesheet" href="{{ raiz }}css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="pular-para-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+{{ zapFlutuante }}
+
+{{ cabecalho }}
+
+<main id="conteudo">
+
+  <section class="pagina-topo">
+    <img class="pagina-topo__mono" src="{{ raiz }}assets/monograma-contorno.png" alt="" aria-hidden="true" />
+    <div class="pagina-topo__interno">
+      <p class="sobrancelha sobrancelha--clara sobrancelha--centro">Erro 404</p>
+      <h1>Essa página não existe</h1>
+      <p>O endereço pode ter mudado ou ter sido digitado errado.</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container container--medio" style="text-align:center">
+      <a class="botao botao--cafe" href="{{ raiz }}index.html">Ir para o início</a>
+      <p style="margin-top:2rem">
+        <a class="link-risco" href="{{ raiz }}blog.html">Ver o blog</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a class="link-risco" href="{{ raiz }}index.html#contato">Falar comigo</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+{{ rodape }}
+
+<script src="{{ raiz }}js/main.js" defer></script>
+</body>
+</html>
