@@ -1,6 +1,16 @@
 /* Fontes auto-hospedadas.
    Cosen (títulos) — licenciada, arquivos cedidos pela marca.
-   Karla (texto e interface) — Google Fonts, variável de 400 a 700. */
+   Karla (texto e interface) — Google Fonts, variável de 400 a 700.
+   Alex Brush (palavra em destaque) — Google Fonts, licença SIL Open
+   Font License, livre para uso comercial. */
+
+@font-face {
+  font-family: 'Alex Brush';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fontes/alex-brush.woff2) format('woff2');
+}
 
 @font-face {
   font-family: 'Cosen';
