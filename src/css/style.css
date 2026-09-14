@@ -1114,6 +1114,22 @@ textarea:focus-visible {
 }
 .js [data-revelar].visivel { opacity: 1; transform: none; }
 
+/* Marca-texto: um fundo tipo caneta marca-texto que se expande da
+   esquerda para a direita quando a frase entra na tela. Uso: envolver
+   o trecho num <span class="marca-texto">. Só some com JS ativo —
+   sem JS o marca-texto já nasce completo, igual ao data-revelar. */
+.marca-texto {
+  background-image: linear-gradient(rgba(168, 103, 44, .28), rgba(168, 103, 44, .28));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 40%;
+}
+.js .marca-texto {
+  background-size: 0 40%;
+  transition: background-size .8s cubic-bezier(.2, .7, .2, 1);
+}
+.js .marca-texto.marcado { background-size: 100% 40%; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js [data-revelar] { opacity: 1 !important; transform: none !important; transition: none !important; }
