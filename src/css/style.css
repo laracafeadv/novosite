@@ -368,6 +368,21 @@ textarea:focus-visible {
   .faixa__trilha { animation: none; }
 }
 
+/* Transição de cor entre seções: em vez de um corte seco entre um
+   fundo escuro e um claro, um degradê curto faz o olho passar de um
+   para o outro. Só existe nas duas costuras reais do site: depois da
+   faixa (quando vem seguida de uma seção clara) e antes do rodapé
+   (sempre escuro, sempre vindo de conteúdo claro). */
+.transicao-secao {
+  height: 3rem;
+}
+.transicao-secao--para-claro {
+  background: linear-gradient(to bottom, var(--cafe), var(--creme));
+}
+.transicao-secao--para-escuro {
+  background: linear-gradient(to bottom, var(--creme), var(--cafe));
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
