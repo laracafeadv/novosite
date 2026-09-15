@@ -18,15 +18,15 @@ O [divórcio consensual](/glossario/divorcio-consensual.html) significa que o ca
 
 Quando não há filhos menores ou incapazes envolvidos e o acordo é total, o divórcio pode ser feito diretamente em cartório, pela via extrajudicial. Esse caminho costuma ser mais rápido, mais discreto e mais barato do que passar por um processo judicial completo.
 
-Havendo filhos menores, incapazes, ou qualquer ponto de desacordo entre o casal, o divórcio segue pela via judicial, mesmo sendo consensual. A diferença nesse caso não é a existência de acordo, e sim a exigência legal de homologação por um juiz quando menores estão envolvidos.
+Quando há filho menor de idade ou incapaz envolvido, ou algum ponto em que o casal ainda não concorda, o divórcio segue pela via judicial, mesmo sendo consensual entre as partes. A diferença nesse caso não é a existência de acordo, e sim a exigência legal de homologação por um juiz quando menores estão envolvidos.
 
 ## Documentos e primeiros passos
 
-Os documentos básicos incluem certidão de casamento atualizada e documentos pessoais dos dois. Quando há bens ou filhos, a documentação correspondente a cada um também entra na lista. Reunir tudo isso com antecedência é o que mais ajuda a manter esse processo curto, evitando idas e vindas.
+Os documentos básicos incluem certidão de casamento atualizada e documentos pessoais dos dois. Quando há bens ou filhos, a documentação correspondente a cada um também entra na lista. O que mais influencia a velocidade desse processo não é o tribunal nem o cartório, é a organização do casal antes de começar, quantos bens existem, se já sabem como dividir cada um, e se os documentos já estão em mãos ou ainda precisam ser buscados.
 
 ## A partilha dentro do divórcio
 
-A [partilha de bens](/glossario/partilha-de-bens.html) segue o regime adotado pelo casal no casamento, e costuma ser o ponto que mais gera dúvida e desgaste, mesmo em divórcios consensuais. Ter clareza sobre o regime de bens e sobre o que cada um trouxe pro casamento facilita muito essa etapa.
+A [partilha de bens](/glossario/partilha-de-bens.html) segue o regime adotado pelo casal no casamento, e costuma ser o ponto que mais gera dúvida e desgaste, mesmo em divórcios consensuais. Um casal que comprou o apartamento onde mora durante o casamento, por exemplo, precisa decidir se um fica com o imóvel e compensa o outro, se vendem e dividem o valor, ou se mantêm a copropriedade por um tempo. Nenhuma dessas opções é mais certa que a outra, a escolha depende do que faz sentido pra cada família. Ter clareza sobre o regime de bens e sobre o que cada um trouxe pro casamento facilita muito essa etapa.
 
 > Consensual não é sinônimo de indolor, é sinônimo de decidido em conjunto.
 
@@ -34,4 +34,4 @@ A [partilha de bens](/glossario/partilha-de-bens.html) segue o regime adotado pe
 
 Depois de homologado, o divórcio já produz efeito imediato entre o casal. Questões pontuais, como a efetivação da partilha de um imóvel específico, podem levar mais tempo para se concretizar na prática, mas o vínculo do casamento já está desfeito.
 
-Cada casal chega ao consenso de um jeito diferente, e o tempo que isso leva não diz nada sobre o quanto a separação foi difícil. O que importa, no fim, é que as duas partes se sintam ouvidas dentro do acordo que assinam.
+Cada casal chega ao consenso de um jeito diferente, e o tempo que isso leva não diz nada sobre o quanto a separação foi difícil. O que importa, no fim, é que as duas partes se sintam ouvidas dentro do acordo que assinam. Se você já está nesse processo, ou só começando a pensar nele, entender esses pontos antes ajuda a chegar com mais clareza numa primeira conversa sobre o seu caso.
