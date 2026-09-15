@@ -336,6 +336,8 @@ textarea:focus-visible {
 /* ---------- Faixa (fita decorativa em looping) ---------- */
 
 .faixa {
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   background: var(--cafe);
   padding-block: .85rem;
@@ -374,6 +376,8 @@ textarea:focus-visible {
    faixa (quando vem seguida de uma seção clara) e antes do rodapé
    (sempre escuro, sempre vindo de conteúdo claro). */
 .transicao-secao {
+  position: relative;
+  z-index: 2;
   height: 3rem;
 }
 .transicao-secao--para-claro {
@@ -385,11 +389,21 @@ textarea:focus-visible {
 
 /* ---------- Hero ---------- */
 
-.hero {
+/* Limita até onde o hero fica fixo na tela: sem esta altura própria,
+   o position: sticky do .hero usa o <main> inteiro como referência e
+   nunca solta, ficando grudado no topo pelo resto da rolagem. */
+.hero-fixador {
   position: relative;
+  height: 88vh;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
-  min-height: 88vh;
+  height: 100%;
   overflow: hidden;
   background: var(--cafe);
 }
@@ -477,6 +491,16 @@ textarea:focus-visible {
 }
 
 /* ---------- Sobre ---------- */
+
+/* Efeito de cartão subindo: o hero fica fixo (position: sticky) e o
+   Sobre mim, com o topo arredondado, sobe por cima dele ao rolar.
+   z-index 2 garante que fique acima do hero (z-index 1). */
+#sobre {
+  position: relative;
+  z-index: 2;
+  background: var(--creme);
+  border-radius: 2rem 2rem 0 0;
+}
 
 .sobre__grade {
   display: grid;
@@ -1241,7 +1265,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .hero { min-height: 78vh; }
+  .hero-fixador { height: 78vh; }
   .sobre__marca-agua { display: none; }
   .etapas__fundo { display: none; }
   .artigo-capa { transform: translateY(-1.5rem); }
