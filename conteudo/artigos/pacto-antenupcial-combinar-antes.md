@@ -1,8 +1,8 @@
 ---
-titulo: Pacto antenupcial para combinar antes e viver em paz depois
+titulo: Vale a pena fazer um pacto antenupcial?
 categoria: Matrimonial
 resumo: Definir o regime de bens no início da união não é desconfiança, é
-  clareza. Entenda como o pacto protege os dois e evita mal-entendidos futuros.
+  clareza. Entenda o que o pacto muda na prática e quando ele compensa.
 data_publicacao: 2026-09-15
 leitura: 4 min de leitura
 imagem: capa-pacto.jpg
