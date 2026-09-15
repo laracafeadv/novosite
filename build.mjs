@@ -282,7 +282,7 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null, robot
   partes.push(`<meta name="description" content="${desc}">`);
   partes.push(`<meta name="author" content="${escapar(dados.site.advogada)}">`);
   partes.push(`<meta name="robots" content="${robots}">`);
-  partes.push(`<meta name="theme-color" content="#3b1f0e">`);
+  partes.push(`<meta name="theme-color" content="#3c2923">`);
   if (ok(dados.site.googleSiteVerification)) {
     partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerification)}">`);
   }
