@@ -22,7 +22,14 @@ Quando há herdeiro menor de idade ou incapaz, ou quando existe desacordo entre 
 
 ## Documentos que costumam ser pedidos
 
-Entre os documentos mais comuns estão a certidão de óbito, os documentos pessoais dos herdeiros, a certidão de casamento ou união estável de quem faleceu, e as certidões dos bens deixados, como matrícula de imóvel ou documento de veículo. A lista completa varia de família para família, dependendo do que compõe o patrimônio.
+Os documentos mais comuns costumam ser
+
+* certidão de óbito
+* documentos pessoais dos herdeiros
+* certidão de casamento ou união estável de quem faleceu
+* certidões dos bens deixados, como matrícula de imóvel ou documento de veículo
+
+A lista completa varia de família para família, dependendo do que compõe o patrimônio. O que mais pesa no tempo desse processo costuma ser a quantidade de herdeiros e de bens, se algum bem fica em outro estado, e se essa documentação já está organizada antes de começar.
 
 ## O papel do testamento, quando existe
 
@@ -30,7 +37,7 @@ Se a pessoa deixou um [testamento](/glossario/testamento.html), ele orienta como
 
 ## A partilha entre os herdeiros
 
-A [partilha de bens](/glossario/partilha-de-bens.html) é, com frequência, a etapa mais delicada do inventário, principalmente quando envolve um imóvel usado pela família ou um bem com valor afetivo além do financeiro. Ter clareza sobre os critérios legais aplicáveis ajuda a evitar que essa etapa se transforme em uma disputa.
+A [partilha de bens](/glossario/partilha-de-bens.html) é, com frequência, a etapa mais delicada do inventário, principalmente quando envolve um imóvel usado pela família ou um bem com valor afetivo além do financeiro. Uma casa onde a família sempre se reuniu, por exemplo, costuma gerar mais divergência entre os herdeiros do que uma conta bancária dividida em partes iguais, mesmo que o valor financeiro seja menor. Nesses casos, entender as opções, como vender e dividir o valor, deixar um herdeiro morar no imóvel compensando os demais, ou manter a copropriedade, ajuda a separar o apego da decisão prática. Ter clareza sobre os critérios legais aplicáveis ajuda a evitar que essa etapa se transforme em uma disputa.
 
 > Organizar o inventário não apaga a perda, só evita que ela vire também um problema jurídico arrastado.
 
@@ -38,4 +45,4 @@ A [partilha de bens](/glossario/partilha-de-bens.html) é, com frequência, a et
 
 Concluída a partilha, os bens passam formalmente para os herdeiros, que podem então vender, dividir ou manter cada bem conforme decidido. Um imóvel, por exemplo, só pode ser vendido com segurança depois que essa transferência é formalizada.
 
-Cada inventário tem o ritmo da família que o conduz, e não existe atalho que substitua clareza sobre o que está sendo decidido, ainda mais em um momento que já é, por si só, delicado.
+Cada inventário tem o ritmo da família que o conduz, e não existe atalho que substitua clareza sobre o que está sendo decidido, ainda mais em um momento que já é, por si só, delicado. Conversar sobre a situação específica da sua família, com calma, é o que ajuda a entender qual caminho faz mais sentido pro seu caso.
