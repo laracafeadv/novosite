@@ -228,7 +228,7 @@ function cartao(artigo, ctx, mostrarCapa = true) {
   return artigo.publicado
     ? `        <a class="cartao" href="${destino}" data-categoria="${escapar(artigo.categoria)}" data-revelar>${capaBloco}${corpo}
         </a>`
-    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" data-revelar aria-label="${escapar(artigo.titulo)} — em breve">${capaBloco}${corpo}
+    : `        <article class="cartao cartao--em-breve" data-categoria="${escapar(artigo.categoria)}" data-revelar aria-label="${escapar(artigo.titulo)}, em breve">${capaBloco}${corpo}
         </article>`;
 }
 
@@ -647,7 +647,7 @@ function gerarGlossario() {
     zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
       titulo: `Glossário de Direito de Família e Sucessões | ${dados.site.advogada}`,
-      descricao: 'Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão — sem juridiquês.',
+      descricao: 'Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão, sem juridiquês.',
       caminho: 'glossario.html',
       ctx,
     }),
