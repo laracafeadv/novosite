@@ -860,7 +860,6 @@ function gerarSitemap() {
   const paginas = [
     { caminho: '', prioridade: '1.0' },
     { caminho: 'blog.html', prioridade: '0.8' },
-    { caminho: 'politica-de-privacidade.html', prioridade: '0.3' },
     { caminho: 'glossario.html', prioridade: '0.7' },
     ...termosDoGlossario.map((t) => ({ caminho: `glossario/${t.slug}.html`, prioridade: '0.6' })),
     ...publicados.map((a) => ({ caminho: `artigos/${a.slug}.html`, prioridade: '0.7', data: a.data })),
