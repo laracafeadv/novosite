@@ -179,14 +179,12 @@ textarea:focus-visible {
 
 /* Palavra em destaque dentro de um título: uma fonte só, igual ao
    resto do título (sem cursiva, sem tamanho diferente) — só a cor
-   muda, e só em fundo claro (Sobre mim). Em fundo escuro (hero, topo
-   do blog), nem a cor muda: nenhuma cor própria testada ali (dourado,
-   marrom escuro, marrom claro) ficou boa sobre a foto. */
-/* Marcador de palavra em destaque: hoje sem nenhuma diferença visual
-   (mesma fonte e mesma cor do resto do título) — mantido no HTML só
-   para não precisar mexer no texto se um destaque fizer sentido depois. */
+   muda, para um marrom claro. Já testamos outras cores nessa palavra
+   em fundo escuro (hero, topo do blog) que não ficaram boas sobre a
+   foto (dourado, marrom escuro) — se esse marrom claro também não
+   servir ali, avisa que eu volto a diferenciar por fundo. */
 .acento {
-  color: inherit;
+  color: var(--cafe-claro);
 }
 
 .texto-secao {
@@ -1038,15 +1036,9 @@ textarea:focus-visible {
   background: var(--creme);
   border-radius: 2rem 2rem 0 0;
 }
-/* Funciona como o subtítulo do artigo (a Lara escreve título → esse
-   subtítulo → corpo de texto), por isso usa a mesma fonte e o mesmo
-   peso de um .artigo-corpo h2 — não a fonte do corpo, que vem só
-   depois dele. */
-/* Mesma fonte, tamanho e peso do corpo do artigo (herda de
-   .artigo-corpo p) — só a cor muda, para marcar a abertura sem
-   destoar do resto do texto. */
+/* Mesma fonte, tamanho, peso e cor do corpo do artigo — herda tudo
+   de .artigo-corpo p, sem nenhuma diferença visual. */
 .artigo-corpo .abertura {
-  color: var(--cafe);
   margin-bottom: 2rem;
 }
 .artigo-corpo h2 {
