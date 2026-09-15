@@ -1052,7 +1052,7 @@ textarea:focus-visible {
    peso de um .artigo-corpo h2 — não a fonte do corpo, que vem só
    depois dele. */
 .artigo-corpo .abertura {
-  font-family: var(--serifada);
+  font-family: 'Playfair Display', var(--serifada);
   font-style: italic;
   font-size: 1.3rem;
   font-weight: 600;
