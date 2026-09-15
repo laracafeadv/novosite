@@ -290,10 +290,14 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null, robot
     partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerificationLara)}">`);
   }
 
-  if (ok(dados.site.googleAnalyticsId)) {
-    const gaId = escapar(dados.site.googleAnalyticsId);
-    partes.push(`<script async src="https://www.googletagmanager.com/gtag/js?id=${gaId}"></script>`);
-    partes.push(`<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');</script>`);
+  const gaId = ok(dados.site.googleAnalyticsId) ? escapar(dados.site.googleAnalyticsId) : null;
+  const adsId = ok(dados.site.googleAdsId) ? escapar(dados.site.googleAdsId) : null;
+  if (gaId || adsId) {
+    // As duas tags (Analytics e Ads) dividem o mesmo gtag.js, só muda
+    // qual id carrega o script primeiro — não importa qual dos dois.
+    partes.push(`<script async src="https://www.googletagmanager.com/gtag/js?id=${gaId || adsId}"></script>`);
+    const configs = [gaId, adsId].filter(Boolean).map((id) => `gtag('config','${id}');`).join('');
+    partes.push(`<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${configs}</script>`);
   }
 
   if (enderecoCompleto) partes.push(`<link rel="canonical" href="${enderecoCompleto}">`);
