@@ -475,16 +475,6 @@ textarea:focus-visible {
   border: 1px solid rgba(60, 41, 35, .12);
   border-radius: 2rem;
 }
-.sobre__marca-agua {
-  position: absolute;
-  right: -3rem;
-  top: -4rem;
-  z-index: -2;
-  height: 11rem;
-  width: auto;
-  opacity: .12;
-  pointer-events: none;
-}
 .sobre__retrato {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -943,17 +933,6 @@ textarea:focus-visible {
   padding-block: clamp(3.5rem, 7vw, 6rem);
   text-align: center;
 }
-.pagina-topo__mono {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 24rem;
-  width: auto;
-  transform: translate(-50%, -50%);
-  opacity: .05;
-  filter: invert(1);
-  pointer-events: none;
-}
 .pagina-topo__interno { position: relative; max-width: 44rem; margin: 0 auto; padding-inline: var(--lateral); }
 .pagina-topo h1 { font-size: clamp(1.75rem, 4vw, 2.6rem); }
 .pagina-topo p { margin-top: 1.25rem; font-size: 1rem; line-height: 1.7; color: var(--creme-70); }
@@ -1206,7 +1185,6 @@ textarea:focus-visible {
 
 @media (max-width: 640px) {
   .hero-fixador { height: 78vh; }
-  .sobre__marca-agua { display: none; }
   .artigo-capa { transform: translateY(-1.5rem); }
 }
 
