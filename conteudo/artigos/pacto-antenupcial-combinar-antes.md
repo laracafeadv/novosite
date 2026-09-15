@@ -43,7 +43,7 @@ Para valer também perante terceiros, o pacto deve ser registrado no Registro de
 
 ## O que o pacto pode e não pode fazer
 
-Ele define o regime de bens e pode detalhar como o patrimônio será tratado durante e após a união. Não pode, no entanto, dispor sobre questões que a lei não deixa à vontade das partes, como os direitos de filhos, que não se negociam em pacto.
+Ele define o regime de bens e pode detalhar como o patrimônio será tratado durante e após a união. Hoje já é possível, inclusive, combinar regras diferentes para bens diferentes dentro do mesmo pacto, o chamado regime híbrido, reconhecido pela jurisprudência mesmo não estando entre os quatro regimes previstos em lei. Não pode, no entanto, dispor sobre questões que a lei não deixa à vontade das partes, como os direitos de filhos, que não se negociam em pacto.
 
 ## A conversa antes do documento
 
