@@ -1,16 +1,16 @@
 ---
-titulo: "Pacto antenupcial para combinar antes e viver em paz depois"
+titulo: Pacto antenupcial para combinar antes e viver em paz depois
 categoria: Matrimonial
 resumo: Definir o regime de bens no início da união não é desconfiança, é
   clareza. Entenda como o pacto protege os dois e evita mal-entendidos futuros.
 data_publicacao: 2026-09-15
 leitura: 4 min de leitura
-imagem: capa-pacto.jpg
+imagem: ""
 publicado: true
 ---
-Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheiro. Mas o pacto antenupcial não é sobre desconfiar do outro, é sobre decidir, com calma e antes da pressa do casamento, o que a lei decidiria por vocês se nada fosse combinado.
-
 ## O que acontece quando não há pacto
+
+Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheiro. Mas o pacto antenupcial não é sobre desconfiar do outro, é sobre decidir, com calma e antes da pressa do casamento, o que a lei decidiria por vocês se nada fosse combinado.
 
 Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o pacto antenupcial não trata de desconfiança, e sim de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
 
