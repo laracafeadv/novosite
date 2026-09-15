@@ -174,31 +174,18 @@ textarea:focus-visible {
 }
 
 /* Palavra em destaque dentro de um título, sem trocar nenhum texto:
-   cursiva Alex Brush, que tem o traço fino de assinatura e por isso
-   precisa de um tamanho maior para acompanhar visualmente a altura
-   das letras ao redor. font-style normal porque a fonte já nasce
-   inclinada, se herdasse itálico do título ficaria com dupla inclinação.
-   Usada em fundo claro (Sobre mim). Em fundo escuro (hero, topo do
-   blog), a Lara pediu para tirar a cursiva: mantém a fonte do resto
-   do título, só muda a cor para um marrom claro. */
+   fonte normal do corpo do site (não a serifada do título), para
+   contrastar por ser diferente da letra ao redor, sem cursiva e sem
+   tamanho maior. Cor própria só em fundo claro (Sobre mim); em fundo
+   escuro (hero, topo do blog), herda a cor do título, porque toda cor
+   própria testada ali (dourado, marrom escuro, marrom claro) ficou feia
+   sobre a foto. */
 .acento {
-  font-family: 'Alex Brush', var(--serifada);
-  font-style: normal;
-  font-size: 1.5em;
-  line-height: 1;
-  padding-inline: .08em;
+  font-family: var(--sem-serifa);
   color: var(--acento);
 }
-/* Depois de três cores rejeitadas nesse fundo escuro (dourado, marrom
-   escuro, marrom claro), a mais segura é nenhuma: mesma cor do resto
-   do título, sem risco de ficar feia. */
 .hero__titulo .acento,
 .blog-topo h1 .acento {
-  font-family: inherit;
-  font-style: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding-inline: 0;
   color: inherit;
 }
 
