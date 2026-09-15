@@ -592,7 +592,7 @@ function gerarBlog() {
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
-      titulo: `Artigos sobre Direito de Família e Sucessões — ${dados.site.nomeCurto}`,
+      titulo: `Artigos sobre Direito de Família e Sucessões | ${dados.site.nomeCurto}`,
       descricao: 'Orientações claras sobre Direito de Família e Sucessões, escritas para ajudar você a decidir com tranquilidade.',
       caminho: 'blog.html',
       ctx,
@@ -618,10 +618,11 @@ function gerarPrivacidade() {
     ...ctx,
     ...parciais(ctx),
     meta: cabecaMeta({
-      titulo: `Política de Privacidade — ${dados.site.nomeCurto}`,
+      titulo: `Política de Privacidade | ${dados.site.nomeCurto}`,
       descricao: 'Como os seus dados são tratados neste site, em conformidade com a LGPD.',
       caminho: 'politica-de-privacidade.html',
       ctx,
+      robots: 'noindex, follow',
     }),
   };
 
@@ -691,7 +692,7 @@ function gerarTermos() {
       ...parciais(ctx),
       zapFlutuante: botaoFlutuante(ctx),
       meta: cabecaMeta({
-        titulo: `${t.termo} — o que é | ${dados.site.nomeCurto}`,
+        titulo: `O que é ${t.termo} | ${dados.site.nomeCurto}`,
         descricao: t.definicao,
         caminho: `glossario/${t.slug}.html`,
         ctx,
@@ -746,7 +747,7 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
       ...parciais(ctx),
       zapFlutuante: botaoFlutuante(ctx),
       meta: cabecaMeta({
-        titulo: `${artigo.titulo} — ${dados.site.nomeCurto}`,
+        titulo: `${artigo.titulo} | ${dados.site.nomeCurto}`,
         descricao: artigo.resumo || artigo.textoSimples.slice(0, 160),
         caminho: `artigos/${artigo.slug}.html`,
         ctx,
