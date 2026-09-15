@@ -372,9 +372,9 @@ textarea:focus-visible {
 
 /* Transição de cor entre seções: em vez de um corte seco entre um
    fundo escuro e um claro, um degradê curto faz o olho passar de um
-   para o outro. Só existe nas duas costuras reais do site: depois da
-   faixa (quando vem seguida de uma seção clara) e antes do rodapé
-   (sempre escuro, sempre vindo de conteúdo claro). */
+   para o outro. Só existe depois da faixa, quando ela é seguida de
+   uma seção clara (home e blog); a costura antes do rodapé usa o
+   efeito de cartão subindo (mais abaixo), não precisa de degradê. */
 .transicao-secao {
   position: relative;
   z-index: 2;
@@ -383,8 +383,19 @@ textarea:focus-visible {
 .transicao-secao--para-claro {
   background: linear-gradient(to bottom, var(--cafe), var(--creme));
 }
-.transicao-secao--para-escuro {
-  background: linear-gradient(to bottom, var(--creme), var(--cafe));
+
+/* Efeito de cartão subindo, reaproveitável: a seção anterior fica
+   fixa (.empilhador envolve, .fixar-no-topo fixa) enquanto a próxima,
+   com o topo arredondado e uma camada acima, sobe por cima dela ao
+   rolar. Sem altura própria no .empilhador: ele nasce do tamanho
+   natural do que está dentro, o sticky se limita a essa altura sozinho. */
+.empilhador {
+  position: relative;
+}
+.fixar-no-topo {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 /* ---------- Hero ---------- */
@@ -827,6 +838,10 @@ textarea:focus-visible {
   overflow: hidden;
   background: var(--cafe);
   color: var(--creme);
+}
+.rodape--empilhado {
+  z-index: 2;
+  border-radius: 2rem 2rem 0 0;
 }
 .rodape__fundo {
   position: absolute;
