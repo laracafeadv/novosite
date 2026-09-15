@@ -190,22 +190,6 @@ function botaoFlutuante(ctx) {
 </a>`;
 }
 
-/** Faixa decorativa em loop (marquee). Repete o par item+ponto 6 vezes
- *  (não 2): com pouca repetição, telas largas (iPad, monitor grande)
- *  mostram um vazio depois do texto antes do loop reiniciar, porque o
- *  conteúdo duplicado não chega a ocupar a largura toda. */
-function faixaDecorativa() {
-  const par = `      <span class="faixa__item">Lara Café Advocacia</span>
-      <span class="faixa__ponto">•</span>
-      <span class="faixa__item">Direito de Família e Sucessões</span>
-      <span class="faixa__ponto">•</span>`;
-  return `<div class="faixa" aria-hidden="true">
-  <div class="faixa__trilha">
-${Array(6).fill(par).join('\n')}
-  </div>
-</div>`;
-}
-
 /** Capa padrão para artigo que ainda não tem imagem própria. */
 const CAPA_PADRAO = 'capa-padrao.jpg';
 
@@ -478,7 +462,6 @@ function gerarHome() {
   const ctx = contexto({ mensagem: 'home' });
 
   const valores = {
-    faixa: faixaDecorativa(),
     ...ctx,
     ...parciais(ctx),
     meta: cabecaMeta({
@@ -605,7 +588,6 @@ function gerarBlog() {
     : '';
 
   const valores = {
-    faixa: faixaDecorativa(),
     ...ctx,
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
@@ -633,7 +615,6 @@ function gerarPrivacidade() {
   const ctx = contexto({ mensagem: 'home', paginaInterna: true });
 
   const valores = {
-    faixa: faixaDecorativa(),
     ...ctx,
     ...parciais(ctx),
     meta: cabecaMeta({
@@ -660,7 +641,6 @@ function gerarGlossario() {
         </li>`).join('\n');
 
   const valores = {
-    faixa: faixaDecorativa(),
     ...ctx,
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
@@ -682,7 +662,6 @@ function gerarPagina404() {
   const ctx = contexto({ mensagem: 'home' });
 
   const valores = {
-    faixa: faixaDecorativa(),
     ...ctx,
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
@@ -708,7 +687,6 @@ function gerarTermos() {
     const ctx = contexto({ subpasta: true, mensagem: 'home' });
 
     const valores = {
-      faixa: faixaDecorativa(),
       ...ctx,
       ...parciais(ctx),
       zapFlutuante: botaoFlutuante(ctx),
@@ -764,7 +742,6 @@ ${[vizinho(anterior, 'Artigo anterior'), vizinho(proximo, 'Próximo artigo')].fi
     const compartilhar = endereco ? blocoCompartilhar(artigo, endereco) : '';
 
     const valores = {
-      faixa: faixaDecorativa(),
       ...ctx,
       ...parciais(ctx),
       zapFlutuante: botaoFlutuante(ctx),
