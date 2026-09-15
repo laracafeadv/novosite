@@ -178,11 +178,10 @@ textarea:focus-visible {
    muda, e só em fundo claro (Sobre mim). Em fundo escuro (hero, topo
    do blog), nem a cor muda: nenhuma cor própria testada ali (dourado,
    marrom escuro, marrom claro) ficou boa sobre a foto. */
+/* Marcador de palavra em destaque: hoje sem nenhuma diferença visual
+   (mesma fonte e mesma cor do resto do título) — mantido no HTML só
+   para não precisar mexer no texto se um destaque fizer sentido depois. */
 .acento {
-  color: var(--acento);
-}
-.hero__titulo .acento,
-.blog-topo h1 .acento {
   color: inherit;
 }
 
