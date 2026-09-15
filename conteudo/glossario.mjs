@@ -45,7 +45,8 @@ export const termosDoGlossario = [
     "paragrafos": [
       "No divórcio consensual, as partes concordam sobre a separação e seus termos, como partilha de bens, uso do nome e, quando houver, guarda e pensão de filhos.",
       "Quando não há filhos menores ou incapazes e há consenso total, o divórcio pode ser feito diretamente em cartório, pela via extrajudicial, o que costuma ser mais rápido e menos custoso que o processo judicial.",
-      "Mesmo sendo consensual, a assistência de advogado é obrigatória em qualquer modalidade de divórcio no Brasil."
+      "Mesmo sendo consensual, a assistência de advogado é obrigatória em qualquer modalidade de divórcio no Brasil.",
+      "Os documentos básicos costumam incluir certidão de casamento atualizada, documentos pessoais do casal e, quando houver bens ou filhos envolvidos, a documentação correspondente a cada um. O tempo até a homologação varia conforme a via escolhida e a organização prévia desses documentos, e um advogado consegue estimar um prazo mais realista já na primeira conversa sobre o caso."
     ]
   },
   {
@@ -55,7 +56,8 @@ export const termosDoGlossario = [
     "paragrafos": [
       "O inventário extrajudicial pode ser feito em cartório, sem processo judicial, quando todos os herdeiros são maiores de idade, capazes, e estão de acordo sobre a partilha dos bens.",
       "Essa via costuma ser mais rápida e econômica que o inventário judicial, reduzindo o tempo entre o falecimento e a efetiva divisão do patrimônio entre os herdeiros.",
-      "A presença de um advogado é obrigatória em qualquer inventário, extrajudicial ou judicial, para assessorar as partes durante o procedimento."
+      "A presença de um advogado é obrigatória em qualquer inventário, extrajudicial ou judicial, para assessorar as partes durante o procedimento.",
+      "Entre os documentos normalmente exigidos estão a certidão de óbito, os documentos pessoais e o certificado de casamento ou união estável dos herdeiros, e as certidões dos bens deixados (como matrícula de imóvel e documento de veículo). A relação exata varia conforme o patrimônio de cada família, por isso o ideal é confirmar a lista completa com um advogado antes de reunir tudo."
     ]
   },
   {
@@ -76,6 +78,26 @@ export const termosDoGlossario = [
       "Em um divórcio, a partilha de bens segue o regime adotado pelo casal, seja comunhão parcial, separação total, comunhão universal ou participação final nos aquestos, definindo o que é dividido e em que proporção.",
       "Em um inventário, a partilha segue a ordem de sucessão prevista em lei, respeitando testamento (se houver) e a parte reservada aos herdeiros necessários.",
       "Uma partilha bem construída, com clareza sobre os critérios aplicáveis, é o que evita que desacordos patrimoniais se transformem em disputas judiciais longas."
+    ]
+  },
+  {
+    "slug": "guarda-compartilhada",
+    "termo": "Guarda Compartilhada",
+    "definicao": "Modelo de guarda em que pai e mãe dividem as decisões sobre a vida do filho, mesmo quando a criança mora principalmente com um dos dois.",
+    "paragrafos": [
+      "A guarda compartilhada é a regra no Brasil desde 2014, e só deixa de ser aplicada quando um dos pais abre mão da guarda ou quando existe risco para a criança. Ela não significa dividir o tempo de convivência ao meio, e sim dividir as decisões importantes sobre educação, saúde e criação.",
+      "É comum que o filho tenha uma residência principal com um dos pais, chamada residência fixa, enquanto o outro mantém um regime de convivência definido. Isso não reduz a guarda compartilhada a uma guarda unilateral disfarçada, as decisões continuam sendo dos dois.",
+      "Divergências entre os pais sobre o dia a dia não anulam a guarda compartilhada, mas podem levar a um pedido de intervenção judicial quando o diálogo direto deixa de funcionar."
+    ]
+  },
+  {
+    "slug": "pensao-alimenticia",
+    "termo": "Pensão Alimentícia",
+    "definicao": "Valor pago periodicamente para cobrir despesas de quem depende financeiramente de outra pessoa, em geral um filho menor de idade, mas que também pode envolver ex-cônjuges ou outros parentes.",
+    "paragrafos": [
+      "O valor da pensão alimentícia não segue uma tabela fixa. Ele é definido considerando a necessidade de quem recebe e a possibilidade de quem paga, podendo ser fixado em um percentual da renda ou em um valor determinado.",
+      "A pensão pode ser revisada a qualquer momento, para mais ou para menos, quando a situação financeira de alguma das partes muda de forma relevante, ou quando as necessidades de quem recebe se alteram.",
+      "O não pagamento da pensão alimentícia pode levar à prisão civil do devedor, uma das poucas dívidas no Brasil com essa consequência, o que mostra o peso que a lei dá a essa obrigação."
     ]
   }
 ];
