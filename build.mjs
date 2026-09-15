@@ -502,16 +502,12 @@ function gerarHome() {
 
 /* ---------- Blocos da barra lateral ---------- */
 
-/** Miniatura + título + data, usada em "recentes" e "relacionados". */
+/** Título + data, usada em "recentes" e "relacionados" — sem foto. */
 function linhaDeArtigo(artigo, ctx) {
-  const capa = imagem(artigo.imagem, '', ctx, ' loading="lazy" width="120" height="120"');
   return `            <li>
               <a class="lateral__artigo" href="${ctx.raiz}artigos/${artigo.slug}.html">
-                <span class="lateral__miniatura">${capa}</span>
-                <span>
-                  <span class="lateral__titulo">${escapar(artigo.titulo)}</span>
-                  <span class="lateral__data">${escapar(artigo.dataExibicao)}</span>
-                </span>
+                <span class="lateral__titulo">${escapar(artigo.titulo)}</span>
+                <span class="lateral__data">${escapar(artigo.dataExibicao)}</span>
               </a>
             </li>`;
 }
