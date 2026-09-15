@@ -1,10 +1,10 @@
 @import url('fontes.css');
-@import url('fontes-poppins.css');
+@import url('fontes-marcellus.css');
 
 /* =========================================================
    Lara Café Advocacia & Consultoria
    Design system — café #3c2923 / creme #edeae2
-   Poppins (títulos) + Plus Jakarta Sans (texto e interface)
+   Marcellus (títulos) + Plus Jakarta Sans (texto e interface)
    ========================================================= */
 
 :root {
@@ -84,7 +84,7 @@ img { height: auto; }
 a { color: inherit; text-decoration: none; transition: color var(--transicao); }
 
 h1, h2, h3, h4 {
-  font-family: 'Poppins', var(--sem-serifa);
+  font-family: var(--sem-serifa);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.25;
@@ -95,12 +95,6 @@ h1, h2, h3, h4 {
 p { margin: 0; }
 ul, ol, dl, dd { margin: 0; padding: 0; }
 li { list-style: none; }
-
-/* Trava qualquer itálico marcado dentro do corpo do texto (o editor do
-   painel tem um botão de itálico) — mantém o corpo dos artigos ereto. */
-em, i, cite {
-  font-style: normal !important;
-}
 
 ::selection { background: var(--cafe); color: var(--creme); }
 
@@ -179,17 +173,8 @@ textarea:focus-visible {
 }
 
 /* Palavra em destaque dentro de um título: uma fonte só, igual ao
-   resto do título (sem cursiva, sem tamanho diferente) — só a cor
-   muda, para um marrom claro, e só em fundo claro (Sobre mim). Em
-   fundo escuro (hero, topo do blog), o marrom claro confirmou o que
-   as cores anteriores (dourado, marrom escuro) já tinham mostrado:
-   nenhuma cor própria fica boa sobre a foto, então ali volta a
-   herdar a cor do resto do título. */
+   resto do título, sem nenhuma cor própria — herda tudo. */
 .acento {
-  color: var(--cafe-claro);
-}
-.hero__titulo .acento,
-.blog-topo h1 .acento {
   color: inherit;
 }
 
@@ -558,7 +543,6 @@ textarea:focus-visible {
 }
 .pilar { border-top: 1px solid var(--linha-cafe); padding-top: 1rem; }
 .pilar dt {
-  font-family: 'Poppins', var(--sem-serifa);
   font-size: .92rem;
   color: var(--cafe);
 }
@@ -642,7 +626,6 @@ textarea:focus-visible {
 }
 .indice__titulo {
   display: block;
-  font-family: 'Poppins', var(--sem-serifa);
   font-size: 1rem;
   line-height: 1.4;
   color: var(--cafe);
