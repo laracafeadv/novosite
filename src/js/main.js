@@ -40,15 +40,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
     alvos.forEach(function (el) { observador.observe(el); });
-
-    // Rede de segurança: se algo impedir o observador de disparar,
-    // o conteúdo nunca fica invisível para sempre.
-    setTimeout(function () {
-      alvos.forEach(function (el) {
-        el.style.transitionDelay = '0ms';
-        el.classList.add('visivel');
-      });
-    }, 4000);
   }
 
   /* ---------- 2. Marca-texto ---------- */

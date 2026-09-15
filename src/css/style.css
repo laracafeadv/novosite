@@ -189,6 +189,9 @@ textarea:focus-visible {
   padding-inline: .08em;
   color: var(--acento);
 }
+/* Depois de três cores rejeitadas nesse fundo escuro (dourado, marrom
+   escuro, marrom claro), a mais segura é nenhuma: mesma cor do resto
+   do título, sem risco de ficar feia. */
 .hero__titulo .acento,
 .blog-topo h1 .acento {
   font-family: inherit;
@@ -196,7 +199,7 @@ textarea:focus-visible {
   font-size: inherit;
   line-height: inherit;
   padding-inline: 0;
-  color: #d8b876;
+  color: inherit;
 }
 
 .texto-secao {
