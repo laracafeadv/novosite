@@ -12,7 +12,7 @@ Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheir
 
 ## O que acontece quando não há pacto
 
-Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o pacto antenupcial não trata de desconfiança, e sim de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
+Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o [pacto antenupcial](/glossario/pacto-antenupcial.html) não trata de desconfiança, e sim de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
 
 Casamento sem pacto segue automaticamente o regime da comunhão parcial de bens. É a regra que a lei aplica quando o casal não escolhe outra.
 
