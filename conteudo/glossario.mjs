@@ -57,7 +57,7 @@ export const termosDoGlossario = [
       "O inventário extrajudicial pode ser feito em cartório, sem processo judicial, quando todos os herdeiros são maiores de idade, capazes, e estão de acordo sobre a partilha dos bens.",
       "Essa via costuma ser mais rápida e econômica que o inventário judicial, reduzindo o tempo entre o falecimento e a efetiva divisão do patrimônio entre os herdeiros.",
       "A presença de um advogado é obrigatória em qualquer inventário, extrajudicial ou judicial, para assessorar as partes durante o procedimento.",
-      "Entre os documentos normalmente exigidos estão a certidão de óbito, os documentos pessoais e o certificado de casamento ou união estável dos herdeiros, e as certidões dos bens deixados (como matrícula de imóvel e documento de veículo). A relação exata varia conforme o patrimônio de cada família, por isso o ideal é confirmar a lista completa com um advogado antes de reunir tudo."
+      "Entre os documentos normalmente exigidos estão a certidão de óbito, os documentos pessoais dos herdeiros, a certidão de casamento ou união estável de quem faleceu, e as certidões dos bens deixados (como matrícula de imóvel e documento de veículo). A relação exata varia conforme o patrimônio de cada família, por isso o ideal é confirmar a lista completa com um advogado antes de reunir tudo."
     ]
   },
   {
@@ -97,7 +97,7 @@ export const termosDoGlossario = [
     "paragrafos": [
       "O valor da pensão alimentícia não segue uma tabela fixa. Ele é definido considerando a necessidade de quem recebe e a possibilidade de quem paga, podendo ser fixado em um percentual da renda ou em um valor determinado.",
       "A pensão pode ser revisada a qualquer momento, para mais ou para menos, quando a situação financeira de alguma das partes muda de forma relevante, ou quando as necessidades de quem recebe se alteram.",
-      "O não pagamento da pensão alimentícia pode levar à prisão civil do devedor, uma das poucas dívidas no Brasil com essa consequência, o que mostra o peso que a lei dá a essa obrigação."
+      "O não pagamento da pensão alimentícia pode levar à prisão civil do devedor, hoje praticamente a única dívida no Brasil com essa consequência, o que mostra o peso que a lei dá a essa obrigação."
     ]
   }
 ];

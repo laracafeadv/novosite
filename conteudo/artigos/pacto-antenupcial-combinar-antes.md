@@ -2,7 +2,8 @@
 titulo: Vale a pena fazer um pacto antenupcial?
 categoria: Casamento e Patrimônio
 resumo: Definir o regime de bens no início da união não é desconfiança, é
-  clareza. Entenda o que o pacto muda na prática e quando ele compensa.
+  clareza. Entenda o que o pacto antenupcial muda na prática e quando ele
+  compensa.
 data_publicacao: 2026-09-15
 leitura: 4 min de leitura
 imagem: capa-pacto.jpg
