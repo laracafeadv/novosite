@@ -375,9 +375,7 @@ textarea:focus-visible {
 
 /* Transição de cor entre seções: em vez de um corte seco entre um
    fundo escuro e um claro, um degradê curto faz o olho passar de um
-   para o outro. Só existe depois da faixa, quando ela é seguida de
-   uma seção clara (home e blog); a costura antes do rodapé usa o
-   efeito de cartão subindo (mais abaixo), não precisa de degradê. */
+   para o outro. Usada só no blog, depois da faixa. */
 .transicao-secao {
   position: relative;
   z-index: 2;
@@ -385,6 +383,15 @@ textarea:focus-visible {
 }
 .transicao-secao--para-claro {
   background: linear-gradient(to bottom, var(--cafe), var(--creme));
+}
+/* Respiro sólido (não degradê) entre a faixa e o Sobre mim, só na
+   home: existe para o Sobre mim (abaixo) se sobrepor a ele com
+   margem negativa, revelando o café no corte arredondado do seu topo
+   — o mesmo efeito de cartão do rodapé, mas ali funciona de graça
+   porque o fundo do body já é creme, igual à seção que vem antes. */
+.transicao-secao--cartao {
+  height: 2.5rem;
+  background: var(--cafe);
 }
 
 /* Efeito de cartão subindo, reaproveitável: a seção anterior fica
@@ -509,12 +516,14 @@ textarea:focus-visible {
 
 /* ---------- Sobre ---------- */
 
-/* Efeito de cartão subindo: o hero fica fixo (position: sticky) e o
-   Sobre mim, com o topo arredondado, sobe por cima dele ao rolar.
-   z-index 2 garante que fique acima do hero (z-index 1). */
+/* Efeito de cartão: o Sobre mim sobe por cima do respiro escuro que
+   vem antes dele (margem negativa do tamanho do raio da borda), e o
+   canto arredondado do seu topo revela o café por baixo — em vez de
+   um corte reto entre a faixa e o Sobre mim. */
 #sobre {
   position: relative;
   z-index: 2;
+  margin-top: -2rem;
   background: var(--creme);
   border-radius: 2rem 2rem 0 0;
 }
