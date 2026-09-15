@@ -35,7 +35,7 @@ export const termosDoGlossario = [
     "paragrafos": [
       "O pacto antenupcial é celebrado antes do casamento, por escritura pública em cartório, e define como o patrimônio do casal será tratado durante e após a relação.",
       "Sem esse documento, o casamento segue automaticamente o regime da comunhão parcial de bens. Com o pacto, é possível optar por separação total, comunhão universal ou participação final nos aquestos, cada um com efeitos diferentes sobre o patrimônio de cada cônjuge.",
-      "Além desses quatro regimes previstos em lei, a jurisprudência já reconhece a possibilidade de combinar regras diferentes para bens diferentes dentro do mesmo pacto, o chamado regime híbrido ou misto. É o caso, por exemplo, de separar totalmente o patrimônio empresarial de um dos cônjuges e manter comunhão sobre os bens do dia a dia do casal.",
+      "Além desses quatro regimes previstos em lei, hoje também é possível fazer um pacto misturando regras diferentes para bens diferentes, dentro do mesmo documento. É o que se chama de regime híbrido ou misto, já aceito pelos tribunais mesmo sem estar escrito assim na lei. Um exemplo comum é separar totalmente o patrimônio da empresa de um dos cônjuges e manter comunhão sobre os bens do dia a dia do casal.",
       "É especialmente relevante quando um dos nubentes já possui patrimônio formado antes do casamento, ou quando há interesse em proteger bens familiares ou empresariais."
     ]
   },
