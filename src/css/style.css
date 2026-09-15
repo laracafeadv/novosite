@@ -560,15 +560,6 @@ textarea:focus-visible {
   position: relative;
   overflow: hidden;
 }
-.atuacao__fundo {
-  position: absolute;
-  right: -4rem;
-  bottom: -6rem;
-  height: 26rem;
-  width: auto;
-  opacity: .06;
-  pointer-events: none;
-}
 .atuacao__grade { display: grid; gap: 3rem; }
 
 .grupo-atuacao + .grupo-atuacao { margin-top: 3.5rem; }
