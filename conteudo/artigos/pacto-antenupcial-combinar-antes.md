@@ -17,7 +17,7 @@ Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. 
 
 Casamento sem pacto segue automaticamente o regime da comunhão parcial de bens. É a regra que a lei aplica quando o casal não escolhe outra.
 
-Nesse regime, tudo o que for adquirido a título oneroso durante o casamento passa a pertencer aos dois, independentemente de quem pagou ou em nome de quem está registrado. O que cada um já tinha antes permanece individual, assim como o que receber por herança ou doação.
+Nesse regime, tudo o que for comprado ou ganho com dinheiro do casal durante o casamento passa a pertencer aos dois, independentemente de quem pagou ou em nome de quem está registrado. O que cada um já tinha antes permanece individual, assim como o que receber por herança ou doação.
 
 Para muitos casais essa regra funciona bem. Para outros, não, e é aí que o pacto entra.
 
