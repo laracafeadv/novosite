@@ -466,7 +466,7 @@ function gerarHome() {
     ...parciais(ctx),
     meta: cabecaMeta({
       // O serviço vem antes do nome: é o que as pessoas digitam no Google.
-      titulo: `Advogada de Direito de Família e Sucessões | ${dados.site.advogada}`,
+      titulo: `Advogada de Direito de Família e Sucessões | ${dados.site.nomeCurto}`,
       descricao: dados.site.descricao,
       caminho: '',
       ctx,
@@ -646,7 +646,7 @@ function gerarGlossario() {
     ...parciais(ctx),
     zapFlutuante: botaoFlutuante(ctx),
     meta: cabecaMeta({
-      titulo: `Glossário de Direito de Família e Sucessões | ${dados.site.advogada}`,
+      titulo: `Glossário de Direito de Família e Sucessões | ${dados.site.nomeCurto}`,
       descricao: 'Explicações diretas dos termos que aparecem em uma conversa sobre família, patrimônio e sucessão, sem juridiquês.',
       caminho: 'glossario.html',
       ctx,
