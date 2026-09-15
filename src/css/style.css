@@ -1074,10 +1074,10 @@ textarea:focus-visible {
   padding-left: 1.25rem;
   border-left: 4px solid var(--cafe);
 }
+/* Mesma fonte, tamanho e peso do corpo do artigo — o destaque vem só
+   da borda à esquerda e da cor, não de itálico nem de tamanho maior. */
 .artigo-corpo blockquote p {
   font-family: var(--sem-serifa);
-  font-style: italic;
-  font-size: 1.125rem;
   color: var(--cafe-claro);
   margin: 0;
 }
