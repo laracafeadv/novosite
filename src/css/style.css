@@ -1041,11 +1041,10 @@ textarea:focus-visible {
    subtítulo → corpo de texto), por isso usa a mesma fonte e o mesmo
    peso de um .artigo-corpo h2 — não a fonte do corpo, que vem só
    depois dele. */
+/* Mesma fonte, tamanho e peso do corpo do artigo (herda de
+   .artigo-corpo p) — só a cor muda, para marcar a abertura sem
+   destoar do resto do texto. */
 .artigo-corpo .abertura {
-  font-family: 'Playfair Display', var(--serifada);
-  font-style: italic;
-  font-size: 1.3rem;
-  font-weight: 600;
   color: var(--cafe);
   margin-bottom: 2rem;
 }
