@@ -14,7 +14,7 @@ Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheir
 
 Falar de patrimônio antes do casamento ainda causa desconforto em muita gente. Mas o pacto antenupcial não trata de desconfiança, e sim de combinar, com calma e antecedência, o que de outro modo seria decidido no pior momento possível.
 
-Casamento sem pacto segue automaticamente o regime da **comunhão parcial de bens**. É a regra que a lei aplica quando o casal não escolhe outra.
+Casamento sem pacto segue automaticamente o regime da comunhão parcial de bens. É a regra que a lei aplica quando o casal não escolhe outra.
 
 Nesse regime, tudo o que for adquirido a título oneroso durante o casamento passa a pertencer aos dois, independentemente de quem pagou ou em nome de quem está registrado. O que cada um já tinha antes permanece individual, assim como o que receber por herança ou doação.
 
@@ -34,7 +34,7 @@ Nenhum desses motivos é sinal de desconfiança. Todos são sinal de organizaç�
 
 ## Como se faz
 
-O pacto antenupcial é feito por escritura pública, em cartório de notas, **antes** do casamento. Depois da celebração, ele não é mais possível, a mudança de regime passa a exigir ação judicial.
+O pacto antenupcial é feito por escritura pública, em cartório de notas, antes do casamento. Depois da celebração, ele não é mais possível, a mudança de regime passa a exigir ação judicial.
 
 Para valer também perante terceiros, o pacto deve ser registrado no Registro de Imóveis do domicílio do casal.
 
