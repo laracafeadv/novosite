@@ -179,12 +179,17 @@ textarea:focus-visible {
 
 /* Palavra em destaque dentro de um título: uma fonte só, igual ao
    resto do título (sem cursiva, sem tamanho diferente) — só a cor
-   muda, para um marrom claro. Já testamos outras cores nessa palavra
-   em fundo escuro (hero, topo do blog) que não ficaram boas sobre a
-   foto (dourado, marrom escuro) — se esse marrom claro também não
-   servir ali, avisa que eu volto a diferenciar por fundo. */
+   muda, para um marrom claro, e só em fundo claro (Sobre mim). Em
+   fundo escuro (hero, topo do blog), o marrom claro confirmou o que
+   as cores anteriores (dourado, marrom escuro) já tinham mostrado:
+   nenhuma cor própria fica boa sobre a foto, então ali volta a
+   herdar a cor do resto do título. */
 .acento {
   color: var(--cafe-claro);
+}
+.hero__titulo .acento,
+.blog-topo h1 .acento {
+  color: inherit;
 }
 
 .texto-secao {
