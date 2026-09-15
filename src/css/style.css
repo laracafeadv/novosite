@@ -173,32 +173,16 @@ textarea:focus-visible {
   color: var(--cafe);
 }
 
-/* Palavra em destaque dentro de um título, sem trocar nenhum texto:
-   cursiva Alex Brush, que tem o traço fino de assinatura e por isso
-   precisa de um tamanho maior para acompanhar visualmente a altura
-   das letras ao redor. font-style normal porque a fonte já nasce
-   inclinada, se herdasse itálico do título ficaria com dupla inclinação.
-   Usada em fundo claro (Sobre mim). Em fundo escuro (hero, topo do
-   blog), a Lara pediu para tirar a cursiva: mantém a fonte do resto
-   do título, só muda a cor para um marrom claro. */
+/* Palavra em destaque dentro de um título: uma fonte só, igual ao
+   resto do título (sem cursiva, sem tamanho diferente) — só a cor
+   muda, e só em fundo claro (Sobre mim). Em fundo escuro (hero, topo
+   do blog), nem a cor muda: nenhuma cor própria testada ali (dourado,
+   marrom escuro, marrom claro) ficou boa sobre a foto. */
 .acento {
-  font-family: 'Alex Brush', var(--serifada);
-  font-style: normal;
-  font-size: 1.5em;
-  line-height: 1;
-  padding-inline: .08em;
   color: var(--acento);
 }
-/* Depois de três cores rejeitadas nesse fundo escuro (dourado, marrom
-   escuro, marrom claro), a mais segura é nenhuma: mesma cor do resto
-   do título, sem risco de ficar feia. */
 .hero__titulo .acento,
 .blog-topo h1 .acento {
-  font-family: inherit;
-  font-style: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding-inline: 0;
   color: inherit;
 }
 
@@ -1514,21 +1498,7 @@ textarea:focus-visible {
 .lateral__conta { color: var(--tinta-45); font-variant-numeric: tabular-nums; }
 
 .lateral__lista { display: grid; gap: 1rem; }
-.lateral__artigo {
-  display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: .85rem;
-  align-items: start;
-}
-.lateral__miniatura {
-  display: block;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: .3rem;
-  background: var(--cafe);
-}
-.lateral__miniatura img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-.lateral__artigo:hover .lateral__miniatura img { transform: scale(1.06); }
+.lateral__artigo { display: block; }
 .lateral__titulo {
   display: block;
   font-size: .84rem;
