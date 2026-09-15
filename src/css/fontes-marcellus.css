@@ -1,0 +1,28 @@
+/* =========================================================
+   Marcellus — fonte dos títulos do site inteiro. Google Fonts,
+   licença SIL Open Font License, livre para uso comercial. Sem
+   itálico própria (a fonte não tem um estilo itálico desenhado).
+   ========================================================= */
+
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fontes/marcellus.woff2) format('woff2');
+}
+
+h1, h2, h3, h4,
+.indice__titulo,
+.pilar dt {
+  font-family: 'Marcellus', var(--serifada) !important;
+  font-style: normal !important;
+}
+
+/* Trava qualquer itálico em todo o site, inclusive texto marcado como
+   itálico no corpo de artigos (o editor do painel tem um botão de
+   itálico) — a Marcellus não tem itálico próprio, e o corpo do texto
+   não deve ficar inclinado de propósito nenhum. */
+em, i, cite {
+  font-style: normal !important;
+}
