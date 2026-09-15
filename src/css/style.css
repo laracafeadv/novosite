@@ -1027,6 +1027,16 @@ textarea:focus-visible {
   margin: 0 auto;
   padding: 0 var(--lateral) clamp(4rem, 7vw, 6rem);
 }
+/* Só no termo do glossário (as duas classes juntas, .artigo-corpo
+   sozinho não deve ganhar isto): mesmo efeito de cartão do blog e
+   da home, subindo por cima do topo escuro. */
+.artigo-corpo.fixar-no-topo {
+  position: relative;
+  z-index: 2;
+  margin-top: -2rem;
+  background: var(--creme);
+  border-radius: 2rem 2rem 0 0;
+}
 /* Funciona como o subtítulo do artigo (a Lara escreve título → esse
    subtítulo → corpo de texto), por isso usa a mesma fonte e o mesmo
    peso de um .artigo-corpo h2 — não a fonte do corpo, que vem só
@@ -1236,6 +1246,16 @@ textarea:focus-visible {
 
 /* ---------- Glossário ---------- */
 
+/* Mesmo efeito de cartão do blog e da home: sobe por cima do topo
+   escuro, com margem negativa revelando o café no canto arredondado. */
+.glossario-corpo {
+  position: relative;
+  z-index: 2;
+  margin-top: -2rem;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  background: var(--creme);
+  border-radius: 2rem 2rem 0 0;
+}
 .glossario {
   display: grid;
   gap: 0;
