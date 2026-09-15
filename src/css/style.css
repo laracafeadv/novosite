@@ -1109,10 +1109,10 @@ textarea:focus-visible {
   padding: 0 var(--lateral) clamp(4rem, 7vw, 6rem);
 }
 .artigo-corpo .abertura {
-  font-family: var(--serifada);
-  font-style: italic;
-  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
-  line-height: 1.55;
+  font-family: var(--sem-serifa);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
   color: var(--cafe);
   margin-bottom: 2rem;
 }
@@ -1419,7 +1419,16 @@ textarea:focus-visible {
 
 /* ---------- Corpo do blog ---------- */
 
-.blog-corpo { padding-top: clamp(2.5rem, 5vw, 4rem); }
+/* Mesmo efeito de cartão do Sobre mim e do rodapé: sobe por cima do
+   respiro escuro que vem antes, revelando o café no canto arredondado. */
+.blog-corpo {
+  position: relative;
+  z-index: 2;
+  margin-top: -2rem;
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  background: var(--creme);
+  border-radius: 2rem 2rem 0 0;
+}
 .blog-intro {
   max-width: 38rem;
   font-size: .95rem;
