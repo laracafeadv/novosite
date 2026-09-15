@@ -8,7 +8,7 @@ leitura: 4 min de leitura
 imagem: capa-pacto.jpg
 publicado: true
 ---
-Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheiro. Mas o pacto antenupcial não é sobre desconfiar do outro, é sobre decidir, com calma e antes da pressa do casamento, o que a lei decidiria por vocês se nada fosse combinado.
+Poucos temas geram tanto desconforto na hora de casar quanto falar sobre dinheiro. Mas o pacto antenupcial não é sobre desconfiar do outro, é sobre decidir, com calma e antes da pressa do casamento, o que a lei decidiria por vocês se nada fosse combinado. Vale a pena? Para muitos casais, sim, porque evita que essa escolha seja feita mais tarde, em meio a um conflito.
 
 ## O que acontece quando não há pacto
 
@@ -32,7 +32,7 @@ Alguns cenários em que vale a conversa antes
 
 Nenhum desses motivos é sinal de desconfiança. Todos são sinal de organização.
 
-## Como se faz
+## Como fazer um pacto antenupcial
 
 O pacto antenupcial é feito por escritura pública, em cartório de notas, antes do casamento. Depois da celebração, ele não é mais possível, a mudança de regime passa a exigir ação judicial.
 

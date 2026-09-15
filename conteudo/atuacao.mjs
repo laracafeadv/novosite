@@ -15,15 +15,15 @@ export const gruposDeAtuacao = [
     descricao: 'Para relações que estão se formando, se organizando ou passando por uma separação.',
     itens: [
       {
-        titulo: 'Planejamento matrimonial e organização do patrimônio',
+        titulo: 'Proteção do patrimônio antes ou durante o casamento',
         descricao: 'Organização das decisões jurídicas e patrimoniais do casal, antes ou durante o casamento ou a união, para evitar que precisem ser resolvidas depois, sob conflito.',
       },
       {
-        titulo: 'Pactos antenupciais, acordos e contratos',
+        titulo: 'Pacto antenupcial e contrato de convivência',
         descricao: 'Elaboração de pactos antenupciais, contratos de convivência e demais acordos que formalizam as escolhas do casal sobre o patrimônio e a relação.',
       },
       {
-        titulo: 'Divórcio e dissolução de união estável',
+        titulo: 'Divórcio e fim de união estável',
         descricao: 'Consensual ou litigioso, incluindo as questões patrimoniais que costumam acompanhar a separação.',
       },
       {
