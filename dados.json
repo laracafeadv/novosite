@@ -12,7 +12,9 @@
     "_sobre_verificacao_lara": "Meta tag do Google Search Console na conta pessoal da Lara. As duas convivem sem conflito.",
     "googleSiteVerificationLara": "fzzj9DPny2e71a6a5nvaw-G8MR-jJ-OU-IZ-z4KaMns",
     "_sobre_analytics": "ID de mediação do Google Analytics 4. Para tirar o Analytics do site, apague o valor abaixo (deixe vazio).",
-    "googleAnalyticsId": "G-FLXHMHEHH6"
+    "googleAnalyticsId": "G-FLXHMHEHH6",
+    "_sobre_ads": "ID de conversão do Google Ads. Só rastreia, não publica nem cobra nada sozinho. Para tirar, apague o valor abaixo.",
+    "googleAdsId": "AW-18453710958"
   },
   "painel": {
     "_leia_me": "Usado pelo painel em /admin. O repositório é onde os artigos ficam guardados.",
