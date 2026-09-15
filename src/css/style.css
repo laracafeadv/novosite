@@ -1092,11 +1092,10 @@ textarea:focus-visible {
   margin: 0 auto;
   padding: 0 var(--lateral) clamp(4rem, 7vw, 6rem);
 }
+/* Mesma fonte, mesmo tamanho e mesmo peso do resto do corpo do
+   artigo (herda de .artigo-corpo p) — só a cor muda, para marcar
+   que é a abertura sem parecer um texto diferente do resto. */
 .artigo-corpo .abertura {
-  font-family: var(--sem-serifa);
-  font-weight: 500;
-  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-  line-height: 1.65;
   color: var(--cafe);
   margin-bottom: 2rem;
 }
