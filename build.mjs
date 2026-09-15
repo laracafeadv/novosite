@@ -290,6 +290,12 @@ function cabecaMeta({ titulo, descricao, caminho = '', ctx, artigo = null, robot
     partes.push(`<meta name="google-site-verification" content="${escapar(dados.site.googleSiteVerificationLara)}">`);
   }
 
+  if (ok(dados.site.googleAnalyticsId)) {
+    const gaId = escapar(dados.site.googleAnalyticsId);
+    partes.push(`<script async src="https://www.googletagmanager.com/gtag/js?id=${gaId}"></script>`);
+    partes.push(`<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');</script>`);
+  }
+
   if (enderecoCompleto) partes.push(`<link rel="canonical" href="${enderecoCompleto}">`);
 
   partes.push(`<link rel="icon" href="${ctx.raiz}favicon.svg" type="image/svg+xml">`);
