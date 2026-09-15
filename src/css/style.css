@@ -1,5 +1,4 @@
 @import url('fontes.css');
-@import url('fontes-poppins.css');
 @import url('fontes-titulos.css');
 
 /* =========================================================
@@ -781,7 +780,7 @@ textarea:focus-visible {
 }
 .canal__valor {
   display: block;
-  font-family: 'Poppins', var(--sem-serifa);
+  font-family: var(--sem-serifa);
   font-size: .9rem;
   color: var(--cafe);
   word-break: break-word;
@@ -1110,7 +1109,7 @@ textarea:focus-visible {
   font-weight: 600;
   color: var(--cafe);
 }
-.artigo-corpo p { margin-bottom: 1rem; line-height: 1.8; color: var(--tinta-70); font-family: 'Poppins', var(--sem-serifa); }
+.artigo-corpo p { margin-bottom: 1rem; line-height: 1.8; color: var(--tinta-70); font-family: var(--sem-serifa); }
 .artigo-corpo ul { margin: 0 0 1rem 1.5rem; }
 .artigo-corpo li {
   list-style: disc;
@@ -1124,7 +1123,7 @@ textarea:focus-visible {
   border-left: 4px solid var(--cafe);
 }
 .artigo-corpo blockquote p {
-  font-family: 'Poppins', var(--sem-serifa);
+  font-family: var(--sem-serifa);
   font-style: italic;
   font-size: 1.125rem;
   color: var(--cafe-claro);
