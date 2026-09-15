@@ -196,7 +196,7 @@ textarea:focus-visible {
   font-size: inherit;
   line-height: inherit;
   padding-inline: 0;
-  color: #9b633c;
+  color: #d8b876;
 }
 
 .texto-secao {
@@ -1169,18 +1169,18 @@ textarea:focus-visible {
 /* ---------- Entrada suave ---------- */
 
 /* Só esconde com JS ativo — sem JS o conteúdo aparece normalmente.
-   Deslocamento e duração maiores que antes de propósito: em 20px/0.8s
-   o efeito passava despercebido numa rolagem normal. */
+   Deslocamento e duração grandes de propósito: a Lara pediu uma
+   entrada bem marcada, não uma sutileza que passa despercebida numa
+   rolagem normal. */
 .js [data-revelar] {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 1s cubic-bezier(.2, .7, .2, 1), transform 1s cubic-bezier(.2, .7, .2, 1);
+  transform: translateY(55px);
+  transition: opacity 1.3s cubic-bezier(.2, .7, .2, 1), transform 1.3s cubic-bezier(.2, .7, .2, 1);
 }
 
 /* Variante sem deslocamento: só fade e zoom (para fotos e cartões,
-   onde subir de baixo para cima ficaria chamativo demais). Zoom mais
-   forte que antes (.96 quase não se via). */
-.js [data-revelar="escala"] { transform: scale(.88); }
+   onde subir de baixo para cima ficaria chamativo demais). */
+.js [data-revelar="escala"] { transform: scale(.8); }
 .js [data-revelar="escala"].visivel { transform: none; }
 .js [data-revelar].visivel { opacity: 1; transform: none; }
 
