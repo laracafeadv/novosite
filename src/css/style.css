@@ -1168,16 +1168,19 @@ textarea:focus-visible {
 
 /* ---------- Entrada suave ---------- */
 
-/* Só esconde com JS ativo — sem JS o conteúdo aparece normalmente */
+/* Só esconde com JS ativo — sem JS o conteúdo aparece normalmente.
+   Deslocamento e duração maiores que antes de propósito: em 20px/0.8s
+   o efeito passava despercebido numa rolagem normal. */
 .js [data-revelar] {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(.2, .7, .2, 1), transform 1s cubic-bezier(.2, .7, .2, 1);
 }
 
-/* Variante discreta, sem deslocamento: só fade e leve zoom (para fotos
-   e cartões, onde subir de baixo para cima ficaria chamativo demais). */
-.js [data-revelar="escala"] { transform: scale(.96); }
+/* Variante sem deslocamento: só fade e zoom (para fotos e cartões,
+   onde subir de baixo para cima ficaria chamativo demais). Zoom mais
+   forte que antes (.96 quase não se via). */
+.js [data-revelar="escala"] { transform: scale(.88); }
 .js [data-revelar="escala"].visivel { transform: none; }
 .js [data-revelar].visivel { opacity: 1; transform: none; }
 

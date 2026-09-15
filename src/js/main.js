@@ -41,16 +41,6 @@
 
     alvos.forEach(function (el) { observador.observe(el); });
 
-    // O que já está visível no primeiro quadro entra imediatamente,
-    // sem esperar o usuário rolar.
-    requestAnimationFrame(function () {
-      alvos.forEach(function (el) {
-        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
-          el.classList.add('visivel');
-        }
-      });
-    });
-
     // Rede de segurança: se algo impedir o observador de disparar,
     // o conteúdo nunca fica invisível para sempre.
     setTimeout(function () {
