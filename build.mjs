@@ -625,7 +625,7 @@ function gerarBlog() {
     ], ctx),
     imagemBlog: ok(dados.imagens.blog) ? dados.imagens.blog : 'capa-inventario.jpg',
     filtros,
-    cartoesBlog: temArtigos ? artigos.map((a) => cartao(a, ctx)).join('\n') : '',
+    cartoesBlog: temArtigos ? artigos.map((a) => cartao(a, ctx, false)).join('\n') : '',
     blogVazio: temArtigos ? '' : '        <p class="sem-resultados">Em breve, novos artigos por aqui.</p>',
     lateralBlog: [blocoBusca(), blocoCategorias(ctx), blocoRecentes(ctx)].filter(Boolean).join('\n\n'),
   };
