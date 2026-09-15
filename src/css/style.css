@@ -4,7 +4,7 @@
 
 /* =========================================================
    Lara Café Advocacia & Consultoria
-   Design system — café #412b20 / creme #f2eee7
+   Design system — café #412b20 / creme #edeae3
    Playfair Display Italic (títulos) + Plus Jakarta Sans (texto e interface)
    ========================================================= */
 
@@ -15,7 +15,7 @@
   /* Versão escurecida para rótulos pequenos: #8b6f47 sobre o creme dá
      4,1:1, abaixo do mínimo de 4,5:1 para texto miúdo. */
   --cafe-rotulo: #6f5636;
-  --creme:       #f2eee7;
+  --creme:       #edeae3;
   --tinta:       #2c2c2c;
   --branco:      #ffffff;
   --zap:         #25d366;
@@ -25,12 +25,12 @@
   --tinta-65:    rgba(44, 44, 44, .65);
   --tinta-60:    rgba(44, 44, 44, .6);
   --tinta-45:    rgba(44, 44, 44, .45);
-  --creme-90:    rgba(242, 238, 231, .9);
-  --creme-70:    rgba(242, 238, 231, .7);
-  --creme-60:    rgba(242, 238, 231, .6);
-  --creme-40:    rgba(242, 238, 231, .4);
+  --creme-90:    rgba(237, 234, 227, .9);
+  --creme-70:    rgba(237, 234, 227, .7);
+  --creme-60:    rgba(237, 234, 227, .6);
+  --creme-40:    rgba(237, 234, 227, .4);
   --linha-cafe:  rgba(65, 43, 32, .12);
-  --linha-creme: rgba(242, 238, 231, .12);
+  --linha-creme: rgba(237, 234, 227, .12);
   --acento:      #613e26;
 
   /* Tipografia */
@@ -164,7 +164,7 @@ textarea:focus-visible {
   background: rgba(139, 111, 71, .6);
 }
 .sobrancelha--clara { color: var(--creme-70); }
-.sobrancelha--clara::before { background: rgba(242, 238, 231, .5); }
+.sobrancelha--clara::before { background: rgba(237, 234, 227, .5); }
 .sobrancelha--centro { justify-content: center; }
 
 .titulo-secao {
@@ -464,7 +464,7 @@ textarea:focus-visible {
   margin-top: 1rem;
   font-size: clamp(.92rem, 1.6vw, 1rem);
   line-height: 1.6;
-  color: rgba(242, 238, 231, .82);
+  color: rgba(237, 234, 227, .82);
 }
 .hero__acao { margin-top: 1.75rem; }
 
@@ -865,7 +865,7 @@ textarea:focus-visible {
 .rodape__lista a:hover { color: var(--creme); }
 /* .55 e não .5: com .5 o texto miúdo dava 4,38:1 sobre o café,
    abaixo do mínimo de 4,5:1. Com .55 fica em 5:1. */
-.rodape__horario { padding-top: .25rem; color: rgba(242, 238, 231, .55); }
+.rodape__horario { padding-top: .25rem; color: rgba(237, 234, 227, .55); }
 
 .redes { display: flex; gap: .75rem; }
 .rede {
@@ -874,7 +874,7 @@ textarea:focus-visible {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid rgba(242, 238, 231, .25);
+  border: 1px solid rgba(237, 234, 227, .25);
   border-radius: 50%;
   transition: transform var(--transicao), border-color var(--transicao), background var(--transicao);
 }
@@ -884,13 +884,13 @@ textarea:focus-visible {
 .rodape__base {
   margin-top: 3.5rem;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(242, 238, 231, .1);
+  border-top: 1px solid rgba(237, 234, 227, .1);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   font-size: .75rem;
-  color: rgba(242, 238, 231, .55);
+  color: rgba(237, 234, 227, .55);
   text-align: center;
 }
 .rodape__base a:hover { color: var(--creme); }
@@ -1259,7 +1259,7 @@ textarea:focus-visible {
     gap: .25rem;
     padding: 1rem var(--lateral) 1.25rem;
     background: var(--cafe);
-    border-top: 1px solid rgba(242, 238, 231, .1);
+    border-top: 1px solid rgba(237, 234, 227, .1);
     box-shadow: 0 20px 30px rgba(0, 0, 0, .2);
   }
   .menu[data-aberto='true'] {
@@ -1273,7 +1273,7 @@ textarea:focus-visible {
     font-size: .875rem;
   }
   .menu a:not(.botao)::after { display: none; }
-  .menu a:not(.botao):hover { background: rgba(242, 238, 231, .1); }
+  .menu a:not(.botao):hover { background: rgba(237, 234, 227, .1); }
   .menu .botao { display: inline-flex; margin-top: .5rem; }
 
   .cabecalho__acao { display: none; }
