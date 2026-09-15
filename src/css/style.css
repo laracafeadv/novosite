@@ -336,6 +336,8 @@ textarea:focus-visible {
 /* ---------- Faixa (fita decorativa em looping) ---------- */
 
 .faixa {
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   background: var(--cafe);
   padding-block: .85rem;
@@ -368,13 +370,51 @@ textarea:focus-visible {
   .faixa__trilha { animation: none; }
 }
 
+/* Transição de cor entre seções: em vez de um corte seco entre um
+   fundo escuro e um claro, um degradê curto faz o olho passar de um
+   para o outro. Só existe depois da faixa, quando ela é seguida de
+   uma seção clara (home e blog); a costura antes do rodapé usa o
+   efeito de cartão subindo (mais abaixo), não precisa de degradê. */
+.transicao-secao {
+  position: relative;
+  z-index: 2;
+  height: 3rem;
+}
+.transicao-secao--para-claro {
+  background: linear-gradient(to bottom, var(--cafe), var(--creme));
+}
+
+/* Efeito de cartão subindo, reaproveitável: a seção anterior fica
+   fixa (.empilhador envolve, .fixar-no-topo fixa) enquanto a próxima,
+   com o topo arredondado e uma camada acima, sobe por cima dela ao
+   rolar. Sem altura própria no .empilhador: ele nasce do tamanho
+   natural do que está dentro, o sticky se limita a essa altura sozinho. */
+.empilhador {
+  position: relative;
+}
+.fixar-no-topo {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 /* ---------- Hero ---------- */
 
-.hero {
+/* Limita até onde o hero fica fixo na tela: sem esta altura própria,
+   o position: sticky do .hero usa o <main> inteiro como referência e
+   nunca solta, ficando grudado no topo pelo resto da rolagem. */
+.hero-fixador {
   position: relative;
+  height: 88vh;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
-  min-height: 88vh;
+  height: 100%;
   overflow: hidden;
   background: var(--cafe);
 }
@@ -462,6 +502,16 @@ textarea:focus-visible {
 }
 
 /* ---------- Sobre ---------- */
+
+/* Efeito de cartão subindo: o hero fica fixo (position: sticky) e o
+   Sobre mim, com o topo arredondado, sobe por cima dele ao rolar.
+   z-index 2 garante que fique acima do hero (z-index 1). */
+#sobre {
+  position: relative;
+  z-index: 2;
+  background: var(--creme);
+  border-radius: 2rem 2rem 0 0;
+}
 
 .sobre__grade {
   display: grid;
@@ -788,6 +838,10 @@ textarea:focus-visible {
   overflow: hidden;
   background: var(--cafe);
   color: var(--creme);
+}
+.rodape--empilhado {
+  z-index: 2;
+  border-radius: 2rem 2rem 0 0;
 }
 .rodape__fundo {
   position: absolute;
@@ -1226,7 +1280,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .hero { min-height: 78vh; }
+  .hero-fixador { height: 78vh; }
   .sobre__marca-agua { display: none; }
   .etapas__fundo { display: none; }
   .artigo-capa { transform: translateY(-1.5rem); }

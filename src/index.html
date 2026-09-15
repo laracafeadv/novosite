@@ -20,6 +20,7 @@
 <main id="conteudo">
 
   <!-- ============ HERO ============ -->
+  <div class="hero-fixador">
   <section class="hero" id="home">
     <picture>
       <!-- No celular a foto vertical: a horizontal perderia dois terços
@@ -37,6 +38,7 @@
 
     <img class="hero__mono" src="{{ raiz }}assets/mono-claro.png" alt="" aria-hidden="true" width="44" height="44" />
   </section>
+  </div>
 
   <!-- ============ FAIXA ============ -->
   <div class="faixa" aria-hidden="true">
@@ -51,6 +53,8 @@
       <span class="faixa__ponto">•</span>
     </div>
   </div>
+
+  <div class="transicao-secao transicao-secao--para-claro" aria-hidden="true"></div>
 
   <!-- ============ SOBRE ============ -->
   <section class="secao" id="sobre">
@@ -190,7 +194,8 @@
   </section>
 
   <!-- ============ CONTATO ============ -->
-  <section class="secao" id="contato">
+  <div class="empilhador">
+  <section class="secao fixar-no-topo" id="contato">
     <div class="container container--medio">
       <div class="contato-grade">
 
@@ -214,6 +219,7 @@
       </div>
     </div>
   </section>
+  </div>
 
 </main>
 
