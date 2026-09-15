@@ -5,7 +5,7 @@
 /* =========================================================
    Lara Café Advocacia & Consultoria
    Design system — café #412b20 / creme #f5efe6
-   Cosen (títulos) + Karla (texto e interface)
+   Playfair Display Italic (títulos) + Plus Jakarta Sans (texto e interface)
    ========================================================= */
 
 :root {
@@ -35,7 +35,7 @@
 
   /* Tipografia */
   --serifada:   'Cosen', 'Iowan Old Style', Georgia, serif;
-  --sem-serifa: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sem-serifa: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Layout */
   --largura:  80rem;   /* max-w-7xl */
