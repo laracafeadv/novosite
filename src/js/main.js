@@ -24,7 +24,7 @@
       var irmaos = el.parentElement.querySelectorAll(':scope > [data-revelar]');
       if (irmaos.length < 2) return 0;
       var posicao = Array.prototype.indexOf.call(irmaos, el);
-      return Math.min(posicao, 5) * 80;
+      return Math.min(posicao, 5) * 140;
     }
 
     var observador = new IntersectionObserver(function (entradas) {

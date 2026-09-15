@@ -31,7 +31,7 @@
 <main id="conteudo">
 
   <section class="artigo-topo">
-    <div class="artigo-topo__interno">
+    <div class="artigo-topo__interno" data-revelar>
       <a class="voltar" href="{{ raiz }}glossario.html">← Voltar ao glossário</a>
       <p class="sobrancelha sobrancelha--clara">Glossário</p>
       <h1>{{ termo }}</h1>
@@ -40,7 +40,7 @@
 
   <div class="empilhador">
   <article class="artigo-corpo fixar-no-topo" style="padding-top:clamp(2.5rem,5vw,3.5rem)">
-    <p class="abertura">{{ definicao }}</p>
+    <p class="abertura" data-revelar>{{ definicao }}</p>
 
 {{ paragrafos }}
 
