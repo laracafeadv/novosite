@@ -14,6 +14,10 @@ Lidar com a burocracia de um inventário logo depois de perder alguém é uma da
 
 O [inventário extrajudicial](/glossario/inventario-extrajudicial.html) é o procedimento que formaliza a partilha dos bens deixados por quem faleceu. Ele é obrigatório sempre que há patrimônio a ser transmitido aos herdeiros, mesmo quando a relação entre eles é boa e não há disputa nenhuma.
 
+## O prazo para abrir o inventário
+
+A lei prevê um prazo de 60 dias, contados da data do falecimento, para dar início ao inventário. Na prática, muitas famílias ultrapassam esse prazo, seja pelo próprio momento de luto, seja por simplesmente não saber que ele existe. Isso não impede que o inventário seja aberto depois, mas costuma gerar multa no imposto sobre a herança devido ao estado, cujo valor varia conforme a legislação local. Quanto antes o processo começa, menor a chance desse custo adicional aparecer.
+
 ## Extrajudicial ou judicial
 
 O inventário pode ser feito em cartório, pela via extrajudicial, quando todos os herdeiros são maiores de idade, capazes, e estão de acordo sobre a partilha. É, na maioria dos casos, o caminho mais rápido e mais simples.
@@ -35,11 +39,27 @@ A lista completa varia de família para família, dependendo do que compõe o pa
 
 Se a pessoa deixou um [testamento](/glossario/testamento.html), ele orienta como o patrimônio deve ser distribuído, respeitando sempre a parte da herança reservada por lei aos herdeiros necessários. Na ausência de testamento, a partilha segue a ordem de sucessão prevista em lei.
 
+## Herdeiros necessários e a parte que a lei já reserva
+
+Mesmo quando existe testamento, a lei reserva pelo menos metade do patrimônio aos herdeiros necessários, que são os filhos, o cônjuge ou companheiro, e os pais, na ausência de descendentes. Essa parte, chamada de legítima, não pode ser afastada pela vontade de quem faleceu. A outra metade, chamada de parte disponível, é a que pode ser destinada livremente a outras pessoas ou causas por testamento.
+
+## O imposto sobre a herança
+
+Além dos custos de cartório, a transmissão dos bens por herança está sujeita ao ITCMD, um imposto estadual calculado sobre o valor do patrimônio transmitido. A alíquota varia de estado para estado, por isso o valor exato só se confirma consultando a legislação vigente no estado onde o inventário é aberto. Esse imposto precisa ser pago antes da conclusão da partilha.
+
 ## A partilha entre os herdeiros
 
 A [partilha de bens](/glossario/partilha-de-bens.html) é, com frequência, a etapa mais delicada do inventário, principalmente quando envolve um imóvel usado pela família ou um bem com valor afetivo além do financeiro. Uma casa onde a família sempre se reuniu, por exemplo, costuma gerar mais divergência entre os herdeiros do que uma conta bancária dividida em partes iguais, mesmo que o valor financeiro seja menor. Nesses casos, entender as opções, como vender e dividir o valor, deixar um herdeiro morar no imóvel compensando os demais, ou manter a copropriedade, ajuda a separar o apego da decisão prática. Ter clareza sobre os critérios legais aplicáveis ajuda a evitar que essa etapa se transforme em uma disputa.
 
 > Organizar o inventário não apaga a perda, só evita que ela vire também um problema jurídico arrastado.
+
+## Quando aparece um bem depois do inventário concluído
+
+É comum descobrir um bem só depois que o inventário já foi encerrado, uma conta esquecida, um imóvel não registrado corretamente, ou um direito que ninguém sabia que existia. Nesses casos não é preciso refazer todo o processo, existe um procedimento específico, chamado sobrepartilha, feito só para tratar do bem que ficou de fora.
+
+## Bens em mais de um estado ou fora do Brasil
+
+Quando o patrimônio inclui imóveis em estados diferentes, isso não impede um inventário único, mas costuma exigir documentação e certidões específicas de cada localidade. Já bens localizados fora do Brasil geralmente exigem um inventário à parte, no país onde eles estão, seguindo as regras locais daquele lugar.
 
 ## Depois da partilha
 
