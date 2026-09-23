@@ -21,6 +21,10 @@ Nesse regime, tudo o que for comprado ou ganho com dinheiro do casal durante o c
 
 Para muitos casais essa regra funciona bem. Para outros, não é bem assim, e é aí que o pacto entra.
 
+## Pacto antenupcial não é a mesma coisa que contrato de convivência
+
+É comum confundir os dois. O pacto antenupcial é feito antes do casamento civil. Quem vive em união estável, sem casamento, usa outro documento pra combinar as mesmas questões patrimoniais, o [contrato de convivência](/glossario/contrato-de-convivencia.html), com a mesma lógica de definir regras diferentes das que a lei aplicaria por padrão.
+
 ## Quando o pacto costuma fazer diferença
 
 Alguns cenários em que vale a conversa antes
@@ -45,9 +49,17 @@ O custo é o de uma escritura pública, que varia de cartório para cartório e 
 
 > Combinar antes custa uma escritura. Combinar depois costuma custar um processo.
 
+## Dá para mudar de regime depois de casado?
+
+Sim, mas não do mesmo jeito. Depois do casamento, a mudança de regime de bens exige um pedido judicial, com motivo justificado e respeito aos direitos de quem já negociou com o casal sob o regime anterior. É um caminho bem mais longo e mais caro do que simplesmente assinar um pacto antes de casar.
+
 ## O que o pacto pode e não pode fazer
 
 Ele define o regime de bens e pode detalhar como o patrimônio será tratado durante e após a união. Hoje já é possível, inclusive, misturar regras diferentes para bens diferentes dentro do mesmo pacto, o chamado regime híbrido, aceito pelos tribunais mesmo sem estar escrito assim na lei. Não pode, no entanto, dispor sobre questões que a lei não deixa à vontade das partes, como os direitos de filhos, que não se negociam em pacto.
+
+## Uma cláusula inválida invalida o pacto inteiro?
+
+Não necessariamente. Quando uma cláusula do pacto contraria a lei, a tendência é que só essa parte específica seja considerada nula, mantendo o restante do documento válido. É mais um motivo pra contar com orientação na elaboração, uma cláusula mal redigida não precisa comprometer todo o resto, mas evitar o problema desde o início é sempre melhor do que corrigir depois.
 
 ## A conversa antes do documento
 
