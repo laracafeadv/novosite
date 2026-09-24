@@ -1,5 +1,5 @@
 ---
-titulo: O que fazer quando o outro não quer assinar o divórcio
+titulo: Divórcio sem a concordância do outro
 categoria: Divórcio e Separação
 resumo: Nem sempre o divórcio é um acordo entre dois. Entenda por que a
   falta de consenso, ou até o sumiço do outro lado, não impede a
