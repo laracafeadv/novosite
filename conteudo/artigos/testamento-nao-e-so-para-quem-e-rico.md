@@ -8,7 +8,7 @@ data_publicacao: 2026-09-24
 leitura: 4 min de leitura
 publicado: true
 ---
-Testamento costuma soar como assunto de gente rica, ou de quem já está muito no fim da vida. Na prática, é uma ferramenta útil pra qualquer pessoa com algum patrimônio, por menor que seja, e pra qualquer idade, desde que exista capacidade civil para fazê-lo.
+Testamento costuma soar como assunto de gente rica, ou de quem já está muito no fim da vida. Na prática, é uma ferramenta útil pra qualquer pessoa com algum patrimônio, por menor que seja, e pra qualquer idade, desde que a pessoa esteja em condições de entender e manifestar a própria vontade, o que a lei chama de capacidade civil.
 
 Boa parte da confusão em torno do tema vem de achar que, sem testamento, tudo fica em aberto, ou que fazer um documento desses significa desconfiar da própria família. Nenhuma das duas coisas é verdade, e entender a diferença ajuda a decidir com mais clareza se vale a pena pro seu caso.
 
