@@ -23,7 +23,7 @@ export const gruposDeAtuacao = [
         descricao: 'Elaboração de pactos antenupciais, contratos de convivência e demais acordos que formalizam as escolhas do casal sobre o patrimônio e a relação.',
       },
       {
-        titulo: 'Divórcio e fim de união estável',
+        titulo: 'Divórcio e fim de união estável, extrajudicial ou judicial',
         descricao: 'Consensual ou litigioso, incluindo as questões patrimoniais que costumam acompanhar a separação.',
       },
       {
