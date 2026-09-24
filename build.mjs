@@ -476,9 +476,9 @@ function gerarHome() {
     ...parciais(ctx),
     meta: cabecaMeta({
       // O serviço vem antes do nome, é o que as pessoas digitam no Google.
-      // Salvador entra para capturar busca de intenção local, sem tirar
-      // o "atendimento em todo o Brasil" que aparece no resto do site.
-      titulo: `Advogada de Família e Sucessões em Salvador | ${dados.site.nomeCurto}`,
+      // Sem cidade no título de propósito: posicionamento é de advocacia
+      // nacional, não local (o alcance nacional aparece na description).
+      titulo: `Advogada de Direito de Família e Sucessões | ${dados.site.nomeCurto}`,
       descricao: dados.site.descricao,
       caminho: '',
       ctx,
