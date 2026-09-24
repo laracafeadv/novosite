@@ -30,12 +30,12 @@ Para muitos casais essa regra funciona bem. Para outros, não é bem assim, e é
 Alguns cenários em que vale a conversa antes
 
 * Um dos dois já construiu patrimônio significativo antes da união.
-* Existe empresa familiar, e a entrada de um cônjuge no quadro societário traria complicações.
+* Existe empresa familiar, e a entrada de um cônjuge como sócio traria complicações.
 * Um dos dois exerce atividade com risco patrimonial, e o casal quer proteger o outro.
 * Há filhos de relacionamento anterior e o desejo de organizar a sucessão com clareza.
 * Simplesmente porque o casal prefere manter os patrimônios separados.
 
-Um exemplo comum é o de um casal em que um dos dois é sócio de uma empresa construída ao longo de anos com a família. Sem pacto, o outro cônjuge pode acabar tendo direito sobre parte dessas cotas em caso de divórcio, mesmo nunca tendo participado do negócio, o que costuma gerar desconforto com o restante dos sócios. Um pacto bem feito evita essa mistura desde o início.
+Um exemplo comum é o de um casal em que um dos dois é sócio de uma empresa construída ao longo de anos com a família. Sem pacto, o outro cônjuge pode acabar tendo direito sobre parte dessa empresa em caso de divórcio, mesmo nunca tendo participado do negócio, o que costuma gerar desconforto com o restante dos sócios. Um pacto bem feito evita essa mistura desde o início.
 
 Nenhum desses motivos é sinal de desconfiança. Todos são sinal de organização.
 

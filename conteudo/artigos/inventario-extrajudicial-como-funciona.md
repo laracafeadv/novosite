@@ -45,7 +45,7 @@ Mesmo quando existe testamento, a lei reserva pelo menos metade do patrimônio a
 
 ## O imposto sobre a herança
 
-Além dos custos de cartório, a transmissão dos bens por herança está sujeita ao ITCMD, um imposto estadual calculado sobre o valor do patrimônio transmitido. A alíquota varia de estado para estado, por isso o valor exato só se confirma consultando a legislação vigente no estado onde o inventário é aberto. Esse imposto precisa ser pago antes da conclusão da partilha.
+Além dos custos de cartório, a transmissão dos bens por herança está sujeita ao ITCMD, um imposto estadual calculado sobre o valor do patrimônio transmitido. A alíquota, ou seja, o percentual cobrado, varia de estado para estado, por isso o valor exato só se confirma consultando a legislação vigente no estado onde o inventário é aberto. Esse imposto precisa ser pago antes da conclusão da partilha.
 
 ## A partilha entre os herdeiros
 

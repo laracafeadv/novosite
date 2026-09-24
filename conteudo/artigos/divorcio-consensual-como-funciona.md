@@ -38,7 +38,7 @@ A partilha alcança também as dívidas contraídas durante o casamento, não s�
 
 ## O que muda no papel depois do divórcio
 
-Depois de homologado, o divórcio é averbado, ou seja, anotado oficialmente, na certidão de casamento, que passa a ser o documento que comprova o novo estado civil. Sem essa anotação, o casamento continua constando como vigente nos registros, mesmo que o casal já esteja de fato separado.
+Depois de homologado, ou seja, aprovado formalmente pela Justiça ou pelo cartório, o divórcio é averbado, ou seja, anotado oficialmente, na certidão de casamento, que passa a ser o documento que comprova o novo estado civil. Sem essa anotação, o casamento continua constando como vigente nos registros, mesmo que o casal já esteja de fato separado.
 
 Depois de homologado, o divórcio já produz efeito imediato entre o casal. Questões pontuais, como a efetivação da partilha de um imóvel específico, podem levar mais tempo para se concretizar na prática, mas o vínculo do casamento já está desfeito.
 

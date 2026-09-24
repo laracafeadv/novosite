@@ -1,5 +1,5 @@
 ---
-titulo: Namoro qualificado ou união estável, qual é a diferença
+titulo: Namoro qualificado ou união estável?
 categoria: União Estável e Relacionamentos
 resumo: Morar junto ou dividir contas não faz de um relacionamento uma
   união estável. Entenda a diferença real entre namoro qualificado e

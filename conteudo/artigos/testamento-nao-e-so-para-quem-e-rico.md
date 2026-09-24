@@ -30,7 +30,7 @@ Qualquer pessoa maior de 16 anos, com capacidade civil para os atos da vida, pod
 
 ### Testamento público, particular e cerrado
 
-O [testamento](/glossario/testamento.html) público é feito em cartório, na presença de um tabelião e testemunhas, e costuma ser o mais seguro por já nascer registrado. O particular é escrito e assinado pela própria pessoa, também na presença de testemunhas, mas exige reconhecimento posterior. Já o cerrado, escrito e lacrado pelo próprio autor, é hoje pouco utilizado na prática. Cada modalidade tem exigências formais próprias, e o não cumprimento delas pode comprometer a validade do documento.
+O [testamento](/glossario/testamento.html) público é feito em cartório, na presença de um tabelião e testemunhas, e costuma ser o mais seguro por já nascer registrado. O particular é escrito e assinado pela própria pessoa, também na presença de testemunhas, mas só passa a valer depois de confirmado por um juiz. Já o cerrado, escrito e lacrado pelo próprio autor, é hoje pouco utilizado na prática. Cada modalidade tem exigências formais próprias, e o não cumprimento delas pode comprometer a validade do documento.
 
 ## O que a lei já reserva, mesmo com testamento
 
