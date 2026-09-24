@@ -2,8 +2,7 @@
 titulo: Como funciona um inventário extrajudicial
 categoria: Inventário e Sucessões
 resumo: Perder alguém já basta. Entenda como funciona o inventário
-  extrajudicial, quando ele é possível e o que muda em relação à via
-  judicial.
+  extrajudicial, os custos envolvidos e os direitos dos herdeiros.
 data_publicacao: 2026-09-15
 leitura: 4 min de leitura
 publicado: true

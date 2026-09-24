@@ -11,10 +11,10 @@ export const termosDoGlossario = [
   {
     "slug": "uniao-estavel",
     "termo": "União Estável",
-    "definicao": "Relação reconhecida quando duas pessoas convivem de forma pública, contínua e duradoura, com o objetivo de constituir família, independentemente de contrato formal.",
+    "definicao": "Relação reconhecida quando duas pessoas convivem de forma pública, contínua e duradoura, com o objetivo de constituir família.",
     "paragrafos": [
       "A união estável não exige casamento civil para existir. Basta a convivência pública, contínua e duradoura entre duas pessoas com o objetivo de constituir família.",
-      "Ainda assim, ela gera efeitos jurídicos relevantes, entre eles o regime de bens equivalente ao da comunhão parcial (salvo contrato de convivência em sentido diferente) e direitos sucessórios entre os companheiros.",
+      "Ainda assim, ela gera efeitos jurídicos relevantes, entre eles o regime de bens equivalente ao da comunhão parcial (salvo contrato de convivência em sentido diferente) e direito de herança entre os companheiros.",
       "A união estável também pode ser convertida em casamento a qualquer momento, mediante requerimento ao cartório."
     ]
   },
@@ -31,12 +31,12 @@ export const termosDoGlossario = [
   {
     "slug": "pacto-antenupcial",
     "termo": "Pacto Antenupcial",
-    "definicao": "Documento que define o regime de bens do casal antes do casamento civil, permitindo escolher uma regra diferente da comunhão parcial prevista por padrão em lei.",
+    "definicao": "Documento que define o regime de bens do casal antes do casamento, permitindo escolher regra diferente da comunhão parcial prevista por padrão em lei.",
     "paragrafos": [
       "O pacto antenupcial é celebrado antes do casamento, por escritura pública em cartório, e define como o patrimônio do casal será tratado durante e após a relação.",
-      "Sem esse documento, o casamento segue automaticamente o regime da comunhão parcial de bens. Com o pacto, é possível optar por separação total, comunhão universal ou participação final nos aquestos, cada um com efeitos diferentes sobre o patrimônio de cada cônjuge.",
+      "Sem esse documento, o casamento segue automaticamente o regime da comunhão parcial de bens. Com o pacto, é possível optar por separação total, comunhão universal ou participação final nos aquestos, um regime raro que combina regras dos outros dois, cada um com efeitos diferentes sobre o patrimônio de cada cônjuge.",
       "Além desses quatro regimes previstos em lei, hoje também é possível fazer um pacto misturando regras diferentes para bens diferentes, dentro do mesmo documento. É o que se chama de regime híbrido ou misto, já aceito pelos tribunais mesmo sem estar escrito assim na lei. Um exemplo comum é separar totalmente o patrimônio da empresa de um dos cônjuges e manter comunhão sobre os bens do dia a dia do casal.",
-      "É especialmente relevante quando um dos nubentes já possui patrimônio formado antes do casamento, ou quando há interesse em proteger bens familiares ou empresariais."
+      "É especialmente relevante quando um dos noivos já possui patrimônio formado antes do casamento, ou quando há interesse em proteger bens familiares ou empresariais."
     ]
   },
   {
@@ -47,7 +47,7 @@ export const termosDoGlossario = [
       "No divórcio consensual, as partes concordam sobre a separação e seus termos, como partilha de bens, uso do nome e, quando houver, guarda e pensão de filhos.",
       "Quando não há filhos menores ou incapazes e há consenso total, o divórcio pode ser feito diretamente em cartório, pela via extrajudicial, o que costuma ser mais rápido e menos custoso que o processo judicial.",
       "Mesmo sendo consensual, a assistência de advogado é obrigatória em qualquer modalidade de divórcio no Brasil.",
-      "Os documentos básicos costumam incluir certidão de casamento atualizada, documentos pessoais do casal e, quando houver bens ou filhos envolvidos, a documentação correspondente a cada um. O tempo até a homologação varia conforme a via escolhida e a organização prévia desses documentos, e um advogado consegue estimar um prazo mais realista já na primeira conversa sobre o caso."
+      "Os documentos básicos costumam incluir certidão de casamento atualizada, documentos pessoais do casal e, quando houver bens ou filhos envolvidos, a documentação correspondente a cada um. O tempo até a homologação, ou seja, a aprovação final pelo juiz ou pelo cartório, varia conforme a via escolhida e a organização prévia desses documentos, e um advogado consegue estimar um prazo mais realista já na primeira conversa sobre o caso."
     ]
   },
   {
@@ -76,7 +76,7 @@ export const termosDoGlossario = [
     "termo": "Partilha de Bens",
     "definicao": "Divisão do patrimônio entre o casal (em divórcio) ou entre os herdeiros (em inventário), seguindo o regime de bens ou a ordem legal de sucessão.",
     "paragrafos": [
-      "Em um divórcio, a partilha de bens segue o regime adotado pelo casal, seja comunhão parcial, separação total, comunhão universal ou participação final nos aquestos, definindo o que é dividido e em que proporção.",
+      "Em um divórcio, a partilha de bens segue o regime adotado pelo casal, seja comunhão parcial, separação total, comunhão universal ou participação final nos aquestos (regime raro que mistura os dois anteriores), definindo o que é dividido e em que proporção.",
       "Em um inventário, a partilha segue a ordem de sucessão prevista em lei, respeitando testamento (se houver) e a parte reservada aos herdeiros necessários.",
       "Uma partilha bem construída, com clareza sobre os critérios aplicáveis, é o que evita que desacordos patrimoniais se transformem em disputas judiciais longas."
     ]
@@ -94,7 +94,7 @@ export const termosDoGlossario = [
   {
     "slug": "pensao-alimenticia",
     "termo": "Pensão Alimentícia",
-    "definicao": "Valor pago periodicamente para cobrir despesas de quem depende financeiramente de outra pessoa, em geral um filho menor de idade, mas que também pode envolver ex-cônjuges ou outros parentes.",
+    "definicao": "Valor pago periodicamente para cobrir despesas de quem depende financeiramente de outra pessoa, como um filho ou ex-cônjuge.",
     "paragrafos": [
       "O valor da pensão alimentícia não segue uma tabela fixa. Ele é definido considerando a necessidade de quem recebe e a possibilidade de quem paga, podendo ser fixado em um percentual da renda ou em um valor determinado.",
       "A pensão pode ser revisada a qualquer momento, para mais ou para menos, quando a situação financeira de alguma das partes muda de forma relevante, ou quando as necessidades de quem recebe se alteram.",

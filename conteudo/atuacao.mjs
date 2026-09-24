@@ -37,10 +37,6 @@ export const gruposDeAtuacao = [
     descricao: 'Para quem precisa organizar uma herança ou a transmissão de bens, antes ou depois de uma perda.',
     itens: [
       {
-        titulo: 'Inventário judicial e extrajudicial',
-        descricao: 'Formalização da partilha de bens após um falecimento, pela via mais adequada a cada situação familiar.',
-      },
-      {
         titulo: 'Planejamento sucessório',
         descricao: 'Organização, ainda em vida, de como o patrimônio será transmitido, reduzindo a chance de disputa entre herdeiros e dando mais segurança a quem fica.',
       },
@@ -51,6 +47,10 @@ export const gruposDeAtuacao = [
       {
         titulo: 'Herança e partilha de bens',
         descricao: 'Orientação sobre direitos dos herdeiros e divisão do patrimônio deixado, com clareza e critério técnico.',
+      },
+      {
+        titulo: 'Inventário judicial e extrajudicial',
+        descricao: 'Formalização da partilha de bens após um falecimento, pela via mais adequada a cada situação familiar.',
       },
     ],
   },
